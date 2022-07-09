@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">@color/blue_78a6ff</item>
         <item name="colorOnPrimary">@color/white_ffffff</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/yellow_fee723</item>
+        <item name="colorSecondary">@color/yellow_fee823</item>
         <item name="colorSecondaryVariant">@color/yellow_fff280</item>
         <item name="colorOnSecondary">@color/black_000000</item>
         <!-- Status bar color. -->
@@ -14,25 +14,6 @@
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
-        <font android:font="@font/gmarket_sans_medium" android:fontStyle="normal" android:fontWeight="500" />
-    </font-family>
-
-    <!-- font/pretendard.xml -->
-    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
-        <font android:font="@font/pretendard_regular" android:fontStyle="normal" android:fontWeight="400" />
-    </font-family>
-
-    <!-- font/gmarket_sans.xml -->
-    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
-        <font android:font="@font/gmarket_sans_bold" android:fontStyle="normal" android:fontWeight="700" />
-    </font-family>
-
-    <!-- font/pretendard_medium.xml -->
-    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
-        <font android:font="@font/pretendard_medium" android:fontStyle="normal" android:fontWeight="500" />
-    </font-family>
 
     <style name="H0">
         <item name="android:fontFamily">@font/gmarket_sans_medium</item>
