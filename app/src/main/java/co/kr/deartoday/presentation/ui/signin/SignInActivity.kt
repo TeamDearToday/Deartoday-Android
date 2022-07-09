@@ -2,6 +2,7 @@ package co.kr.deartoday.presentation.ui.signin
 
 import android.content.ContentValues
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivitySignInBinding
@@ -17,6 +18,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding.viewmodel = viewModel
 
         signIn()
@@ -41,6 +43,16 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
                     }
                 }
             }
+        }
+    }
+
+    fun setCaptionVisible(){
+        if (true){
+            binding.tvCaption01.visibility = View.VISIBLE
+            binding.tvCaption02.visibility = View.VISIBLE
+        } else if ( false){
+            binding.tvCaption01.visibility = View.GONE
+            binding.tvCaption02.visibility = View.GONE
         }
     }
 }
