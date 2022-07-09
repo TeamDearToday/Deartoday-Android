@@ -35,6 +35,12 @@
         <item name="android:lineSpacingExtra">7sp</item>
     </style>
 
+    <style name="P5En">
+        <item name="android:fontFamily">@font/gmarket_sans_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">19sp</item>
+    </style>
+
     <style name="Btn1En">
         <item name="android:fontFamily">@font/gmarket_sans_bold</item>
         <item name="android:textStyle">bold</item>
@@ -67,6 +73,12 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">15sp</item>
         <item name="android:lineSpacingExtra">13sp</item>
+    </style>
+
+    <style name="P4">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
     <style name="Caption0">

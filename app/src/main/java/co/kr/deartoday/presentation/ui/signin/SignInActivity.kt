@@ -1,12 +1,14 @@
 package co.kr.deartoday.presentation.ui.signin
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivitySignInBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import co.kr.deartoday.presentation.ui.main.MainActivity
 import com.kakao.sdk.user.UserApiClient
 import timber.log.Timber
 
@@ -29,6 +31,10 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
                         Toast.makeText(this, "카카오 관련 에러 발생", Toast.LENGTH_SHORT).show()
                     } else if (token != null) {
                         Timber.tag(ContentValues.TAG).i("로그인 성공 $token.accessToken")
+                        startActivity(Intent(this, MainActivity::class.java))
+                        if(!isFinishing) {
+                            finish()
+                        }
                     }
                 }
             } else {
@@ -38,6 +44,10 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
                         Toast.makeText(this, "카카오 관련 에러 발생", Toast.LENGTH_SHORT).show()
                     } else if (token != null) {
                         Timber.tag(ContentValues.TAG).i("로그인 성공 ${token.accessToken}")
+                        startActivity(Intent(this, MainActivity::class.java))
+                        if(!isFinishing) {
+                            finish()
+                        }
                     }
                 }
             }
