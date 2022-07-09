@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.onboarding.Onboarding8Fragment">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_3_withg" />
+
+        <ImageView
+            android:id="@+id/iv_letter_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="134dp"
+            android:src="@drawable/bg_letter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_ob8_line1"
+            style="@style/P3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="27dp"
+            android:gravity="start"
+            android:text="@string/ob8_line1"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_letter_8" />
+
+        <TextView
+            android:id="@+id/tv_ob8_line2"
+            style="@style/P3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="28dp"
+            android:gravity="start"
+            android:text="@string/ob8_line2"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ob8_line1" />
+
+        <TextView
+            android:id="@+id/tv_ob8_line3"
+            style="@style/P4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="28dp"
+            android:gravity="start"
+            android:text="@string/ob8_line3"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ob8_line2" />
+
+        <TextView
+            android:id="@+id/tv_ob8_line4"
+            style="@style/P4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="38dp"
+            android:gravity="start"
+            android:text="@string/ob8_line4"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ob8_line3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_go_next_8"
+            style="@style/BtnKr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/btn_small_present"
+            android:text="@string/btn_go_next"
+            android:textColor="@color/blue_558fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ob8_line4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
