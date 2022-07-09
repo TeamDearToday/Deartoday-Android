@@ -27,6 +27,7 @@
             android:gravity="center"
             android:text="@string/ob1_line1"
             android:textColor="@color/white_ffffff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@id/btn_next"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
@@ -40,6 +41,7 @@
             android:gravity="center"
             android:text="@string/ob1_line2"
             android:textColor="@color/white_ffffff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/btn_next"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
@@ -52,8 +54,10 @@
             android:layout_marginHorizontal="6dp"
             android:layout_marginBottom="64dp"
             android:background="@drawable/btn_large_present"
+            android:clickable="false"
             android:text="@string/btn_next"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
