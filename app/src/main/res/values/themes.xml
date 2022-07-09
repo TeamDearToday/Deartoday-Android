@@ -14,4 +14,97 @@
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
+        <font android:font="@font/gmarket_sans_medium" android:fontStyle="normal" android:fontWeight="500" />
+    </font-family>
+
+    <!-- font/pretendard.xml -->
+    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
+        <font android:font="@font/pretendard_regular" android:fontStyle="normal" android:fontWeight="400" />
+    </font-family>
+
+    <!-- font/gmarket_sans.xml -->
+    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
+        <font android:font="@font/gmarket_sans_bold" android:fontStyle="normal" android:fontWeight="700" />
+    </font-family>
+
+    <!-- font/pretendard_medium.xml -->
+    <font-family xmlns:android="http://schemas.android.com/apk/res/android">
+        <font android:font="@font/pretendard_medium" android:fontStyle="normal" android:fontWeight="500" />
+    </font-family>
+
+    <style name="H0">
+        <item name="android:fontFamily">@font/gmarket_sans_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <style name="P1">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="P0En">
+        <item name="android:fontFamily">@font/gmarket_sans_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+    </style>
+
+    <style name="Btn1En">
+        <item name="android:fontFamily">@font/gmarket_sans_bold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="BtnKr">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <style name="Btn0">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="P2">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+    </style>
+
+    <style name="P3">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineSpacingExtra">13sp</item>
+    </style>
+
+    <style name="Caption0">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Onboard0">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+    </style>
+
+    <style name="Caption1">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>
