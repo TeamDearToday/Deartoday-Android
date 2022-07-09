@@ -3,6 +3,7 @@ package co.kr.deartoday.presentation.ui.signin
 import android.content.ContentValues
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivitySignInBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
@@ -25,6 +26,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
                 UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
                     if (error != null) {
                         Timber.tag(ContentValues.TAG).e(error, "로그인 실패")
+                        Toast.makeText(this, "카카오 관련 에러 발생", Toast.LENGTH_SHORT).show()
                     } else if (token != null) {
                         Timber.tag(ContentValues.TAG).i("로그인 성공 $token.accessToken")
                     }
@@ -33,6 +35,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
                 UserApiClient.instance.loginWithKakaoAccount(this) { token, error ->
                     if (error != null) {
                         Timber.tag(ContentValues.TAG).e(error, "로그인 실패")
+                        Toast.makeText(this, "카카오 관련 에러 발생", Toast.LENGTH_SHORT).show()
                     } else if (token != null) {
                         Timber.tag(ContentValues.TAG).i("로그인 성공 ${token.accessToken}")
                     }
@@ -41,7 +44,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
         }
     }
 
-    fun setCaptionVisible() {
+    private fun setCaptionVisible() {
         if (true) {
             binding.tvCaption01.visibility = View.VISIBLE
             binding.tvCaption02.visibility = View.VISIBLE
