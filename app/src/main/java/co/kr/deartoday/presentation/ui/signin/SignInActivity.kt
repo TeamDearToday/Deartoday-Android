@@ -17,10 +17,10 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        signIn()
+        setOnLayoutButtonClickListener()
     }
 
-    private fun signIn() {
+    private fun setOnLayoutButtonClickListener() {
         binding.layoutButton.setOnClickListener {
             if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
                 UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
