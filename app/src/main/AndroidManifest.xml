@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="co.kr.deartoday">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".application.DeartodayApplication"
         android:allowBackup="true"
@@ -24,8 +26,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.ui.main.MainActivity"
+            android:name=".presentation.ui.signin.SignInActivity"
             android:exported="true" />
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao${KAKAO_APP_KEY_MANIFEST}" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".presentation.ui.main.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

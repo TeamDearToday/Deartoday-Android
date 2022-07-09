@@ -6,6 +6,8 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityMainBinding
 import co.kr.deartoday.presentation.adapter.MainViewPagerAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity() : BaseActivity<ActivityMainBinding>() {
     override val layoutRes: Int
@@ -19,6 +21,7 @@ class MainActivity() : BaseActivity<ActivityMainBinding>() {
 
     private fun initView() {
         initViewPager()
+        initDateView()
     }
 
     private fun initViewPager() {
@@ -39,6 +42,16 @@ class MainActivity() : BaseActivity<ActivityMainBinding>() {
                     }
                 }
             })
+        }
+    }
+
+    private fun initDateView() {
+        val todayFormat = SimpleDateFormat("yyyyMMdd")
+        val today = todayFormat.format(Date())
+        with(binding) {
+            tvTodayYear.text = today.substring(0, 4)
+            tvTodayMonth.text = today.substring(4, 6)
+            tvTodayDay.text = today.substring(6, 8)
         }
     }
 }

@@ -5,6 +5,11 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def kakao_app_key = properties.get('kakao_app_key')
+def kakao_app_key_manifest = properties.get('kakao_app_key_manifest')
+
 android {
     compileSdk 31
 
@@ -16,6 +21,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // KakaoAppKey
+        buildConfigField ("String", "KAKAO_APP_KEY", kakao_app_key)
+        manifestPlaceholders = [KAKAO_APP_KEY_MANIFEST: kakao_app_key_manifest]
     }
 
     buildTypes {
@@ -76,4 +85,7 @@ dependencies {
     // OkHttp3
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+
+    // 카카오 로그인
+    implementation "com.kakao.sdk:v2-user:2.11.0"
 }
