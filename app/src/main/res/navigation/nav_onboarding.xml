@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_onboarding"
+    app:startDestination="@id/onboarding1Fragment">
+
+    <fragment
+        android:id="@+id/onboarding1Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding1Fragment"
+        android:label="fragment_onboarding1"
+        tools:layout="@layout/fragment_onboarding1">
+        <action
+            android:id="@+id/action_onboarding1Fragment_to_onboarding2Fragment"
+            app:destination="@id/onboarding2Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboarding4Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding4Fragment"
+        android:label="fragment_onboarding4"
+        tools:layout="@layout/fragment_onboarding4">
+        <action
+            android:id="@+id/action_onboarding4Fragment_to_onboarding5Fragment"
+            app:destination="@id/onboarding5Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding5Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding5Fragment"
+        android:label="fragment_onboarding5"
+        tools:layout="@layout/fragment_onboarding5">
+        <action
+            android:id="@+id/action_onboarding5Fragment_to_onboarding6Fragment"
+            app:destination="@id/onboarding6Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding6Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding6Fragment"
+        android:label="fragment_onboarding6"
+        tools:layout="@layout/fragment_onboarding6">
+        <action
+            android:id="@+id/action_onboarding6Fragment_to_onboarding7Fragment"
+            app:destination="@id/onboarding7Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding7Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding7Fragment"
+        android:label="fragment_onboarding7"
+        tools:layout="@layout/fragment_onboarding7">
+        <action
+            android:id="@+id/action_onboarding7Fragment_to_onboarding8Fragment"
+            app:destination="@id/onboarding8Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding8Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding8Fragment"
+        android:label="fragment_onboarding8"
+        tools:layout="@layout/fragment_onboarding8">
+        <action
+            android:id="@+id/action_onboarding8Fragment_to_onboarding9Fragment"
+            app:destination="@id/onboarding9Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding9Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding9Fragment"
+        android:label="fragment_onboarding9"
+        tools:layout="@layout/fragment_onboarding9">
+        <action
+            android:id="@+id/action_onboarding9Fragment_to_onboarding10Fragment"
+            app:destination="@id/onboarding10Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding10Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding10Fragment"
+        android:label="fragment_onboarding10"
+        tools:layout="@layout/fragment_onboarding10">
+        <action
+            android:id="@+id/action_onboarding10Fragment_to_onboarding11Fragment"
+            app:destination="@id/onboarding11Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding11Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding11Fragment"
+        android:label="fragment_onboarding11"
+        tools:layout="@layout/fragment_onboarding11" >
+        <action
+            android:id="@+id/action_onboarding11Fragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding3Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding3Fragment"
+        android:label="fragment_onboarding3"
+        tools:layout="@layout/fragment_onboarding3" >
+        <action
+            android:id="@+id/action_onboarding3Fragment_to_onboarding4Fragment"
+            app:destination="@id/onboarding4Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarding2Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding2Fragment"
+        android:label="fragment_onboarding2"
+        tools:layout="@layout/fragment_onboarding2" >
+        <action
+            android:id="@+id/action_onboarding2Fragment_to_onboarding3Fragment"
+            app:destination="@id/onboarding3Fragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="co.kr.deartoday.presentation.ui.main.MainActivity"
+        android:label="MainActivity" />
+
+</navigation>
