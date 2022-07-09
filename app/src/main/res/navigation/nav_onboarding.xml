@@ -85,7 +85,7 @@
         tools:layout="@layout/fragment_onboarding11" >
         <action
             android:id="@+id/action_onboarding11Fragment_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            app:destination="@id/sign_in_activity" />
     </fragment>
     <fragment
         android:id="@+id/onboarding3Fragment"
@@ -106,8 +106,8 @@
             app:destination="@id/onboarding3Fragment" />
     </fragment>
     <activity
-        android:id="@+id/mainActivity"
-        android:name="co.kr.deartoday.presentation.ui.main.MainActivity"
-        android:label="MainActivity" />
+        android:id="@+id/sign_in_activity"
+        android:name="co.kr.deartoday.presentation.ui.signin.SignInActivity"
+        android:label="SignInActivity" />
 
 </navigation>
