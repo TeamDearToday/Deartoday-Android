@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,12 +9,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.main.MainActivity">
+        tools:context=".presentation.ui.main.MainRightFragment">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vp_main"
+        <ImageView
+            android:id="@+id/iv_background"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_right_withg_a" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
