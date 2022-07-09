@@ -26,6 +26,5 @@ class Onboarding6Fragment : BaseFragment<FragmentOnboarding6Binding>() {
         binding.btnCircleTouch6.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding6Fragment_to_onboarding7Fragment)
         }
-
     }
 }

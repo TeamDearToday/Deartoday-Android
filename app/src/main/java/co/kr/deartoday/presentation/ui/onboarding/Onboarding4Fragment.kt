@@ -25,6 +25,5 @@ class Onboarding4Fragment : BaseFragment<FragmentOnboarding4Binding>() {
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding4Fragment_to_onboarding5Fragment)
         }
-
     }
 }

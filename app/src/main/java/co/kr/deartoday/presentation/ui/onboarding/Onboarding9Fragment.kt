@@ -22,6 +22,5 @@ class Onboarding9Fragment : BaseFragment<FragmentOnboarding9Binding>() {
         binding.layoutPlayer.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding9Fragment_to_onboarding10Fragment)
         }
-
     }
 }
