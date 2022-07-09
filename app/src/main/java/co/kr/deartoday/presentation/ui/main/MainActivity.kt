@@ -1,6 +1,7 @@
 package co.kr.deartoday.presentation.ui.main
 
 import android.os.Bundle
+import androidx.viewpager2.widget.ViewPager2
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityMainBinding
 import co.kr.deartoday.presentation.adapter.MainViewPagerAdapter
@@ -22,6 +23,22 @@ class MainActivity() : BaseActivity<ActivityMainBinding>() {
 
     private fun initViewPager() {
         mainViewPagerAdapter = MainViewPagerAdapter(this)
-        binding.vpMain.adapter = mainViewPagerAdapter
+        with(binding.vpMain) {
+            adapter = mainViewPagerAdapter
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    when (position) {
+                        0 -> {
+                            binding.ivIndicatorOne.setBackgroundResource(R.drawable.circle_full)
+                            binding.ivIndicatorTwo.setBackgroundResource(R.drawable.circle_border)
+                        }
+                        else -> {
+                            binding.ivIndicatorOne.setBackgroundResource(R.drawable.circle_border)
+                            binding.ivIndicatorTwo.setBackgroundResource(R.drawable.circle_full)
+                        }
+                    }
+                }
+            })
+        }
     }
 }
