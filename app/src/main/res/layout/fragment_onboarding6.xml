@@ -25,9 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="117dp"
             android:gravity="center"
-            android:visibility="invisible"
             android:text="@string/ob6_line1"
             android:textColor="@color/white_ffffff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="150dp"
             android:layout_marginBottom="12dp"
-            android:clickable="false"
             android:background="@drawable/ic_btn_circle_touch"
+            android:clickable="false"
             app:layout_constraintBottom_toTopOf="@+id/btn_box_touch_6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

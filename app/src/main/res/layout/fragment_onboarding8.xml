@@ -25,9 +25,9 @@
             android:layout_marginTop="134dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_bg_letter"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_ob8_line1"
@@ -37,9 +37,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="27dp"
             android:gravity="start"
-            android:visibility="invisible"
             android:text="@string/ob8_line1"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/iv_letter_8" />
@@ -52,9 +52,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="28dp"
             android:gravity="start"
-            android:visibility="invisible"
             android:text="@string/ob8_line2"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob8_line1" />
@@ -67,9 +67,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="28dp"
             android:gravity="start"
-            android:visibility="invisible"
             android:text="@string/ob8_line3"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob8_line2" />
@@ -82,9 +82,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="38dp"
             android:gravity="start"
-            android:visibility="invisible"
             android:text="@string/ob8_line4"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob8_line3" />
@@ -97,10 +97,10 @@
             android:layout_marginTop="34dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/btn_small_present"
-            android:visibility="invisible"
             android:clickable="false"
             android:text="@string/btn_go_next"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_ob8_line4" />
 

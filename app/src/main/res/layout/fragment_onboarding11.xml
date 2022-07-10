@@ -37,9 +37,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="27dp"
             android:gravity="start"
-            android:visibility="invisible"
             android:text="@string/ob11_line1"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/iv_letter_11" />
@@ -52,9 +52,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="28dp"
             android:gravity="start"
-            android:visibility="invisible"
             android:text="@string/ob11_line2"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob11_line1" />
@@ -67,9 +67,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="28dp"
             android:gravity="start"
-            android:visibility="invisible"
             android:text="@string/ob11_line3"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob11_line2" />
@@ -83,8 +83,8 @@
             android:layout_marginTop="28dp"
             android:gravity="start"
             android:text="@string/ob11_line4"
-            android:visibility="invisible"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob11_line3" />
@@ -98,9 +98,9 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="10dp"
             android:gravity="start"
-            android:visibility="invisible"
             android:text="@string/ob11_line5"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob11_line4" />
@@ -113,10 +113,10 @@
             android:layout_marginTop="72dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/btn_medium_present"
-            android:visibility="invisible"
             android:clickable="false"
             android:text="@string/btn_start_dt"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_ob11_line5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
