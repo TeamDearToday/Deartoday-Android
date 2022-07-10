@@ -44,6 +44,9 @@ class Onboarding2Fragment : BaseFragment<FragmentOnboarding2Binding>() {
             binding.tvOb2Line1.visibility = View.VISIBLE
             fadeIn1.start()
             slideUp1.start()
+
+            binding.btnBoxTouch2.isClickable = true
+            binding.btnCircleTouch2.isClickable = true
         }
     }
 }
