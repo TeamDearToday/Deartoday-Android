@@ -27,6 +27,7 @@
             android:gravity="center"
             android:text="@string/ob4_line1"
             android:textColor="@color/white_ffffff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@id/tv_ob4_line2"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
@@ -40,6 +41,7 @@
             android:gravity="center"
             android:text="@string/ob4_line2"
             android:textColor="@color/white_ffffff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@id/tv_ob4_line3"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
@@ -53,20 +55,23 @@
             android:gravity="center"
             android:text="@string/ob4_line3"
             android:textColor="@color/white_ffffff"
-            app:layout_constraintBottom_toTopOf="@+id/btn_next"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_read_letter"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_read_letter"
             style="@style/BtnKr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="6dp"
             android:layout_marginBottom="64dp"
             android:background="@drawable/btn_large_present"
-            android:text="@string/btn_letter"
+            android:clickable="false"
+            android:text="@string/btn_read_letter"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />

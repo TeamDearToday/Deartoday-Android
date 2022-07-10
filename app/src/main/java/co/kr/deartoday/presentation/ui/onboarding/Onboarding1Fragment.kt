@@ -21,7 +21,7 @@ class Onboarding1Fragment : BaseFragment<FragmentOnboarding1Binding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnNext.setOnClickListener {
+        binding.btnNext1.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding1Fragment_to_onboarding2Fragment)
         }
         initAnimation()
@@ -43,13 +43,13 @@ class Onboarding1Fragment : BaseFragment<FragmentOnboarding1Binding>() {
             fadeIn2.start()
             slideUp2.start()
 
-            delay(1000)
+            delay(600)
 
-            val fadeIn3 = fadeInAnimator(binding.btnNext, 1000)
-            binding.btnNext.visibility = View.VISIBLE
+            val fadeIn3 = fadeInAnimator(binding.btnNext1, 600)
+            binding.btnNext1.visibility = View.VISIBLE
             fadeIn3.start()
 
-            binding.btnNext.isClickable = true
+            binding.btnNext1.isClickable = true
         }
     }
 }

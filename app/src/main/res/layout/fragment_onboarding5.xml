@@ -23,10 +23,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="134dp"
-            android:src="@drawable/bg_letter"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_bg_letter"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_ob5_line1"
@@ -38,6 +39,7 @@
             android:gravity="start"
             android:text="@string/ob5_line1"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/iv_letter_5" />
@@ -52,6 +54,7 @@
             android:gravity="start"
             android:text="@string/ob5_line2"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob5_line1" />
@@ -66,6 +69,7 @@
             android:gravity="start"
             android:text="@string/ob5_line3"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob5_line2" />
@@ -80,6 +84,7 @@
             android:gravity="start"
             android:text="@string/ob5_line4"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob5_line3" />
@@ -94,6 +99,7 @@
             android:gravity="start"
             android:text="@string/ob5_line5"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob5_line4" />
@@ -108,6 +114,7 @@
             android:gravity="start"
             android:text="@string/ob5_line6"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob5_line5" />
@@ -120,8 +127,10 @@
             android:layout_marginTop="35dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/btn_small_present"
-            android:text="@string/btn_player"
+            android:clickable="false"
+            android:text="@string/btn_look_player"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_ob5_line6" />
     </androidx.constraintlayout.widget.ConstraintLayout>

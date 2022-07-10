@@ -2,8 +2,8 @@
     <string name="app_name">Dear today</string>
     <!--Onboarding-->
     <string name="btn_next">다음</string>
-    <string name="btn_letter">편지 읽어보기</string>
-    <string name="btn_player">플레이어 살펴보기</string>
+    <string name="btn_read_letter">편지 읽어보기</string>
+    <string name="btn_look_player">플레이어 살펴보기</string>
     <string name="btn_go_next">다음으로</string>
     <string name="btn_play_player">플레이어 작동하기</string>
     <string name="btn_start_dt">디어투데이 시작하기</string>

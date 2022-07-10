@@ -9,6 +9,11 @@ import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.*
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import co.kr.deartoday.util.fadeInAnimator
+import co.kr.deartoday.util.slideUpAnimator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class Onboarding9Fragment : BaseFragment<FragmentOnboarding9Binding>() {
     override val TAG: String
@@ -22,6 +27,16 @@ class Onboarding9Fragment : BaseFragment<FragmentOnboarding9Binding>() {
         binding.layoutPlayer.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding9Fragment_to_onboarding10Fragment)
         }
+        initAnimation()
+    }
 
+    private fun initAnimation() {
+        CoroutineScope(Dispatchers.Main).launch {
+            val fadeIn1 = fadeInAnimator(binding.layoutPlayer, 600)
+            binding.layoutPlayer.visibility = View.VISIBLE
+            fadeIn1.start()
+
+            binding.layoutPlayer.isClickable = true
+        }
     }
 }
