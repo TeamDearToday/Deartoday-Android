@@ -9,6 +9,12 @@ import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.*
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import co.kr.deartoday.util.fadeInAnimator
+import co.kr.deartoday.util.slideUpAnimator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class Onboarding5Fragment : BaseFragment<FragmentOnboarding5Binding>() {
     override val TAG: String
@@ -21,6 +27,54 @@ class Onboarding5Fragment : BaseFragment<FragmentOnboarding5Binding>() {
 
         binding.btnPlayer.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding5Fragment_to_onboarding6Fragment)
+        }
+        initAnimation()
+    }
+
+    private fun initAnimation() {
+        CoroutineScope(Dispatchers.Main).launch {
+
+            delay(1000)
+
+            val fadeIn1 = fadeInAnimator(binding.tvOb5Line1, 1200)
+            binding.tvOb5Line1.visibility = View.VISIBLE
+            fadeIn1.start()
+
+            val fadeIn2 = fadeInAnimator(binding.tvOb5Line2, 1200)
+            binding.tvOb5Line2.visibility = View.VISIBLE
+            fadeIn2.start()
+
+            delay(2400)
+
+            val fadeIn3 = fadeInAnimator(binding.tvOb5Line3, 1200)
+            binding.tvOb5Line3.visibility = View.VISIBLE
+            fadeIn3.start()
+
+            delay(2400)
+
+            val fadeIn4 = fadeInAnimator(binding.tvOb5Line4, 1200)
+            binding.tvOb5Line4.visibility = View.VISIBLE
+            fadeIn4.start()
+
+            delay(2400)
+
+            val fadeIn5 = fadeInAnimator(binding.tvOb5Line5, 1200)
+            binding.tvOb5Line5.visibility = View.VISIBLE
+            fadeIn5.start()
+
+            delay(2400)
+
+            val fadeIn6 = fadeInAnimator(binding.tvOb5Line6, 1200)
+            binding.tvOb5Line6.visibility = View.VISIBLE
+            fadeIn6.start()
+
+            delay(2400)
+
+            val fadeIn7 = fadeInAnimator(binding.btnPlayer, 600)
+            binding.btnPlayer.visibility = View.VISIBLE
+            fadeIn7.start()
+
+            binding.btnPlayer.isClickable = true
         }
     }
 }
