@@ -12,6 +12,12 @@ import co.kr.deartoday.databinding.FragmentOnboarding2Binding
 import co.kr.deartoday.databinding.FragmentOnboarding3Binding
 import co.kr.deartoday.databinding.FragmentOnboarding4Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import co.kr.deartoday.util.fadeInAnimator
+import co.kr.deartoday.util.slideUpAnimator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class Onboarding4Fragment : BaseFragment<FragmentOnboarding4Binding>() {
     override val TAG: String
@@ -22,8 +28,44 @@ class Onboarding4Fragment : BaseFragment<FragmentOnboarding4Binding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnNext.setOnClickListener {
+        binding.btnReadLetter.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding4Fragment_to_onboarding5Fragment)
+        }
+
+        initAnimation()
+    }
+
+    private fun initAnimation() {
+        CoroutineScope(Dispatchers.Main).launch {
+            val fadeIn1 = fadeInAnimator(binding.tvOb4Line1, 1000)
+            val slideUp1 = slideUpAnimator(binding.tvOb4Line1, 1000)
+            binding.tvOb4Line1.visibility = View.VISIBLE
+            fadeIn1.start()
+            slideUp1.start()
+
+            delay(1000)
+
+            val fadeIn2 = fadeInAnimator(binding.tvOb4Line2, 1000)
+            val slideUp2 = slideUpAnimator(binding.tvOb4Line2, 1000)
+            binding.tvOb4Line2.visibility = View.VISIBLE
+            fadeIn2.start()
+            slideUp2.start()
+
+            delay(1000)
+
+            val fadeIn3 = fadeInAnimator(binding.tvOb4Line3, 1000)
+            val slideUp3= slideUpAnimator(binding.tvOb4Line3, 1000)
+            binding.tvOb4Line3.visibility = View.VISIBLE
+            fadeIn3.start()
+            slideUp3.start()
+
+            delay(600)
+
+            val fadeIn4 = fadeInAnimator(binding.btnReadLetter, 600)
+            binding.btnReadLetter.visibility = View.VISIBLE
+            fadeIn4.start()
+
+            binding.btnReadLetter.isClickable = true
         }
     }
 }
