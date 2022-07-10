@@ -10,6 +10,12 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentOnboarding1Binding
 import co.kr.deartoday.databinding.FragmentOnboarding2Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import co.kr.deartoday.util.fadeInAnimator
+import co.kr.deartoday.util.slideUpAnimator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class Onboarding2Fragment : BaseFragment<FragmentOnboarding2Binding>() {
     override val TAG: String
@@ -26,6 +32,18 @@ class Onboarding2Fragment : BaseFragment<FragmentOnboarding2Binding>() {
 
         binding.btnCircleTouch2.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding2Fragment_to_onboarding3Fragment)
+        }
+
+        initAnimation()
+    }
+
+    private fun initAnimation() {
+        CoroutineScope(Dispatchers.Main).launch {
+            val fadeIn1 = fadeInAnimator(binding.tvOb2Line1, 1000)
+            val slideUp1 = slideUpAnimator(binding.tvOb2Line1, 1000)
+            binding.tvOb2Line1.visibility = View.VISIBLE
+            fadeIn1.start()
+            slideUp1.start()
         }
     }
 }
