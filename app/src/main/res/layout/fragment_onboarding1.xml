@@ -23,12 +23,12 @@
             style="@style/Onboard0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="65dp"
+            android:layout_marginBottom="12dp"
             android:gravity="center"
             android:text="@string/ob1_line1"
             android:textColor="@color/white_ffffff"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            app:layout_constraintBottom_toTopOf="@id/tv_ob1_line2"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
 
@@ -37,17 +37,17 @@
             style="@style/Onboard0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="46dp"
             android:gravity="center"
             android:text="@string/ob1_line2"
             android:textColor="@color/white_ffffff"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@+id/btn_next"
+            app:layout_constraintBottom_toTopOf="@+id/btn_next1"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_next1"
             style="@style/BtnKr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
