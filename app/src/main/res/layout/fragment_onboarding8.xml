@@ -20,11 +20,12 @@
 
         <ImageView
             android:id="@+id/iv_letter_8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="134dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_bg_letter"
+            app:layout_constraintDimensionRatio="360:614.8"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -65,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="33dp"
             android:gravity="start"
             android:text="@string/ob8_line3"
             android:textColor="@color/dark_gray_323232"
