@@ -2,8 +2,8 @@
     <string name="app_name">Dear today</string>
     <!--Onboarding-->
     <string name="btn_next">다음</string>
-    <string name="btn_letter">편지 읽어보기</string>
-    <string name="btn_player">플레이어 살펴보기</string>
+    <string name="btn_read_letter">편지 읽어보기</string>
+    <string name="btn_look_player">플레이어 살펴보기</string>
     <string name="btn_go_next">다음으로</string>
     <string name="btn_play_player">플레이어 작동하기</string>
     <string name="btn_start_dt">디어투데이 시작하기</string>
@@ -16,7 +16,7 @@
     <string name="ob5_line1">Dear</string>
     <string name="ob5_line2">2022년의 나,</string>
     <string name="ob5_line3">안녕!\n많이 놀랐지?</string>
-    <string name="ob5_line4">믿기지 않을 수 있지만,나는 2032년의 너야!\n너가 이 비디오테이프와 플레이어를\n잘 발견했으면 좋겠다.</string>
+    <string name="ob5_line4">믿기지 않을 수 있지만, 나는 2032년의 너야!\n너가 이 비디오테이프와 플레이어를\n잘 발견했으면 좋겠다.</string>
     <string name="ob5_line5">왜냐하면 이거,\n그냥 평범한 플레이어가 아니거든.</string>
     <string name="ob5_line6">바로 시간 여행을 도와주는 플레이어야.\n나도 이 친구를 이용해서 너를 만나러 온 거야 :)</string>
     <string name="ob6_line1">비디오 플레이어를 터치해서 사용법을 알아보세요.</string>

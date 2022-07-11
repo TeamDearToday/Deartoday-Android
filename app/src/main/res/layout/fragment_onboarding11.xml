@@ -20,13 +20,15 @@
 
         <ImageView
             android:id="@+id/iv_letter_11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="134dp"
-            android:src="@drawable/bg_letter"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_bg_letter"
+            app:layout_constraintDimensionRatio="360:614.8"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
             android:id="@+id/tv_ob11_line1"
@@ -38,6 +40,7 @@
             android:gravity="start"
             android:text="@string/ob11_line1"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/iv_letter_11" />
@@ -52,6 +55,7 @@
             android:gravity="start"
             android:text="@string/ob11_line2"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob11_line1" />
@@ -66,6 +70,7 @@
             android:gravity="start"
             android:text="@string/ob11_line3"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob11_line2" />
@@ -76,14 +81,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="30dp"
             android:gravity="start"
             android:text="@string/ob11_line4"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob11_line3" />
-
 
         <TextView
             android:id="@+id/tv_ob11_line5"
@@ -95,6 +100,7 @@
             android:gravity="start"
             android:text="@string/ob11_line5"
             android:textColor="@color/dark_gray_323232"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ob11_line4" />
@@ -107,8 +113,10 @@
             android:layout_marginTop="72dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/btn_medium_present"
+            android:clickable="false"
             android:text="@string/btn_start_dt"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_ob11_line5" />
     </androidx.constraintlayout.widget.ConstraintLayout>

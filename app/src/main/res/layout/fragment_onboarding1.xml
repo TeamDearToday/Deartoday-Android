@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.ui.onboarding.Onboarding1Fragment">
@@ -23,11 +23,12 @@
             style="@style/Onboard0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="65dp"
+            android:layout_marginBottom="12dp"
             android:gravity="center"
             android:text="@string/ob1_line1"
             android:textColor="@color/white_ffffff"
-            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/tv_ob1_line2"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
 
@@ -36,24 +37,27 @@
             style="@style/Onboard0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="46dp"
             android:gravity="center"
             android:text="@string/ob1_line2"
             android:textColor="@color/white_ffffff"
-            app:layout_constraintBottom_toTopOf="@+id/btn_next"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_next1"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_next1"
             style="@style/BtnKr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="6dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/btn_large_present"
+            android:clickable="false"
             android:text="@string/btn_next"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />
