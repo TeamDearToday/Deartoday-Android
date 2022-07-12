@@ -1,5 +1,6 @@
 package co.kr.deartoday.presentation.ui.onboarding
 
+import android.animation.Animator
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,10 @@ import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.*
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class Onboarding10Fragment : BaseFragment<FragmentOnboarding10Binding>() {
     override val TAG: String
@@ -19,9 +24,27 @@ class Onboarding10Fragment : BaseFragment<FragmentOnboarding10Binding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 로티 적용 해야함 이건 온보딩 네비 시험용 버튼임
-        binding.btnNext10.setOnClickListener {
-            findNavController().navigate(R.id.action_onboarding10Fragment_to_onboarding11Fragment)
-        }
+        tapeLottie()
+    }
+
+    private fun tapeLottie() {
+        binding.lottieTape.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation: Animator) {
+            }
+
+            override fun onAnimationEnd(animation: Animator) {
+                CoroutineScope(Dispatchers.Main).launch {
+                    binding.ivTapeAfterLottie.visibility = View.VISIBLE
+                    delay(1200)
+                    findNavController().navigate(R.id.action_onboarding10Fragment_to_onboarding11Fragment)
+                }
+            }
+
+            override fun onAnimationCancel(animation: Animator) {
+            }
+
+            override fun onAnimationRepeat(animation: Animator) {
+            }
+        })
     }
 }
