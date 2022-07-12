@@ -22,6 +22,12 @@
         <item name="android:letterSpacing">0.04</item>
     </style>
 
+    <style name="H1">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
     <style name="P1">
         <item name="android:fontFamily">@font/pretendard_regular</item>
         <item name="android:textStyle">normal</item>
@@ -99,5 +105,11 @@
         <item name="android:fontFamily">@font/pretendard_regular</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Caption2">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14sp</item>
     </style>
 </resources>
