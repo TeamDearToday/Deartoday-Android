@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -7,6 +8,7 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.ui.main.MainLeftFragment">
@@ -17,6 +19,58 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/main_left_withg_a_1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_video_player"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#80ffffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_btn_video_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/layout_video_player"
+            app:layout_constraintEnd_toEndOf="@id/layout_video_player"
+            app:layout_constraintHorizontal_bias="0.442"
+            app:layout_constraintStart_toStartOf="@id/layout_video_player">
+
+            <ImageView
+                android:id="@+id/iv_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_circle"
+                app:layout_constraintBottom_toTopOf="@id/iv_triangle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_rewind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_rewind"
+                app:layout_constraintBottom_toBottomOf="@id/iv_circle"
+                app:layout_constraintEnd_toEndOf="@id/iv_circle"
+                app:layout_constraintStart_toStartOf="@id/iv_circle"
+                app:layout_constraintTop_toTopOf="@id/iv_circle" />
+
+            <ImageView
+                android:id="@+id/iv_triangle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/triangle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_circle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
