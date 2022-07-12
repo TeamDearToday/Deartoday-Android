@@ -34,4 +34,11 @@
     <string name="signin_button_kakao">카카오로 계속하기</string>
     <string name="signin_caption_0"><u>디어투데이 체험해보기</u></string>
     <string name="signin_caption_1">체험판으로 하는 시간 여행은 저장기능을 제공하지 않습니다.</string>
+
+    <!--Message Box-->
+    <string name="my">나의</string>
+    <string name="message">메시지</string>
+    <string name="check_message">미래의 나로부터 도착한 메시지를 확인해보세요</string>
+    <string name="empty_message">아직 나에게 도착한 메시지가 없어요!\n지금 바로 시간 여행을 떠나볼까요?</string>
+    <string name="go_time_travel">시간 여행 떠나기</string>
 </resources>
