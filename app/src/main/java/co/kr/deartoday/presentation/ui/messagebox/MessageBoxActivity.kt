@@ -21,7 +21,7 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
         backBtnClickEvent()
         timeTravelBtnClickEvent()
         initAdapter()
-        itemDecoration()
+        messageBoxItemDecoration()
     }
 
     private fun backBtnClickEvent() {
@@ -60,7 +60,7 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
 
     }
 
-    private fun itemDecoration() {
+    private fun messageBoxItemDecoration() {
         binding.rvMessage.addItemDecoration(
             MessageBoxItemDecoration(4)
         )
