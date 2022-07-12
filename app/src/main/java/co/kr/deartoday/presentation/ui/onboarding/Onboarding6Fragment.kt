@@ -9,8 +9,7 @@ import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.*
 import co.kr.deartoday.presentation.ui.base.BaseFragment
-import co.kr.deartoday.util.fadeInAnimator
-import co.kr.deartoday.util.slideUpAnimator
+import co.kr.deartoday.util.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,7 +23,7 @@ class Onboarding6Fragment : BaseFragment<FragmentOnboarding6Binding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnBoxTouch6.setOnClickListener {
+        binding.layoutTouchTape.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding6Fragment_to_onboarding7Fragment)
         }
 
@@ -32,6 +31,7 @@ class Onboarding6Fragment : BaseFragment<FragmentOnboarding6Binding>() {
             findNavController().navigate(R.id.action_onboarding6Fragment_to_onboarding7Fragment)
         }
         initAnimation()
+        initTouchArea()
     }
 
     private fun initAnimation() {
@@ -42,8 +42,23 @@ class Onboarding6Fragment : BaseFragment<FragmentOnboarding6Binding>() {
             fadeIn1.start()
             slideUp1.start()
 
-            binding.btnBoxTouch6.isClickable = true
+            binding.layoutTouchTape.isClickable = true
             binding.btnCircleTouch6.isClickable = true
         }
+    }
+
+    private fun initTouchArea() {
+        setTouchLayout(
+            binding.layoutRoot,
+            R.id.layout_touch_tape,
+            239,
+            getScreenWidthDp(),
+            223,
+            getScreenHeightDp(),
+            58,
+            63,
+            257,
+            188
+        )
     }
 }

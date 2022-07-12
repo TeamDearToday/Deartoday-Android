@@ -88,4 +88,7 @@ dependencies {
 
     // 카카오 로그인
     implementation "com.kakao.sdk:v2-user:2.11.0"
+
+    //로티
+    implementation 'com.airbnb.android:lottie:3.7.0'
 }
