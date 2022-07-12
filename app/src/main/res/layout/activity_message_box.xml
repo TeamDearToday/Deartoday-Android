@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.messagebox.MessageBoxActivity">
+
+        <ImageButton
+            android:id="@+id/ib_message_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="34dp"
+            android:src="@drawable/ic_back"
+            android:background="@color/white_ffffff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_memo_bundle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_memo_bundle"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="17dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my"
+            android:textColor="@color/dark_gray_323232"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="20dp"
+            style="@style/H1"
+            app:layout_constraintTop_toBottomOf="@+id/ib_message_back"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/message"
+            android:textColor="@color/blue_558fff"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="5dp"
+            style="@style/H1"
+            app:layout_constraintTop_toBottomOf="@+id/ib_message_back"
+            app:layout_constraintStart_toEndOf="@+id/tv_my"/>
+
+        <TextView
+            android:id="@+id/tv_check_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_message"
+            android:textColor="@color/gray_696969"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="20dp"
+            style="@style/Caption2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_my"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_message_box"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_message"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
