@@ -10,7 +10,6 @@
         android:id="@+id/layout_message_box_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="200dp"
         android:background="@drawable/rectangle_yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
