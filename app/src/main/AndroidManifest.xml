@@ -17,7 +17,7 @@
         android:theme="@style/Theme.DearToday"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.main.timetravel.TimeTravelActivity"
+            android:name=".presentation.ui.timetravel.TimeTravelActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.messagebox.MessageBoxActivity"
