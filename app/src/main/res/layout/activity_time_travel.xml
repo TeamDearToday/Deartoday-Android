@@ -73,12 +73,12 @@
             android:id="@+id/layout_time_travel_empty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="visible"
-            app:layout_constraintVertical_bias="0.56"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.56">
 
             <ImageView
                 android:id="@+id/iv_tape_empty"
@@ -142,27 +142,17 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ScrollView
-            android:id="@+id/sv_time_travel"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_time_travel"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:visibility="invisible"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="22dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/tv_caption"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_tape_bundle">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:visibility="visible"
-                android:id="@+id/rv_time_travel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="12dp"
-                android:layout_marginTop="40dp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_caption"
-                tools:itemCount="4"
-                tools:listitem="@layout/item_itme_travel_list" />
-        </ScrollView>
+            tools:itemCount="4"
+            tools:listitem="@layout/item_itme_travel_list" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
