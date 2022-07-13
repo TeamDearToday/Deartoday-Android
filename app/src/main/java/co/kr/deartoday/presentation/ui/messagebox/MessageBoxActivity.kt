@@ -2,6 +2,7 @@ package co.kr.deartoday.presentation.ui.messagebox
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import co.kr.deartoday.R
 import co.kr.deartoday.data.model.response.ResponseMessageBox
 import co.kr.deartoday.databinding.ActivityMessageBoxBinding
@@ -9,6 +10,7 @@ import co.kr.deartoday.presentation.adapter.MessageBoxAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.main.MainActivity
 import co.kr.deartoday.util.MessageBoxItemDecoration
+import co.kr.deartoday.util.calculateMaxLines
 
 class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
     private lateinit var messageBoxAdapter: MessageBoxAdapter
@@ -42,7 +44,7 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
         binding.rvMessage.adapter = messageBoxAdapter
         messageBoxAdapter.MessageBoxList.addAll(
             listOf(
-                ResponseMessageBox("하여자"),
+                ResponseMessageBox("유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? "),
                 ResponseMessageBox("하냥이"),
                 ResponseMessageBox("하연자"),
                 ResponseMessageBox("하하여자"),
@@ -66,8 +68,7 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
         )
     }
 
-    //서버에서 값 받아오면 srl_message는 visible, layout_message_box_empty는 invisible
-    private fun visible() {
-    }
+//  서버에서 값 받아오면 srl_message는 visible, layout_message_box_empty는 invisible
+//  private fun visible() {
+//  }
 }
-
