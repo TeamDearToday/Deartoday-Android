@@ -8,20 +8,23 @@ import co.kr.deartoday.data.model.response.ResponseMessageBox
 import co.kr.deartoday.databinding.ItemMessageBoxListBinding
 import co.kr.deartoday.util.calculateMaxLines
 
-class MessageBoxAdapter : RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewHolder>() {
+class MessageBoxAdapter(private val itemClick: (String) -> Unit) :
+    RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewHolder>() {
     val messageBoxList = mutableListOf<ResponseMessageBox>()
 
     class MessageBoxViewHolder(
-        private val binding: ItemMessageBoxListBinding
+        private val binding: ItemMessageBoxListBinding,
+        private val itemClick: (String) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseMessageBox) {
             binding.tvMessageItem.text = data.message
             binding.tvMessageItem.calculateMaxLines(data.message) {
-                    if (it >= 0) {
-                        binding.tvMessageItem.maxLines = it - 1
-                        binding.tvMessageItem.ellipsize = TextUtils.TruncateAt.END
-                    }
+                if (it >= 0) {
+                    binding.tvMessageItem.maxLines = it - 1
+                    binding.tvMessageItem.ellipsize = TextUtils.TruncateAt.END
                 }
+            }
+            binding.root.setOnClickListener { itemClick(data.message) }
         }
     }
 
@@ -32,7 +35,7 @@ class MessageBoxAdapter : RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewH
                 parent,
                 false
             )
-        return MessageBoxViewHolder(binding)
+        return MessageBoxViewHolder(binding, itemClick)
     }
 
     override fun onBindViewHolder(holder: MessageBoxViewHolder, position: Int) {
