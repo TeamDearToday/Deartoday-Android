@@ -17,6 +17,9 @@
         android:theme="@style/Theme.DearToday"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.timemachine.TimeMachineActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.messagebox.MessageBoxActivity"
             android:exported="true" />
         <activity
