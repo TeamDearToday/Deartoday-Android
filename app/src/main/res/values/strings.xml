@@ -41,4 +41,5 @@
     <string name="check_message">미래의 나로부터 도착한 메시지를 확인해보세요</string>
     <string name="empty_message">아직 나에게 도착한 메시지가 없어요!\n지금 바로 시간 여행을 떠나볼까요?</string>
     <string name="go_time_travel">시간 여행 떠나기</string>
+    <string name="from_me">From. 미래의 나</string>
 </resources>
