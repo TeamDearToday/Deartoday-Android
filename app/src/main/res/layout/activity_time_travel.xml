@@ -73,17 +73,17 @@
             android:id="@+id/layout_time_travel_empty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:visibility="invisible"
+            android:visibility="visible"
+            app:layout_constraintVertical_bias="0.56"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_tape_bundle">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/iv_tape_empty"
                 android:layout_width="191dp"
                 android:layout_height="109dp"
-                android:layout_marginTop="92dp"
                 android:src="@drawable/img_tape"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -146,24 +146,22 @@
             android:id="@+id/sv_time_travel"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:visibility="visible"
-            android:layout_marginTop="22dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_tape_bundle">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_message"
+                android:visibility="visible"
+                android:id="@+id/rv_time_travel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="40dp"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintTop_toBottomOf="@+id/tv_caption"
-                app:spanCount="2"
                 tools:itemCount="4"
-                tools:listitem="@layout/item_message_box_list" />
+                tools:listitem="@layout/item_itme_travel_list" />
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
