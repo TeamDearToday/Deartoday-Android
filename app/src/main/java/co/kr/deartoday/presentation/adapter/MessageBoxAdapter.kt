@@ -9,7 +9,7 @@ import co.kr.deartoday.databinding.ItemMessageBoxListBinding
 import co.kr.deartoday.util.calculateMaxLines
 
 class MessageBoxAdapter : RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewHolder>() {
-    val MessageBoxList = mutableListOf<ResponseMessageBox>()
+    val messageBoxList = mutableListOf<ResponseMessageBox>()
 
     class MessageBoxViewHolder(
         private val binding: ItemMessageBoxListBinding
@@ -36,8 +36,8 @@ class MessageBoxAdapter : RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewH
     }
 
     override fun onBindViewHolder(holder: MessageBoxViewHolder, position: Int) {
-        holder.onBind(MessageBoxList[position])
+        holder.onBind(messageBoxList[position])
     }
 
-    override fun getItemCount(): Int = MessageBoxList.size
+    override fun getItemCount(): Int = messageBoxList.size
 }
