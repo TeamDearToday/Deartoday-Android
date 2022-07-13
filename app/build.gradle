@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId "co.kr.deartoday"
-        minSdk 26
+        minSdk 28
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -88,4 +88,7 @@ dependencies {
 
     // 카카오 로그인
     implementation "com.kakao.sdk:v2-user:2.11.0"
+
+    // Lottie
+    implementation 'com.airbnb.android:lottie:5.2.0'
 }

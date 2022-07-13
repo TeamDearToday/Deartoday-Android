@@ -20,17 +20,14 @@
             android:name=".presentation.ui.timetravel.TimeTravelActivity"
             android:exported="false" />
         <activity
+            android:name=".presentation.ui.timemachine.TimeMachineActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.messagebox.MessageBoxActivity"
             android:exported="true" />
         <activity
             android:name=".presentation.ui.onboarding.OnboardingActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".presentation.ui.signin.SignInActivity"
             android:exported="true" />
@@ -50,7 +47,13 @@
         </activity>
         <activity
             android:name=".presentation.ui.main.MainActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -22,7 +22,7 @@
     <string name="ob6_line1">비디오 플레이어를 터치해서 사용법을 알아보세요.</string>
     <string name="ob7_line1">우선 플레이어를 사용하는 방법을 알려줄게.</string>
     <string name="ob7_line2">1. 너가 돌아가고 싶은 과거의 순간을 떠올려.\n2. 그 순간이 담긴 사진을 비디오테이프 위에 붙여.\n3. 비디오테이프를 플레이어에 넣고\n4. 뒤로감기 버튼을 누르면,\n5. 플레이어가 너를 과거의 그 순간으로\n    데려다 줄거야.</string>
-    <string name="ob8_line1">단, 이 시간 여행에는 규칙이 있어.\n 우선 너가 직접 경험한 과거의 순간으로만\n 돌아갈 수 있어.\n 그리고 아쉽게도 그 순간으로 돌아간다고 해서\n이미 일어난 일을 바꾸지는 못해.</string>
+    <string name="ob8_line1">단, 이 시간 여행에는 규칙이 있어.\n우선 너가 직접 경험한 과거의 순간으로만\n돌아갈 수 있어.\n그리고 아쉽게도 그 순간으로 돌아간다고 해서\n이미 일어난 일을 바꾸지는 못해.</string>
     <string name="ob8_line2">다만, 너가 할 수 있는 단 한 가지 일은\n바로 과거의 너를 만나서 대화를 나누고\n그 친구에게 남기고 싶은 것을\n전달하고 올 수 있다는 거야.\n내가 너에게 이 플레이어를 전달한 것처럼 :)</string>
     <string name="ob8_line3">여기까지 읽었는데도 아직 와닿지가 않지?</string>
     <string name="ob8_line4">그럼 지금 한 번 플레이어를 바로 작동시켜봐.</string>
@@ -41,9 +41,4 @@
     <string name="check_message">미래의 나로부터 도착한 메시지를 확인해보세요</string>
     <string name="empty_message">아직 나에게 도착한 메시지가 없어요!\n지금 바로 시간 여행을 떠나볼까요?</string>
     <string name="go_time_travel">시간 여행 떠나기</string>
-
-    <!--Time Travel-->
-    <string name="time_travel_title">시간 여행</string>
-    <string name="time_travel_caption">디어투데이와 함께한 시간 여행을\n확인하고 그날의 행복을 추억해 보세요</string>
-
 </resources>

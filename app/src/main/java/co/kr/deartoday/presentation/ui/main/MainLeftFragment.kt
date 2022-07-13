@@ -5,6 +5,7 @@ import android.view.View
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentMainLeftBinding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import co.kr.deartoday.presentation.ui.timemachine.TimeMachineActivity
 import co.kr.deartoday.util.getScreenHeightDp
 import co.kr.deartoday.util.getScreenWidthDp
 import co.kr.deartoday.util.setTouchLayout
@@ -18,6 +19,7 @@ class MainLeftFragment : BaseFragment<FragmentMainLeftBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initTouchArea()
+        initOnClickListener()
     }
 
     private fun initTouchArea() {
@@ -33,6 +35,15 @@ class MainLeftFragment : BaseFragment<FragmentMainLeftBinding>() {
             296,
             132
         )
+    }
+
+    private fun initOnClickListener() {
+        binding.layoutVideoPlayer.setOnClickListener {
+            startActivity(TimeMachineActivity.getIntent(requireContext()))
+        }
+        binding.layoutBtnVideoPlayer.setOnClickListener {
+            startActivity(TimeMachineActivity.getIntent(requireContext()))
+        }
     }
 
     companion object {

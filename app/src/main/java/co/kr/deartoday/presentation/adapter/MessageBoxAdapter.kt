@@ -1,35 +1,46 @@
 package co.kr.deartoday.presentation.adapter
 
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.kr.deartoday.data.model.response.ResponseMessageBox
-import co.kr.deartoday.databinding.ItemMessageBoxBinding
+import co.kr.deartoday.databinding.ItemMessageBoxListBinding
+import co.kr.deartoday.util.calculateMaxLines
 
-class MessageBoxAdapter : RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewHolder>() {
-    val MessageBoxList = mutableListOf<ResponseMessageBox>()
+class MessageBoxAdapter(private val itemClick: (String) -> Unit) :
+    RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewHolder>() {
+    val messageBoxList = mutableListOf<ResponseMessageBox>()
 
     class MessageBoxViewHolder(
-        private val binding: ItemMessageBoxBinding
+        private val binding: ItemMessageBoxListBinding,
+        private val itemClick: (String) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseMessageBox) {
-            binding.tvMessage.text = data.message
+            binding.tvMessageItem.text = data.message
+            binding.tvMessageItem.calculateMaxLines(data.message) {
+                if (it >= 0) {
+                    binding.tvMessageItem.maxLines = it - 1
+                    binding.tvMessageItem.ellipsize = TextUtils.TruncateAt.END
+                }
+            }
+            binding.root.setOnClickListener { itemClick(data.message) }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageBoxViewHolder {
         val binding =
-            ItemMessageBoxBinding.inflate(
+            ItemMessageBoxListBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
-        return MessageBoxViewHolder(binding)
+        return MessageBoxViewHolder(binding, itemClick)
     }
 
     override fun onBindViewHolder(holder: MessageBoxViewHolder, position: Int) {
-        holder.onBind(MessageBoxList[position])
+        holder.onBind(messageBoxList[position])
     }
 
-    override fun getItemCount(): Int = MessageBoxList.size
+    override fun getItemCount(): Int = messageBoxList.size
 }

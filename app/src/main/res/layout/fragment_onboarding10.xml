@@ -12,26 +12,29 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.onboarding.Onboarding10Fragment">
 
-        <!--로티-->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/image_3_withg" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_next_10"
-            style="@style/BtnKr"
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_tape"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="6dp"
-            android:layout_marginBottom="64dp"
-            android:background="@drawable/btn_large_present"
-            android:text="로티 전 임시 버튼"
-            android:textColor="@color/blue_558fff"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintStart_toEndOf="parent" />
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:lottie_fileName="tape.json"
+            app:lottie_autoPlay="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_tape_after_lottie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tape_afterlottie" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
