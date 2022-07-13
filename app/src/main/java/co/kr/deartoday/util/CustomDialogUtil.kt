@@ -18,6 +18,7 @@ class CustomDialog(val context: Context) {
             WindowManager.LayoutParams.WRAP_CONTENT
         )
         dialog.window?.setBackgroundDrawableResource(inset)
+        dialog.setCancelable(false)
         dialog.findViewById<TextView>(R.id.tv_content).text = content
         dialog.show()
         dialog.findViewById<View>(R.id.view_ok).setOnClickListener {

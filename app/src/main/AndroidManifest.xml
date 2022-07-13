@@ -24,9 +24,7 @@
             android:exported="true" />
         <activity
             android:name=".presentation.ui.onboarding.OnboardingActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".presentation.ui.signin.SignInActivity"
             android:exported="true" />
