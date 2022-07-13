@@ -10,6 +10,8 @@
 		시간 여행을 통해 지금의 행복에 대해 생각할 수 있도록 도와주는 스토리텔링 게임 서비스<br>Dear today
 	</h3>	
 	<img src="https://user-images.githubusercontent.com/81508084/178636838-310b9640-d0d7-41c1-9d37-b5e5a7349e6f.png" />
+	<img src="https://user-images.githubusercontent.com/63235947/178440217-bac8e37b-fa27-4ddd-b448-0d346ed6881e.png" />
+	<img src="https://user-images.githubusercontent.com/63235947/178440518-79ddc1ec-d7eb-42e4-b04d-52fbc399278e.png" />
 
 </p>
 
