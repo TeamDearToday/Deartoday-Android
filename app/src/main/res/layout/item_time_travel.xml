@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_tape"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/img_tape"
+        app:layout_constraintDimensionRatio="328:186"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_tape_inner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_left_withg_a_1"
+        app:layout_constraintBottom_toBottomOf="@id/iv_tape"
+        app:layout_constraintDimensionRatio="131:74"
+        app:layout_constraintEnd_toEndOf="@id/iv_tape"
+        app:layout_constraintHorizontal_bias="0.4873"
+        app:layout_constraintStart_toStartOf="@id/iv_tape"
+        app:layout_constraintTop_toTopOf="@id/iv_tape"
+        app:layout_constraintVertical_bias="0.5535"
+        app:layout_constraintWidth_percent="0.4" />
+
+
+    <TextView
+        android:id="@+id/tv_travel_to"
+        style="@style/H0"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/blue_558fff"
+        app:layout_constraintStart_toStartOf="@id/iv_tape"
+        app:layout_constraintTop_toBottomOf="@id/iv_tape"
+        tools:text="2016.06.03" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/rewind"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_travel_from"
+        app:layout_constraintEnd_toStartOf="@id/tv_travel_from"
+        app:layout_constraintTop_toTopOf="@id/tv_travel_from" />
+
+    <TextView
+        android:id="@+id/tv_travel_from"
+        style="@style/Caption0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:textColor="@color/gray_01_a0a0a0"
+        app:layout_constraintBottom_toBottomOf="@id/tv_travel_to"
+        app:layout_constraintEnd_toEndOf="@id/iv_tape"
+        app:layout_constraintTop_toTopOf="@id/tv_travel_to"
+        tools:text="2033.07.03" />
+
+    <TextView
+        android:id="@+id/content"
+        style="@style/P2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:gravity="start"
+        android:maxLines="1"
+        android:textColor="@color/gray_696969"
+        app:layout_constraintEnd_toEndOf="@id/tv_travel_from"
+        app:layout_constraintStart_toStartOf="@id/tv_travel_to"
+        app:layout_constraintTop_toBottomOf="@id/tv_travel_to"
+        tools:text="일이삼사오륙칠팔구십십일십이십삼십사십오십육십칠십팔십구이십이십일" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

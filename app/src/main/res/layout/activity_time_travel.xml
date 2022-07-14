@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-    </data>
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.ui.timetravel.TimeTravelActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".presentation.ui.messagebox.MessageBoxActivity">
+        android:layout_height="match_parent">
 
         <ImageButton
             android:id="@+id/ib_message_back"
@@ -24,12 +21,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/iv_memo_bundle"
+            android:id="@+id/iv_tape_bundle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="17dp"
-            android:src="@drawable/img_memo_bundle"
+            android:layout_marginTop="91dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/img_tape_bundle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,60 +43,64 @@
             app:layout_constraintTop_toBottomOf="@+id/ib_message_back" />
 
         <TextView
-            android:id="@+id/tv_message"
+            android:id="@+id/tv_time_travel"
             style="@style/H1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="9dp"
-            android:text="@string/message"
+            android:text="@string/time_travel_title"
             android:textColor="@color/blue_558fff"
             app:layout_constraintStart_toEndOf="@+id/tv_my"
             app:layout_constraintTop_toBottomOf="@+id/ib_message_back" />
 
         <TextView
-            android:id="@+id/tv_check_message"
+            android:id="@+id/tv_caption"
             style="@style/Caption2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="4dp"
-            android:text="@string/check_message"
+            android:breakStrategy="high_quality"
+            android:gravity="start"
+            android:text="@string/time_travel_caption"
             android:textColor="@color/gray_696969"
+            app:layout_constraintEnd_toStartOf="@id/iv_tape_bundle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_my" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_message_box_empty"
+            android:id="@+id/layout_time_travel_empty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
             android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_check_message">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.56">
 
             <ImageView
-                android:id="@+id/iv_memo_empty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="68dp"
-                android:src="@drawable/img_memoempty"
+                android:id="@+id/iv_tape_empty"
+                android:layout_width="191dp"
+                android:layout_height="109dp"
+                android:src="@drawable/img_tape"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/layout_message_box_empty" />
+                app:layout_constraintTop_toTopOf="@id/layout_time_travel_empty" />
 
             <TextView
                 android:id="@+id/tv_empty_message"
                 style="@style/Caption2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
-                android:text="@string/empty_message"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="아직 디어투데이와 함께한 시간 여행이 없어요\n지금 바로 시간 여행을 떠나볼까요?"
                 android:textColor="@color/gray_01_a0a0a0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_memo_empty" />
+                app:layout_constraintTop_toBottomOf="@+id/iv_tape_empty" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_go_time_travel"
@@ -142,16 +143,17 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_message"
+            android:id="@+id/rv_time_travel"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="40dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/tv_check_message"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="22dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/tv_caption"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:spanCount="2"
-            tools:itemCount="6"
-            tools:listitem="@layout/item_message_box_list" />
+            tools:itemCount="4"
+            tools:listitem="@layout/item_time_travel" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
