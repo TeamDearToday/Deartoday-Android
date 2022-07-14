@@ -8,9 +8,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_message_box_list"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rectangle_yellow"
+        android:minHeight="200dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,8 +26,10 @@
             android:layout_marginBottom="30dp"
             android:textColor="@color/black_000000"
             app:layout_constraintBottom_toTopOf="@id/tv_dialog_from_me"
+            app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="지금을 살자!" />
 
@@ -50,10 +53,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_message_box_list"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/layout_message_box_list" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
