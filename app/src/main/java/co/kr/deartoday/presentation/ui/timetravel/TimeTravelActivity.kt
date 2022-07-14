@@ -6,7 +6,6 @@ import co.kr.deartoday.data.model.response.ResponseTimeTravelTape
 import co.kr.deartoday.databinding.ActivityTimeTravelBinding
 import co.kr.deartoday.presentation.adapter.TimeTravelTapeAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
-import co.kr.deartoday.util.MessageBoxItemDecoration
 
 class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     private lateinit var timeTravelTapeAdapter: TimeTravelTapeAdapter
@@ -20,6 +19,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     }
 
     private fun initAdapter() {
+        timeTravelTapeAdapter = TimeTravelTapeAdapter()
         binding.rvTimeTravel.adapter = timeTravelTapeAdapter
         timeTravelTapeAdapter.tapeList.addAll(
             listOf(
@@ -40,8 +40,16 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
                     22,
                     "2022.07.09",
                     "이미지URL"
+                ),
+                ResponseTimeTravelTape(
+                    "asfjkl1nbbj3j2343284bcjksabfd",
+                    "어쩔티비",
+                    2022,
+                    7,
+                    22,
+                    "2022.07.09",
+                    "이미지URL"
                 )
-
             )
         )
         timeTravelTapeAdapter.notifyDataSetChanged()
