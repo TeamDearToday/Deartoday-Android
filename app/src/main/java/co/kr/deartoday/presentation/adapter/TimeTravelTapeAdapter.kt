@@ -26,6 +26,11 @@ class TimeTravelTapeAdapter :
         private val binding: ItemTimeTravelBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseTimeTravelTape) {
+            binding.apply {
+                content.text = data.title
+                tvTravelFrom.text = data.writtenDate
+                tvTravelTo.text = "%d.%d.%d".format(data.year,data.month,data.day)
+            }
         }
     }
 }
