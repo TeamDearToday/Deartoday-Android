@@ -80,4 +80,5 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
 //  서버에서 값 받아오면 srl_message는 visible, layout_message_box_empty는 invisible
 //  private fun visible() {
 //  }
+
 }
