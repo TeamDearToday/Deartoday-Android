@@ -1,9 +1,7 @@
 package co.kr.deartoday.presentation.ui.messagebox
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import co.kr.deartoday.R
 import co.kr.deartoday.data.model.response.ResponseMessageBox
 import co.kr.deartoday.databinding.ActivityMessageBoxBinding
@@ -12,7 +10,6 @@ import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.main.MainActivity
 import co.kr.deartoday.util.CustomDialog
 import co.kr.deartoday.util.MessageBoxItemDecoration
-import co.kr.deartoday.util.calculateMaxLines
 
 class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
     private lateinit var messageBoxAdapter: MessageBoxAdapter
@@ -75,10 +72,4 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
             MessageBoxItemDecoration(4)
         )
     }
-
-    // 나중에 서버통신 받아올 예정! 뷰 실험용으로 DataList 넣어뒀습니다~
-//  서버에서 값 받아오면 srl_message는 visible, layout_message_box_empty는 invisible
-//  private fun visible() {
-//  }
-
 }
