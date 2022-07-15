@@ -13,11 +13,11 @@ class TimeMachineViewModel : ViewModel() {
     val title = MutableLiveData<String>()
     private val _isImagePickerProcessComplete = MediatorLiveData<Boolean>()
     val isImagePickerProcessComplete: LiveData<Boolean> get() = _isImagePickerProcessComplete
-    private var _year: Int = 0
+    private var _year: String = ""
     val year get() = _year
-    private var _month: Int = 0
+    private var _month: String = ""
     val month get() = _month
-    private var _day: Int = 0
+    private var _day: String = ""
     val day get() = _day
 
     init {
@@ -35,8 +35,8 @@ class TimeMachineViewModel : ViewModel() {
 
     fun parseDate() {
         val dateTokenized = requireNotNull(date.value).split('.')
-        _year = dateTokenized[0].toInt()
-        _month = dateTokenized[1].toInt()
-        _day = dateTokenized[2].toInt()
+        _year = dateTokenized[0]
+        _month = dateTokenized[1]
+        _day = dateTokenized[2]
     }
 }
