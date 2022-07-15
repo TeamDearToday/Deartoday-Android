@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.*
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import co.kr.deartoday.util.fadeOutAnimator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -33,11 +34,9 @@ class Onboarding10Fragment : BaseFragment<FragmentOnboarding10Binding>() {
             }
 
             override fun onAnimationEnd(animation: Animator) {
-                CoroutineScope(Dispatchers.Main).launch {
-                    binding.ivTapeAfterLottie.visibility = View.VISIBLE
-                    delay(1200)
-                    findNavController().navigate(R.id.action_onboarding10Fragment_to_onboarding11Fragment)
-                }
+                val fadeOut1 = fadeOutAnimator(binding.lottieTape, 1000)
+                fadeOut1.start()
+                findNavController().navigate(R.id.action_onboarding10Fragment_to_onboarding11Fragment)
             }
 
             override fun onAnimationCancel(animation: Animator) {
