@@ -10,6 +10,12 @@ fun fadeInAnimator(view: View, duration: Long): ObjectAnimator {
     return fadeIn
 }
 
+fun fadeOutAnimator(view: View, duration: Long): ObjectAnimator {
+    val fadeOut = ObjectAnimator.ofFloat(view, "alpha", 1f, 0f)
+    fadeOut.duration = duration
+    return fadeOut
+}
+
 fun slideUpAnimator(view: View, duration: Long): ObjectAnimator {
     val slideUp = ObjectAnimator.ofPropertyValuesHolder(
         view,

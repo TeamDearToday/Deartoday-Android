@@ -12,6 +12,9 @@ import co.kr.deartoday.databinding.FragmentOnboarding1Binding
 import co.kr.deartoday.databinding.FragmentOnboarding2Binding
 import co.kr.deartoday.databinding.FragmentOnboarding3Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import co.kr.deartoday.util.fadeInAnimator
+import co.kr.deartoday.util.fadeOutAnimator
+import co.kr.deartoday.util.slideUpAnimator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -35,11 +38,10 @@ class Onboarding3Fragment : BaseFragment<FragmentOnboarding3Binding>() {
             }
 
             override fun onAnimationEnd(animation: Animator) {
-                CoroutineScope(Dispatchers.Main).launch {
-                    binding.ivBoxAfterLottie.visibility = View.VISIBLE
-                    delay(1200)
+                    val fadeOut1 = fadeOutAnimator(binding.lottieBox, 1000)
+                    fadeOut1.start()
+
                     findNavController().navigate(R.id.action_onboarding3Fragment_to_onboarding4Fragment)
-                }
             }
 
             override fun onAnimationCancel(animation: Animator) {
