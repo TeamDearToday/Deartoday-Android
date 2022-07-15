@@ -24,7 +24,7 @@
             app:lottie_fileName="tape.json" />
 
         <TextView
-            android:id="@+id/tv_today_year"
+            android:id="@+id/tv_year"
             style="@style/H0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             tools:text="2022" />
 
         <TextView
-            android:id="@+id/tv_today_month"
+            android:id="@+id/tv_month"
             style="@style/H0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,12 +51,12 @@
             android:paddingVertical="17dp"
             android:text="@{viewmodel.month}"
             android:textColor="@color/light_blue_f0f6ff"
-            app:layout_constraintStart_toEndOf="@id/tv_today_year"
+            app:layout_constraintStart_toEndOf="@id/tv_year"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="07" />
 
         <TextView
-            android:id="@+id/tv_today_day"
+            android:id="@+id/tv_day"
             style="@style/H0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             android:paddingVertical="17dp"
             android:text="@{viewmodel.day}"
             android:textColor="@color/light_blue_f0f6ff"
-            app:layout_constraintStart_toEndOf="@id/tv_today_month"
+            app:layout_constraintStart_toEndOf="@id/tv_month"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="10" />
 
