@@ -89,6 +89,7 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
             requireActivity().onBackPressed()
         }
         binding.layoutRewind.setOnClickListener {
+            viewModel.parseDate()
             parentFragmentManager.commit {
                 replace<TimeMachineLottieFragment>(R.id.fcv_time_machine)
             }

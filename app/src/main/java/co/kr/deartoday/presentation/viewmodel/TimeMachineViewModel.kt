@@ -33,7 +33,7 @@ class TimeMachineViewModel : ViewModel() {
             (imageUri.value != null) && (date.value != null) && (title.value != null && title.value != "")
     }
 
-    fun transformDate() {
+    fun parseDate() {
         val dateTokenized = requireNotNull(date.value).split('.')
         _year = dateTokenized[0].toInt()
         _month = dateTokenized[1].toInt()
