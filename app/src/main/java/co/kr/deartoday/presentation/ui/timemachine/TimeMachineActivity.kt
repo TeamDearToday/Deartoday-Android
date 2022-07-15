@@ -1,15 +1,15 @@
 package co.kr.deartoday.presentation.ui.timemachine
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import co.kr.deartoday.R
-import co.kr.deartoday.databinding.ActivityMainBinding
 import co.kr.deartoday.databinding.ActivityTimeMachineBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
-import java.text.SimpleDateFormat
-import java.util.*
 
 class TimeMachineActivity : BaseActivity<ActivityTimeMachineBinding>() {
     override val layoutRes: Int
@@ -17,24 +17,25 @@ class TimeMachineActivity : BaseActivity<ActivityTimeMachineBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initDateView()
-        initOnClickListener()
+        initFragmentContainer()
     }
 
-    private fun initDateView() {
-        val todayFormat = SimpleDateFormat("yyyyMMdd")
-        val today = todayFormat.format(Date())
-        with(binding) {
-            tvTodayYear.text = today.substring(0, 4)
-            tvTodayMonth.text = today.substring(4, 6)
-            tvTodayDay.text = today.substring(6, 8)
+    private fun initFragmentContainer() {
+        supportFragmentManager.commit {
+            add<TimeMachineImagePickerFragment>(R.id.fcv_time_machine)
         }
     }
 
-    private fun initOnClickListener() {
-        binding.ivVideoTape.setOnClickListener {
-
-        }
+    override fun onBackPressed() {
+        val alertDialog = AlertDialog.Builder(this)
+            .setTitle("시간 여행을 그만두시겠어요?")
+            .setMessage("그만둔 시간여행은 저장되지 않아요")
+            .setPositiveButton("계속하기") { _, _ -> }
+            .setNegativeButton("그만두기") { _, _ -> finish() }
+            .create()
+        alertDialog.show()
+        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(this, R.color.blue_558fff))
+        alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(this, R.color.dark_gray_131313))
     }
 
     companion object {
