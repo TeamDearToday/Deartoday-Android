@@ -16,6 +16,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineImagePickerBinding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
@@ -85,6 +87,11 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
         }
         binding.ivExit.setOnClickListener {
             requireActivity().onBackPressed()
+        }
+        binding.layoutRewind.setOnClickListener {
+            parentFragmentManager.commit {
+                replace<TimeMachineLottieFragment>(R.id.fcv_time_machine)
+            }
         }
     }
 
