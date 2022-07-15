@@ -2,7 +2,7 @@ package co.kr.deartoday.presentation.ui.timetravel
 
 import android.os.Bundle
 import co.kr.deartoday.R
-import co.kr.deartoday.data.model.response.ResponseTimeTravelTape
+import co.kr.deartoday.data.model.response.TapesResponse
 import co.kr.deartoday.databinding.ActivityTimeTravelBinding
 import co.kr.deartoday.presentation.adapter.TapeAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
@@ -22,10 +22,15 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     private fun initAdapter() {
         tapeAdapter = TapeAdapter()
         binding.rvTimeTravel.adapter = tapeAdapter
-        binding.rvTimeTravel.addItemDecoration(TapeItemDecoration(23, getColor(R.color.light_blue_e9f1fe)))
+        binding.rvTimeTravel.addItemDecoration(
+            TapeItemDecoration(
+                23,
+                getColor(R.color.light_blue_e9f1fe)
+            )
+        )
         tapeAdapter.tapeList.addAll(
             listOf(
-                ResponseTimeTravelTape(
+                TapesResponse.Tape(
                     "asfjkl1nbbj3j2343284bcjksabfd",
                     "어쩔티비",
                     2022,
@@ -34,7 +39,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
                     "2022.07.09",
                     "이미지URL"
                 ),
-                ResponseTimeTravelTape(
+                TapesResponse.Tape(
                     "asfjkl1nbbj3j2343284bcjksabfd",
                     "어쩔티비",
                     2022,
@@ -43,7 +48,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
                     "2022.07.09",
                     "이미지URL"
                 ),
-                ResponseTimeTravelTape(
+                TapesResponse.Tape(
                     "asfjkl1nbbj3j2343284bcjksabfd",
                     "어쩔티비",
                     2022,
