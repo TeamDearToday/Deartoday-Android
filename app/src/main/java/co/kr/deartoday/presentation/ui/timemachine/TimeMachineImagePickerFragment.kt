@@ -16,10 +16,13 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineImagePickerBinding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
+import co.kr.deartoday.util.getTodayString
 import co.kr.deartoday.util.shortToast
 import com.bumptech.glide.Glide
 import java.text.SimpleDateFormat
@@ -86,15 +89,21 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
         binding.ivExit.setOnClickListener {
             requireActivity().onBackPressed()
         }
+        binding.layoutRewind.setOnClickListener {
+            viewModel.parseDate()
+            parentFragmentManager.commit {
+                replace<TimeMachineLottieFragment>(R.id.fcv_time_machine)
+            }
+        }
     }
 
     private fun initTvDateView() {
-        val todayFormat = SimpleDateFormat("yyyyMMdd")
-        val today = todayFormat.format(Date())
+        val today = getTodayString()
+        val todayTokenized = today.split('.')
         with(binding) {
-            tvTodayYear.text = today.substring(0, 4)
-            tvTodayMonth.text = today.substring(4, 6)
-            tvTodayDay.text = today.substring(6, 8)
+            tvTodayYear.text = todayTokenized[0]
+            tvTodayMonth.text = todayTokenized[1]
+            tvTodayDay.text = todayTokenized[2]
         }
     }
 
@@ -103,9 +112,6 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
             requireContext(),
             R.style.MySpinnerDatePickerStyle,
             { _, year, month, day ->
-                binding.tvTodayYear.text = year.toString()
-                binding.tvTodayMonth.text = (month + 1).toString()
-                binding.tvTodayDay.text = day.toString()
                 viewModel.date.value = "${year}.${month + 1}.${day}"
             },
             requireNotNull(viewModel.date.value).split('.')[0].toInt(),

@@ -13,6 +13,12 @@ class TimeMachineViewModel : ViewModel() {
     val title = MutableLiveData<String>()
     private val _isImagePickerProcessComplete = MediatorLiveData<Boolean>()
     val isImagePickerProcessComplete: LiveData<Boolean> get() = _isImagePickerProcessComplete
+    private var _year: String = ""
+    val year get() = _year
+    private var _month: String = ""
+    val month get() = _month
+    private var _day: String = ""
+    val day get() = _day
 
     init {
         with(_isImagePickerProcessComplete) {
@@ -25,5 +31,12 @@ class TimeMachineViewModel : ViewModel() {
     private fun checkImagePickerProcessComplete() {
         _isImagePickerProcessComplete.value =
             (imageUri.value != null) && (date.value != null) && (title.value != null && title.value != "")
+    }
+
+    fun parseDate() {
+        val dateTokenized = requireNotNull(date.value).split('.')
+        _year = dateTokenized[0]
+        _month = dateTokenized[1]
+        _day = dateTokenized[2]
     }
 }
