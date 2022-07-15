@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import co.kr.deartoday.data.model.response.ResponseTimeTravelTape
 import co.kr.deartoday.databinding.ItemTimeTravelBinding
 
-class TimeTravelTapeAdapter :
-    RecyclerView.Adapter<TimeTravelTapeAdapter.TimeTravelTapeViewHolder>() {
+class TapeAdapter :
+    RecyclerView.Adapter<TapeAdapter.TimeTravelTapeViewHolder>() {
     val tapeList = mutableListOf<ResponseTimeTravelTape>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TimeTravelTapeViewHolder {

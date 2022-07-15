@@ -4,11 +4,11 @@ import android.os.Bundle
 import co.kr.deartoday.R
 import co.kr.deartoday.data.model.response.ResponseTimeTravelTape
 import co.kr.deartoday.databinding.ActivityTimeTravelBinding
-import co.kr.deartoday.presentation.adapter.TimeTravelTapeAdapter
+import co.kr.deartoday.presentation.adapter.TapeAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 
 class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
-    private lateinit var timeTravelTapeAdapter: TimeTravelTapeAdapter
+    private lateinit var tapeAdapter: TapeAdapter
     override val layoutRes: Int
         get() = R.layout.activity_time_travel
 
@@ -19,9 +19,9 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     }
 
     private fun initAdapter() {
-        timeTravelTapeAdapter = TimeTravelTapeAdapter()
-        binding.rvTimeTravel.adapter = timeTravelTapeAdapter
-        timeTravelTapeAdapter.tapeList.addAll(
+        tapeAdapter = TapeAdapter()
+        binding.rvTimeTravel.adapter = tapeAdapter
+        tapeAdapter.tapeList.addAll(
             listOf(
                 ResponseTimeTravelTape(
                     "asfjkl1nbbj3j2343284bcjksabfd",
@@ -52,6 +52,6 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
                 )
             )
         )
-        timeTravelTapeAdapter.notifyDataSetChanged()
+        tapeAdapter.notifyDataSetChanged()
     }
 }
