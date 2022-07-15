@@ -6,6 +6,7 @@ import co.kr.deartoday.data.model.response.ResponseTimeTravelTape
 import co.kr.deartoday.databinding.ActivityTimeTravelBinding
 import co.kr.deartoday.presentation.adapter.TapeAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import co.kr.deartoday.util.TapeItemDecoration
 
 class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     private lateinit var tapeAdapter: TapeAdapter
@@ -21,6 +22,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     private fun initAdapter() {
         tapeAdapter = TapeAdapter()
         binding.rvTimeTravel.adapter = tapeAdapter
+        binding.rvTimeTravel.addItemDecoration(TapeItemDecoration(23, getColor(R.color.light_blue_e9f1fe)))
         tapeAdapter.tapeList.addAll(
             listOf(
                 ResponseTimeTravelTape(
