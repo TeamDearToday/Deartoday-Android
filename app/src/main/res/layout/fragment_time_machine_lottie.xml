@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,8 +20,56 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            app:lottie_fileName="tape.json"
-            app:lottie_autoPlay="true"/>
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="tape.json" />
+
+        <TextView
+            android:id="@+id/tv_today_year"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/property_1_bg_year"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.year}"
+            android:textColor="@color/light_blue_f0f6ff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2022" />
+
+        <TextView
+            android:id="@+id/tv_today_month"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-14dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/property_1_bg_date"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.month}"
+            android:textColor="@color/light_blue_f0f6ff"
+            app:layout_constraintStart_toEndOf="@id/tv_today_year"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="07" />
+
+        <TextView
+            android:id="@+id/tv_today_day"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-14dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/property_1_bg_date"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.day}"
+            android:textColor="@color/light_blue_f0f6ff"
+            app:layout_constraintStart_toEndOf="@id/tv_today_month"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
