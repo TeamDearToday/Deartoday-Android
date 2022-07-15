@@ -22,6 +22,7 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineImagePickerBinding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
+import co.kr.deartoday.util.getTodayString
 import co.kr.deartoday.util.shortToast
 import com.bumptech.glide.Glide
 import java.text.SimpleDateFormat
@@ -97,12 +98,12 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
     }
 
     private fun initTvDateView() {
-        val todayFormat = SimpleDateFormat("yyyyMMdd")
-        val today = todayFormat.format(Date())
+        val today = getTodayString()
+        val todayTokenized = today.split('.')
         with(binding) {
-            tvTodayYear.text = today.substring(0, 4)
-            tvTodayMonth.text = today.substring(4, 6)
-            tvTodayDay.text = today.substring(6, 8)
+            tvTodayYear.text = todayTokenized[0]
+            tvTodayMonth.text = todayTokenized[1]
+            tvTodayDay.text = todayTokenized[2]
         }
     }
 
