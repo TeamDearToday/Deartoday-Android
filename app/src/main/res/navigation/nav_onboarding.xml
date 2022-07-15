@@ -16,6 +16,30 @@
     </fragment>
 
     <fragment
+        android:id="@+id/onboarding2Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding2Fragment"
+        android:label="fragment_onboarding2"
+        tools:layout="@layout/fragment_onboarding2">
+        <action
+            android:id="@+id/action_onboarding2Fragment_to_onboarding3Fragment"
+            app:destination="@id/onboarding3Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboarding3Fragment"
+        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding3Fragment"
+        android:label="fragment_onboarding3"
+        tools:layout="@layout/fragment_onboarding3">
+        <action
+            android:id="@+id/action_onboarding3Fragment_to_onboarding4Fragment"
+            app:destination="@id/onboarding4Fragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
         android:id="@+id/onboarding4Fragment"
         android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding4Fragment"
         android:label="fragment_onboarding4"
@@ -24,6 +48,7 @@
             android:id="@+id/action_onboarding4Fragment_to_onboarding5Fragment"
             app:destination="@id/onboarding5Fragment" />
     </fragment>
+
     <fragment
         android:id="@+id/onboarding5Fragment"
         android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding5Fragment"
@@ -33,6 +58,7 @@
             android:id="@+id/action_onboarding5Fragment_to_onboarding6Fragment"
             app:destination="@id/onboarding6Fragment" />
     </fragment>
+
     <fragment
         android:id="@+id/onboarding6Fragment"
         android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding6Fragment"
@@ -67,7 +93,11 @@
         tools:layout="@layout/fragment_onboarding9">
         <action
             android:id="@+id/action_onboarding9Fragment_to_onboarding10Fragment"
-            app:destination="@id/onboarding10Fragment" />
+            app:destination="@id/onboarding10Fragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/onboarding10Fragment"
@@ -76,34 +106,20 @@
         tools:layout="@layout/fragment_onboarding10">
         <action
             android:id="@+id/action_onboarding10Fragment_to_onboarding11Fragment"
-            app:destination="@id/onboarding11Fragment" />
+            app:destination="@id/onboarding11Fragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/onboarding11Fragment"
         android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding11Fragment"
         android:label="fragment_onboarding11"
-        tools:layout="@layout/fragment_onboarding11" >
+        tools:layout="@layout/fragment_onboarding11">
         <action
             android:id="@+id/action_onboarding11Fragment_to_mainActivity"
             app:destination="@id/sign_in_activity" />
-    </fragment>
-    <fragment
-        android:id="@+id/onboarding3Fragment"
-        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding3Fragment"
-        android:label="fragment_onboarding3"
-        tools:layout="@layout/fragment_onboarding3" >
-        <action
-            android:id="@+id/action_onboarding3Fragment_to_onboarding4Fragment"
-            app:destination="@id/onboarding4Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/onboarding2Fragment"
-        android:name="co.kr.deartoday.presentation.ui.onboarding.Onboarding2Fragment"
-        android:label="fragment_onboarding2"
-        tools:layout="@layout/fragment_onboarding2" >
-        <action
-            android:id="@+id/action_onboarding2Fragment_to_onboarding3Fragment"
-            app:destination="@id/onboarding3Fragment" />
     </fragment>
     <activity
         android:id="@+id/sign_in_activity"
