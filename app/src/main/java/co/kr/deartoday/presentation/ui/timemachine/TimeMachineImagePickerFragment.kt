@@ -112,9 +112,6 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
             requireContext(),
             R.style.MySpinnerDatePickerStyle,
             { _, year, month, day ->
-                binding.tvTodayYear.text = year.toString()
-                binding.tvTodayMonth.text = (month + 1).toString()
-                binding.tvTodayDay.text = day.toString()
                 viewModel.date.value = "${year}.${month + 1}.${day}"
             },
             requireNotNull(viewModel.date.value).split('.')[0].toInt(),
