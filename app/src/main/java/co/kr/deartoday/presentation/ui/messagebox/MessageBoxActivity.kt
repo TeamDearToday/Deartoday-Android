@@ -1,5 +1,6 @@
 package co.kr.deartoday.presentation.ui.messagebox
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import co.kr.deartoday.R
@@ -8,6 +9,7 @@ import co.kr.deartoday.databinding.ActivityMessageBoxBinding
 import co.kr.deartoday.presentation.adapter.MessageBoxAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.main.MainActivity
+import co.kr.deartoday.presentation.ui.timemachine.TimeMachineActivity
 import co.kr.deartoday.util.CustomDialog
 import co.kr.deartoday.util.MessageBoxItemDecoration
 
@@ -27,7 +29,7 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
 
     private fun backBtnClickEvent() {
         binding.ibMessageBack.setOnClickListener {
-            startActivity(Intent(this@MessageBoxActivity, MainActivity::class.java))
+            finish()
         }
     }
 
@@ -67,9 +69,14 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
 
     }
 
+
     private fun messageBoxItemDecoration() {
         binding.rvMessage.addItemDecoration(
             MessageBoxItemDecoration(4)
         )
+    }
+
+    companion object {
+        fun getIntent(context: Context) = Intent(context, MessageBoxActivity::class.java)
     }
 }
