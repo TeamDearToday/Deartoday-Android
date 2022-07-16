@@ -1,11 +1,14 @@
 package co.kr.deartoday.presentation.ui.timetravel
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import co.kr.deartoday.R
 import co.kr.deartoday.data.model.response.TapesResponse
 import co.kr.deartoday.databinding.ActivityTimeTravelBinding
 import co.kr.deartoday.presentation.adapter.TapeAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import co.kr.deartoday.presentation.ui.messagebox.MessageBoxActivity
 import co.kr.deartoday.util.TapeItemDecoration
 
 class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
@@ -17,6 +20,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
         super.onCreate(savedInstanceState)
 
         initAdapter()
+        backBtnClickEvent()
     }
 
     private fun initAdapter() {
@@ -60,5 +64,15 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
             )
         )
         tapeAdapter.notifyDataSetChanged()
+    }
+
+    private fun backBtnClickEvent() {
+        binding.ibMessageBack.setOnClickListener {
+            finish()
+        }
+    }
+
+    companion object {
+        fun getIntent(context: Context) = Intent(context, TimeTravelActivity::class.java)
     }
 }
