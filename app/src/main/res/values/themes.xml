@@ -57,8 +57,8 @@
     <style name="H2">
         <item name="android:fontFamily">@font/pretendard_regular</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:lineHeight">26sp</item>
     </style>
 
     <style name="Btn1En">
