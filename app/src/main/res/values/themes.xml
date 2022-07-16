@@ -54,6 +54,13 @@
         <item name="lineHeight">24sp</item>
     </style>
 
+    <style name="H2">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+    </style>
+
     <style name="Btn1En">
         <item name="android:fontFamily">@font/gmarket_sans_bold</item>
         <item name="android:textStyle">bold</item>

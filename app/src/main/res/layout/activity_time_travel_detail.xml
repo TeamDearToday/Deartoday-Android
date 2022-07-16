@@ -80,6 +80,7 @@
             tools:text="2033.07.03" />
 
         <TextView
+            style="@style/Btn0"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
