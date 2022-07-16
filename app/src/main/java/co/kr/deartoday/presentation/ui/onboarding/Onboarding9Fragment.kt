@@ -9,6 +9,8 @@ import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.*
 import co.kr.deartoday.presentation.ui.base.BaseFragment
+import co.kr.deartoday.util.MySoundPlayer
+import co.kr.deartoday.util.MySoundPlayer.initSounds
 import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.slideUpAnimator
 import kotlinx.coroutines.CoroutineScope
@@ -24,9 +26,7 @@ class Onboarding9Fragment : BaseFragment<FragmentOnboarding9Binding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.layoutPlayer.setOnClickListener {
-            findNavController().navigate(R.id.action_onboarding9Fragment_to_onboarding10Fragment)
-        }
+
         initAnimation()
     }
 
@@ -37,6 +37,12 @@ class Onboarding9Fragment : BaseFragment<FragmentOnboarding9Binding>() {
             fadeIn1.start()
 
             binding.layoutPlayer.isClickable = true
+
+            initSounds(requireContext())
+            binding.layoutPlayer.setOnClickListener { v: View? ->
+                MySoundPlayer.play(MySoundPlayer.SOUND_PLAYER)
+                findNavController().navigate(R.id.action_onboarding9Fragment_to_onboarding10Fragment)
+            }
         }
     }
 }
