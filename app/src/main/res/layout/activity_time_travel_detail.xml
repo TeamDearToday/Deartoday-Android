@@ -38,14 +38,13 @@
             android:id="@+id/iv_original"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toBottomOf="@id/ib_message_back"
             android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintDimensionRatio="131:74"
             android:scaleType="centerCrop"
-            tools:src="@drawable/main_left_withg_a_size_small"
-            />
+            app:layout_constraintDimensionRatio="131:74"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ib_message_back"
+            tools:src="@drawable/main_left_withg_a_size_small" />
 
         <TextView
             android:id="@+id/tv_travel_to"
@@ -80,14 +79,26 @@
             tools:text="2033.07.03" />
 
         <TextView
+            android:id="@+id/tv_title"
             style="@style/H2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:gravity="start"
+            android:textColor="@color/dark_gray_131313"
             app:layout_constraintEnd_toEndOf="@id/tv_travel_from"
             app:layout_constraintStart_toStartOf="@id/tv_travel_to"
             app:layout_constraintTop_toBottomOf="@id/tv_travel_to"
-            tools:text="더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감"
+            tools:text="더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감더미데이터미네이터미네이터줏대감" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dialogue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
