@@ -1,6 +1,5 @@
 package co.kr.deartoday.presentation.ui.timetravel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityTimeTravelDetailBinding
