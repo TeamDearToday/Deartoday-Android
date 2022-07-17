@@ -11,6 +11,8 @@ import co.kr.deartoday.databinding.FragmentOnboarding1Binding
 import co.kr.deartoday.databinding.FragmentOnboarding2Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.util.*
+import co.kr.deartoday.util.MySoundPlayer.initSounds
+import co.kr.deartoday.util.MySoundPlayer.play
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -24,14 +26,6 @@ class Onboarding2Fragment : BaseFragment<FragmentOnboarding2Binding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.layoutTouchBox.setOnClickListener {
-            findNavController().navigate(R.id.action_onboarding2Fragment_to_onboarding3Fragment)
-        }
-
-        binding.btnCircleTouch2.setOnClickListener {
-            findNavController().navigate(R.id.action_onboarding2Fragment_to_onboarding3Fragment)
-        }
 
         initAnimation()
         initTouchArea()
@@ -47,6 +41,17 @@ class Onboarding2Fragment : BaseFragment<FragmentOnboarding2Binding>() {
 
             binding.layoutTouchBox.isClickable = true
             binding.btnCircleTouch2.isClickable = true
+
+            initSounds(requireContext())
+            binding.layoutTouchBox.setOnClickListener { v: View? ->
+                play(MySoundPlayer.SOUND_BOX)
+                findNavController().navigate(R.id.action_onboarding2Fragment_to_onboarding3Fragment)
+            }
+
+            binding.btnCircleTouch2.setOnClickListener { v: View? ->
+                play(MySoundPlayer.SOUND_BOX)
+                findNavController().navigate(R.id.action_onboarding2Fragment_to_onboarding3Fragment)
+            }
         }
     }
 
