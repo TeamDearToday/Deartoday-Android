@@ -4,12 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import co.kr.deartoday.R
-import co.kr.deartoday.data.model.response.ResponseMessageBox
+import co.kr.deartoday.data.model.response.MessageBoxResponse
 import co.kr.deartoday.databinding.ActivityMessageBoxBinding
 import co.kr.deartoday.presentation.adapter.MessageBoxAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.main.MainActivity
-import co.kr.deartoday.presentation.ui.timemachine.TimeMachineActivity
 import co.kr.deartoday.util.CustomDialog
 import co.kr.deartoday.util.MessageBoxItemDecoration
 
@@ -51,24 +50,23 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
         binding.rvMessage.adapter = messageBoxAdapter
         messageBoxAdapter.messageBoxList.addAll(
             listOf(
-                ResponseMessageBox("유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? "),
-                ResponseMessageBox("하냥이"),
-                ResponseMessageBox("하연자"),
-                ResponseMessageBox("하하여자"),
-                ResponseMessageBox("디어투데이"),
-                ResponseMessageBox("하별찬"),
-                ResponseMessageBox("하메피"),
-                ResponseMessageBox("하피엠"),
-                ResponseMessageBox("하헬창"),
-                ResponseMessageBox("하남자"),
-                ResponseMessageBox("쌉하남자")
+                MessageBoxResponse("유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? "),
+                MessageBoxResponse("하냥이"),
+                MessageBoxResponse("하연자"),
+                MessageBoxResponse("하하여자"),
+                MessageBoxResponse("디어투데이"),
+                MessageBoxResponse("하별찬"),
+                MessageBoxResponse("하메피"),
+                MessageBoxResponse("하피엠"),
+                MessageBoxResponse("하헬창"),
+                MessageBoxResponse("하남자"),
+                MessageBoxResponse("쌉하남자")
             )
         )
 
         messageBoxAdapter.notifyDataSetChanged()
 
     }
-
 
     private fun messageBoxItemDecoration() {
         binding.rvMessage.addItemDecoration(
