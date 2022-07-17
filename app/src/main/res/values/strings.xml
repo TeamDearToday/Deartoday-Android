@@ -46,4 +46,6 @@
     <!--Time Travel-->
     <string name="time_travel_title">시간 여행</string>
     <string name="time_travel_caption">디어투데이와 함께한 시간 여행을\n확인하고 그날의 행복을 추억해 보세요</string>
+    <string name="time_travel_detail_past">과거의 당신에게 꼭 해주고 싶은 말</string>
+    <string name="time_travel_detail_title">나의 시간 여행</string>
 </resources>
