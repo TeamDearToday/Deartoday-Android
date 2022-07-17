@@ -37,6 +37,6 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
     }
 
     companion object {
-        fun newInstance(param1: String, param2: String) = TimeMachineChat1Fragment()
+        fun newInstance() = TimeMachineChat1Fragment()
     }
 }
