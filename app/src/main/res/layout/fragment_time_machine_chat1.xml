@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="지금의 당신을 발견한 2016년도의 당신,\n반갑게 손을 흔들며 당신을 맞이하네요.\n한 번 인사를 건네보세요!"
+            android:text='@{"지금의 당신을 발견한 " + viewmodel.year + "년도의 당신,\n반갑게 손을 흔들며 당신을 맞이하네요.\n한 번 인사를 건네보세요!"}'
             android:textColor="@color/light_gray_e0e0e0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
