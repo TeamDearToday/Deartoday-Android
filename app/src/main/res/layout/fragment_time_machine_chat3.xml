@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:background="@drawable/rectangle_textfield_radius_4_20"
+            android:background="@drawable/rectangle_textfield_border_yellow_radius_4_20"
             android:backgroundTint="@color/yellow_feffdb"
             android:paddingHorizontal="27dp"
             android:paddingVertical="13dp"
