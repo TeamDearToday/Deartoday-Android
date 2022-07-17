@@ -1,8 +1,11 @@
 package co.kr.deartoday.presentation.ui.timemachine
 
+import android.animation.Animator
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineLottieBinding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
@@ -22,7 +25,30 @@ class TimeMachineLottieFragment : BaseFragment<FragmentTimeMachineLottieBinding>
         super.onViewCreated(view, savedInstanceState)
         binding.viewmodel = viewModel
 
-        startDateAnimation()
+        initAnimation()
+    }
+
+    private fun initAnimation() {
+        binding.lottieTape.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(p0: Animator?) {
+                startDateAnimation()
+            }
+
+            override fun onAnimationEnd(p0: Animator?) {
+                parentFragmentManager.commit {
+                    replace<TimeMachinePastRoomFragment>(R.id.fcv_time_machine)
+                }
+            }
+
+            override fun onAnimationCancel(p0: Animator?) {
+
+            }
+
+            override fun onAnimationRepeat(p0: Animator?) {
+
+            }
+
+        })
     }
 
     private fun startDateAnimation() {

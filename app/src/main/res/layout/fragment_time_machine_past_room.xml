@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.timemachine.TimeMachinePastRoomFragment">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_home_past_left" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4cffffff"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_year"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_year_yellow"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.year}"
+            android:textColor="@color/gray_696969"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2016" />
+
+        <TextView
+            android:id="@+id/tv_month"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-14dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_month_yellow"
+            android:gravity="center"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.month}"
+            android:textColor="@color/gray_696969"
+            app:layout_constraintStart_toEndOf="@id/tv_year"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="07" />
+
+        <TextView
+            android:id="@+id/tv_day"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-14dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_month_yellow"
+            android:gravity="center"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.day}"
+            android:textColor="@color/gray_696969"
+            app:layout_constraintStart_toEndOf="@id/tv_month"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="22" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/BtnKr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/img_text_box"
+            android:paddingHorizontal="26dp"
+            android:paddingVertical="24dp"
+            android:text='@{"우리의 " + viewmodel.year + "년, 기억나나요?"}'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_month"
+            tools:text="우리의 2016년, 기억나나요?"/>
+
+        <ImageView
+            android:id="@+id/iv_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_exit_yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_past_photo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="19dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/tv_next"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:listitem="@layout/item_past_photo" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/Btn0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/btn_large_past"
+            android:gravity="center"
+            android:text="과거의 나 만나러 가기"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

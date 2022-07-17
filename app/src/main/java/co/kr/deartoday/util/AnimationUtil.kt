@@ -30,7 +30,7 @@ fun slideUpAnimator(view: View, duration: Long): ObjectAnimator {
 fun textCounterAnimator(textView: TextView, fromValue: String, toValue: String, duration: Long): ValueAnimator {
     val textCounter = ValueAnimator()
     textCounter.setObjectValues(fromValue.toInt(), toValue.toInt())
-    textCounter.addUpdateListener { animation -> textView.text = animation.animatedValue.toString() }
+    textCounter.addUpdateListener { animation -> textView.text = String.format("%02d", animation.animatedValue) }
     textCounter.duration = duration
     return textCounter
 }
