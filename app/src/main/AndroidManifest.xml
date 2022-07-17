@@ -21,6 +21,9 @@
         android:theme="@style/Theme.DearToday"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.timetravel.TimeTravelDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.ui.timetravel.TimeTravelActivity"
             android:exported="true" />
         <activity
@@ -28,13 +31,13 @@
             android:exported="false" />
         <activity
             android:name=".presentation.ui.messagebox.MessageBoxActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".presentation.ui.onboarding.OnboardingActivity"
             android:exported="true"/>
         <activity
             android:name=".presentation.ui.signin.SignInActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">
