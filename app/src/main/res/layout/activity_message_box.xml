@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewmodel"
+            type="co.kr.deartoday.presentation.viewmodel.MessageBoxViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
