@@ -20,6 +20,10 @@ class TimeMachineViewModel : ViewModel() {
     private var _day: String = ""
     val day get() = _day
 
+    // TimaMachinePastRoomFragment
+    private val _pastPhotos = MutableLiveData<List<String>>()
+    val pastPhotos: LiveData<List<String>> get() = _pastPhotos
+
     init {
         with(_isImagePickerProcessComplete) {
             addSource(imageUri) { checkImagePickerProcessComplete() }
@@ -28,11 +32,13 @@ class TimeMachineViewModel : ViewModel() {
         }
     }
 
+    // TimeMachineImagePickerFragment
     private fun checkImagePickerProcessComplete() {
         _isImagePickerProcessComplete.value =
             (imageUri.value != null) && (date.value != null) && (title.value != null && title.value != "")
     }
 
+    // TimeMachineImagePickerFragment
     fun parseDate() {
         val dateTokenized = requireNotNull(date.value).split('.')
         _year = dateTokenized[0]
