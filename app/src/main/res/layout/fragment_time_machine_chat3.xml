@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.timemachine.TimeMachineChat1Fragment">
+        tools:context=".presentation.ui.timemachine.TimeMachineChat3Fragment">
 
         <ImageView
             android:id="@+id/iv_background"
@@ -84,17 +84,21 @@
 
         <TextView
             android:id="@+id/tv_content"
-            style="@style/P3"
-            android:layout_width="wrap_content"
+            style="@style/P7"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text='@{"지금의 당신을 발견한 " + viewmodel.year + "년도의 당신,\n반갑게 손을 흔들며 당신을 맞이하네요.\n한 번 인사를 건네보세요!"}'
-            android:textColor="@color/light_gray_e0e0e0"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/rectangle_textfield_radius_4_20"
+            android:backgroundTint="@color/yellow_feffdb"
+            android:text='@{"안녕! 나는 " + viewmodel.year + "년도의 너야.\n만나서 정말 반가워!\n너에게 몇 가지 궁금한 게 있는데\n괜찮다면 너와 잠깐 얘기하고 싶어."}'
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/dark_gray_323232"
+            android:paddingHorizontal="27dp"
+            android:paddingVertical="13dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintVertical_bias="0.35" />
 
         <TextView
             android:id="@+id/tv_next"
@@ -105,7 +109,7 @@
             android:layout_marginBottom="132dp"
             android:background="@drawable/btn_medium_present"
             android:gravity="center"
-            android:text="안녕!"
+            android:text="응 좋아!"
             android:textColor="@color/blue_558fff"
             app:layout_constraintBottom_toBottomOf="parent" />
 
