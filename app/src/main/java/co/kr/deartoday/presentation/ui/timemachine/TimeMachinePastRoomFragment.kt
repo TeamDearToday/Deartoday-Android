@@ -3,6 +3,8 @@ package co.kr.deartoday.presentation.ui.timemachine
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachinePastRoomBinding
 import co.kr.deartoday.presentation.adapter.PastPhotoAdapter
@@ -24,6 +26,7 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
         binding.viewmodel = viewModel
         viewModel.getPastPhotos()
         initView()
+        initOnClickListener()
         observeData()
     }
 
@@ -31,6 +34,14 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
         with(binding.rvPastPhoto) {
             adapter = pastPhotoAdapter
             addItemDecoration(PastPhotoItemDecoration(15))
+        }
+    }
+
+    private fun initOnClickListener() {
+        binding.tvNext.setOnClickListener {
+            parentFragmentManager.commit {
+                replace<TimeMachineChat1Fragment>(R.id.fcv_time_machine)
+            }
         }
     }
 
