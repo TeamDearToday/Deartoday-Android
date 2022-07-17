@@ -16,5 +16,4 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
             this.header = binding.clTitleBundle
         }
     }
-
 }
