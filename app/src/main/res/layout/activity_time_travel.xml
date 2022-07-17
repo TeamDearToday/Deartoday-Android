@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="아직 디어투데이와 함께한 시간 여행이 없어요\n지금 바로 시간 여행을 떠나볼까요?"
+                android:text="@string/time_travel_empty_case"
                 android:textColor="@color/gray_01_a0a0a0"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
