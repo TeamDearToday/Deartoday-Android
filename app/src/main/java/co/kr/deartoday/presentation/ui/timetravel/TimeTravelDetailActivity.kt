@@ -12,6 +12,10 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding.svSticky.run {
+            header = binding.clTitleBundle
+        }
     }
 
 }
