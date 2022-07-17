@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             app:lottie_autoPlay="true"
-            app:lottie_fileName="tape.json" />
+            app:lottie_fileName="timetravel_lottie.json" />
 
         <TextView
             android:id="@+id/tv_year"
