@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewmodel"
             type="co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel" />
@@ -13,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.timemachine.TimeMachineChat1Fragment">
+        tools:context=".presentation.ui.timemachine.TimeMachineChat2Fragment">
 
         <ImageView
             android:id="@+id/iv_background"
@@ -88,26 +87,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="지금의 당신을 발견한 2016년도의 당신,\n반갑게 손을 흔들며 당신을 맞이하네요.\n한 번 인사를 건네보세요!"
+            android:text="당신에게 궁금한게 많은지 이것저것 질문을 합니다."
             android:textColor="@color/light_gray_e0e0e0"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
-
-        <TextView
-            android:id="@+id/tv_next"
-            style="@style/Btn0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="52dp"
-            android:layout_marginBottom="132dp"
-            android:background="@drawable/btn_medium_present"
-            android:gravity="center"
-            android:text="안녕!"
-            android:textColor="@color/blue_558fff"
-            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
