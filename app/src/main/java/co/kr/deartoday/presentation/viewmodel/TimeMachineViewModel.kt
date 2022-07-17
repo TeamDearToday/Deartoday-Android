@@ -45,4 +45,16 @@ class TimeMachineViewModel : ViewModel() {
         _month = dateTokenized[1]
         _day = dateTokenized[2]
     }
+
+    // TimeMachinePastRoomFragment
+    fun getPastPhotos() {
+        val list = listOf<String>(
+            "",
+            "",
+            "",
+            "",
+            ""
+        )
+        _pastPhotos.value = list
+    }
 }
