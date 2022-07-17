@@ -3,6 +3,8 @@ package co.kr.deartoday.presentation.ui.timemachine
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineChat3Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
@@ -26,6 +28,11 @@ class TimeMachineChat3Fragment : BaseFragment<FragmentTimeMachineChat3Binding>()
     private fun initOnClickListener() {
         binding.ivExit.setOnClickListener {
             requireActivity().onBackPressed()
+        }
+        binding.tvNext.setOnClickListener {
+            parentFragmentManager.commit {
+                replace<TimeMachineChat4Fragment>(R.id.fcv_time_machine)
+            }
         }
     }
 

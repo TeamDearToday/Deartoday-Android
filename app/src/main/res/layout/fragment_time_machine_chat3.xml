@@ -30,6 +30,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_year_yellow"
+            android:gravity="center"
             android:paddingHorizontal="23dp"
             android:paddingVertical="17dp"
             android:text="@{viewmodel.year}"
@@ -90,12 +91,12 @@
             android:layout_marginHorizontal="16dp"
             android:background="@drawable/rectangle_textfield_radius_4_20"
             android:backgroundTint="@color/yellow_feffdb"
-            android:text='@{"안녕! 나는 " + viewmodel.year + "년도의 너야.\n만나서 정말 반가워!\n너에게 몇 가지 궁금한 게 있는데\n괜찮다면 너와 잠깐 얘기하고 싶어."}'
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/dark_gray_323232"
             android:paddingHorizontal="27dp"
             android:paddingVertical="13dp"
+            android:text='@{"안녕! 나는 " + viewmodel.year + "년도의 너야.\n만나서 정말 반가워!\n너에게 몇 가지 궁금한 게 있는데\n괜찮다면 너와 잠깐 얘기하고 싶어."}'
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.35" />

@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.timemachine.TimeMachineChat1Fragment">
+        tools:context=".presentation.ui.timemachine.TimeMachineChat4Fragment">
 
         <ImageView
             android:id="@+id/iv_background"
@@ -83,32 +83,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_content"
-            style="@style/P3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text='@{"지금의 당신을 발견한 " + viewmodel.year + "년도의 당신,\n반갑게 손을 흔들며 당신을 맞이하네요.\n한 번 인사를 건네보세요!"}'
-            android:textColor="@color/light_gray_e0e0e0"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rectangle_radius_20"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="328:182"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
+            app:layout_constraintTop_toBottomOf="@id/tv_year"
+            tools:src="@drawable/main_left_withg_a_1" />
 
         <TextView
-            android:id="@+id/tv_next"
-            style="@style/Btn0"
+            android:id="@+id/tv_content"
+            style="@style/P7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="52dp"
-            android:layout_marginBottom="132dp"
-            android:background="@drawable/btn_medium_present"
-            android:gravity="center"
-            android:text="안녕!"
-            android:textColor="@color/blue_558fff"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rectangle_textfield_radius_4_20"
+            android:backgroundTint="@color/yellow_feffdb"
+            android:paddingHorizontal="27dp"
+            android:paddingVertical="13dp"
+            android:text="고마워!\n아하, 너는 이때로 가장 돌아가고 싶었구나."
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintTop_toBottomOf="@id/iv_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
