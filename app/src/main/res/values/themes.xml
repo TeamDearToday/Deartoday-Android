@@ -54,6 +54,13 @@
         <item name="lineHeight">24sp</item>
     </style>
 
+    <style name="H2">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:lineHeight">26sp</item>
+    </style>
+
     <style name="Btn1En">
         <item name="android:fontFamily">@font/gmarket_sans_bold</item>
         <item name="android:textStyle">bold</item>
@@ -92,6 +99,13 @@
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="P7">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:lineSpacingExtra">7dp</item>
     </style>
 
     <style name="Caption0">

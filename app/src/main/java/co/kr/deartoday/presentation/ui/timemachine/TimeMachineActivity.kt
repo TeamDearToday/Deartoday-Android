@@ -7,17 +7,26 @@ import android.os.Bundle
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.lifecycle.lifecycleScope
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityTimeMachineBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import kotlinx.coroutines.cancel
 
 class TimeMachineActivity : BaseActivity<ActivityTimeMachineBinding>() {
+    val mainScope = this.lifecycleScope
+
     override val layoutRes: Int
         get() = R.layout.activity_time_machine
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initFragmentContainer()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mainScope.cancel()
     }
 
     private fun initFragmentContainer() {
