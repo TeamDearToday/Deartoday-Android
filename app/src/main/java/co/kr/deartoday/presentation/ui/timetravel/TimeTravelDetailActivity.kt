@@ -14,7 +14,7 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
         super.onCreate(savedInstanceState)
 
         binding.svSticky.run {
-            header = binding.clTitleBundle
+            this.header = binding.clTitleBundle
         }
     }
 
