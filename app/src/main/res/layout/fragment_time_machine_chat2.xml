@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewmodel"
             type="co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel" />
@@ -29,6 +30,7 @@
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_year_yellow"
+            android:gravity="center"
             android:paddingHorizontal="23dp"
             android:paddingVertical="17dp"
             android:text="@{viewmodel.year}"
