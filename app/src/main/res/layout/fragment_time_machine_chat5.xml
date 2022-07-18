@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.timemachine.TimeMachineChat5Fragment">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/convo_bg_aos" />
+
+        <TextView
+            android:id="@+id/tv_year"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_year_yellow"
+            android:gravity="center"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.year}"
+            android:textColor="@color/gray_696969"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2016" />
+
+        <TextView
+            android:id="@+id/tv_month"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-14dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_month_yellow"
+            android:gravity="center"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.month}"
+            android:textColor="@color/gray_696969"
+            app:layout_constraintStart_toEndOf="@id/tv_year"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="07" />
+
+        <TextView
+            android:id="@+id/tv_day"
+            style="@style/H0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-14dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_month_yellow"
+            android:gravity="center"
+            android:paddingHorizontal="23dp"
+            android:paddingVertical="17dp"
+            android:text="@{viewmodel.day}"
+            android:textColor="@color/gray_696969"
+            app:layout_constraintStart_toEndOf="@id/tv_month"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="22" />
+
+        <ImageView
+            android:id="@+id/iv_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_exit_yellow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/P7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/rectangle_textfield_border_yellow_radius_4_20"
+            android:backgroundTint="@color/yellow_feffdb"
+            android:paddingHorizontal="27dp"
+            android:visibility="invisible"
+            android:paddingVertical="13dp"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/Btn0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/btn_medium_present"
+            android:gravity="center"
+            android:text="다시 오늘을 살아가기"
+            android:visibility="gone"
+            android:textColor="@color/blue_558fff"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
