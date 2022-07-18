@@ -32,7 +32,7 @@ class TimeMachineChat3Fragment : BaseFragment<FragmentTimeMachineChat3Binding>()
 
     private fun initAnimation() {
         (requireActivity() as TimeMachineActivity).mainScope.launch {
-            delay(400)
+            delay(800)
             fadeInAnimator(binding.tvContent, 300).start()
             binding.tvContent.isVisible = true
             delay(900)
