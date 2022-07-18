@@ -38,6 +38,7 @@ class TimeMachineChat3Fragment : BaseFragment<FragmentTimeMachineChat3Binding>()
             delay(1200)
             fadeInAnimator(binding.tvNext, 600).start()
             binding.tvNext.isVisible = true
+            delay(1800)
         }
     }
 
