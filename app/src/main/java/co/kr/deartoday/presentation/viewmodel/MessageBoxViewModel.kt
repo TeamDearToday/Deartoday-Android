@@ -4,11 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import co.kr.deartoday.data.ServiceCreator.deartodayService
+import co.kr.deartoday.data.service.ServiceCreator.messageBoxService
 import co.kr.deartoday.data.model.response.MessageBoxResponse
 import co.kr.deartoday.util.SingleLiveEvent
 import kotlinx.coroutines.launch
-import retrofit2.HttpException
 
 class MessageBoxViewModel : ViewModel() {
     private var _data = MutableLiveData<MessageBoxResponse>() //업데이트
@@ -23,7 +22,7 @@ class MessageBoxViewModel : ViewModel() {
     fun getMessage() {
         viewModelScope.launch {
             runCatching {
-                deartodayService.getMessageBox()
+                messageBoxService.getMessageBox()
             }
                 .onSuccess {
                     _data = MutableLiveData(it)

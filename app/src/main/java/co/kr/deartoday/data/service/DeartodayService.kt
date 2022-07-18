@@ -4,7 +4,7 @@ import co.kr.deartoday.data.model.response.BaseResponse
 import co.kr.deartoday.data.model.response.MessageBoxResponse
 import retrofit2.http.GET
 
-interface DeartodayService {
+interface MessageBoxService {
     @GET("/timeTravel/answers")
     suspend fun getMessageBox(): MessageBoxResponse
 }
