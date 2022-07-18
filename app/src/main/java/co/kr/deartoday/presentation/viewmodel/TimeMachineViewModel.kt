@@ -28,6 +28,8 @@ class TimeMachineViewModel : ViewModel() {
     private var _questions = mutableListOf<String>()
     val questions get() = _questions.toList()
     private val answers = mutableListOf<String>()
+    private var _lastMessages = listOf<String>()
+    val lastMessages get() = _lastMessages
 
     init {
         with(_isImagePickerProcessComplete) {
@@ -72,7 +74,13 @@ class TimeMachineViewModel : ViewModel() {
             "Q4",
             "Q5"
         )
+        val lastMsg = listOf<String>(
+            "LastMsg1",
+            "LastMsg2",
+            "LastMsg3"
+        )
         _questions = list.toMutableList()
+        _lastMessages = lastMsg
     }
 
     fun addAnswer(answer: String) {
