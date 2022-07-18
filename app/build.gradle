@@ -9,6 +9,7 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 def kakao_app_key = properties.get('kakao_app_key')
 def kakao_app_key_manifest = properties.get('kakao_app_key_manifest')
+def base_url = properties.get('base_url')
 
 android {
     compileSdk 31
@@ -23,8 +24,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // KakaoAppKey
-        buildConfigField ("String", "KAKAO_APP_KEY", kakao_app_key)
+        buildConfigField("String", "KAKAO_APP_KEY", kakao_app_key)
         manifestPlaceholders = [KAKAO_APP_KEY_MANIFEST: kakao_app_key_manifest]
+        // BaseUrl
+        buildConfigField("String", "BASE_URL", base_url)
     }
 
     buildTypes {
