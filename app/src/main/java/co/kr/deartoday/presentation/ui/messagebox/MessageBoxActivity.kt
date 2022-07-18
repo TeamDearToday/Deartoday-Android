@@ -4,6 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isGone
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityMessageBoxBinding
 import co.kr.deartoday.presentation.adapter.MessageBoxAdapter
@@ -28,6 +31,8 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
         timeTravelBtnClickEvent()
         initAdapter()
         messageBoxItemDecoration()
+        message()
+        observeMessages()
     }
 
     private fun backBtnClickEvent() {
@@ -52,30 +57,30 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
             )
         }
         binding.rvMessage.adapter = messageBoxAdapter
-        messageBoxAdapter.messageBoxList.addAll(
-            listOf(
-                "유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? 유리는 하여자다! 아닌데? ",
-                "하냥이",
-                "하연자",
-                "하하여자",
-                "디어투데이",
-                "하별찬",
-                "하메피",
-                "하피엠",
-                "하헬창",
-                "하남자",
-                "쌉하남자"
-            )
-        )
-
-        messageBoxAdapter.notifyDataSetChanged()
-
     }
 
     private fun messageBoxItemDecoration() {
         binding.rvMessage.addItemDecoration(
             MessageBoxItemDecoration(4)
         )
+    }
+
+    private fun message() {
+            viewModel.getMessage()
+    }
+
+    private fun observeMessages(){
+        viewModel.data.observe(this){
+            messageBoxAdapter.messageBoxList.addAll(it.data)
+            messageBoxAdapter.notifyDataSetChanged()
+        }
+
+        viewModel.isEmpty.observe(this) {
+            if (it) {
+                binding.layoutMessageBoxEmpty.isVisible
+                binding.rvMessage.isGone
+            }
+        }
     }
 
     companion object {
