@@ -2,6 +2,7 @@ package co.kr.deartoday.presentation.ui.timemachine
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -32,7 +33,7 @@ class TimeMachineChat2Fragment : BaseFragment<FragmentTimeMachineChat2Binding>()
         (requireActivity() as TimeMachineActivity).mainScope.launch {
             delay(700)
             fadeInAnimator(binding.tvContent, 500).start()
-            binding.tvContent.visibility = View.VISIBLE
+            binding.tvContent.isVisible = true
             delay(900)
 
             parentFragmentManager.commit {

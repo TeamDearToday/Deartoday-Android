@@ -6,7 +6,6 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
-import androidx.lifecycle.lifecycleScope
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineChat3Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
