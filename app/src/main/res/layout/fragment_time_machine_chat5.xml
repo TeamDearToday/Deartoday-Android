@@ -111,6 +111,7 @@
             android:background="@drawable/btn_medium_present"
             android:gravity="center"
             android:text="다시 오늘을 살아가기"
+            android:clickable="false"
             android:visibility="gone"
             android:textColor="@color/blue_558fff"
             app:layout_constraintBottom_toBottomOf="parent" />
