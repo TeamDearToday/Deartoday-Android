@@ -1,6 +1,6 @@
 package co.kr.deartoday.data
 
-import co.kr.deartoday.data.service.DeartodayService
+import co.kr.deartoday.data.service.MessageBoxService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -12,5 +12,5 @@ object ServiceCreator {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val deartodayService: DeartodayService = retrofit.create(DeartodayService::class.java)
+    val messageBoxService: MessageBoxService = retrofit.create(MessageBoxService::class.java)
 }
