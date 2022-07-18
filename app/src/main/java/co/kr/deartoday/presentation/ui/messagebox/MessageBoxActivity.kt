@@ -66,7 +66,7 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
 
     private fun observeData(){
         viewModel.data.observe(this){
-            messageBoxAdapter.messageBoxList.addAll(it.data)
+            messageBoxAdapter.messageBoxList.addAll(it)
             messageBoxAdapter.notifyDataSetChanged()
         }
 
