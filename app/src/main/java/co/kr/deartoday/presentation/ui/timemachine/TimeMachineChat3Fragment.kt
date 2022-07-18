@@ -11,6 +11,7 @@ import co.kr.deartoday.databinding.FragmentTimeMachineChat3Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
 import co.kr.deartoday.util.fadeInAnimator
+import co.kr.deartoday.util.fadeOutAnimator
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -47,8 +48,13 @@ class TimeMachineChat3Fragment : BaseFragment<FragmentTimeMachineChat3Binding>()
             requireActivity().onBackPressed()
         }
         binding.tvNext.setOnClickListener {
-            parentFragmentManager.commit {
-                replace<TimeMachineChat4Fragment>(R.id.fcv_time_machine)
+            (requireActivity() as TimeMachineActivity).mainScope.launch {
+                fadeOutAnimator(binding.tvContent, 600).start()
+                fadeOutAnimator(binding.tvNext, 600).start()
+                delay(1800)
+                parentFragmentManager.commit {
+                    replace<TimeMachineChat4Fragment>(R.id.fcv_time_machine)
+                }
             }
         }
     }
