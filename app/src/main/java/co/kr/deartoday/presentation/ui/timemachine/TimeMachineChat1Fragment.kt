@@ -22,6 +22,7 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
         super.onViewCreated(view, savedInstanceState)
         binding.viewmodel = viewModel
 
+        viewModel.getQuestions()
         initOnClickListener()
     }
 

@@ -24,6 +24,11 @@ class TimeMachineViewModel : ViewModel() {
     private val _pastPhotos = MutableLiveData<List<String>>()
     val pastPhotos: LiveData<List<String>> get() = _pastPhotos
 
+    // TimeMachineChatFragments
+    private var _questions = mutableListOf<String>()
+    val questions get() = _questions.toList()
+    private val answers = mutableListOf<String>()
+
     init {
         with(_isImagePickerProcessComplete) {
             addSource(imageUri) { checkImagePickerProcessComplete() }
@@ -56,5 +61,21 @@ class TimeMachineViewModel : ViewModel() {
             ""
         )
         _pastPhotos.value = list
+    }
+
+    // TimeMachineChatFragments
+    fun getQuestions() {
+        val list = listOf<String>(
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4",
+            "Q5"
+        )
+        _questions = list.toMutableList()
+    }
+
+    fun addAnswer(answer: String) {
+        answers.add(answer)
     }
 }
