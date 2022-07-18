@@ -1,11 +1,9 @@
 package co.kr.deartoday.data.service
 
-import co.kr.deartoday.data.model.response.ResponseMessageBox
-import co.kr.deartoday.data.model.response.TapesResponse
-import retrofit2.Call
+import co.kr.deartoday.data.model.response.timetravel.TapesResponse
 import retrofit2.http.GET
 
-interface DeartodayService {
+interface TapeService {
     @GET("/timeTravel")
     fun getTapes(): List<TapesResponse>
 

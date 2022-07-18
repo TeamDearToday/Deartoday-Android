@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import co.kr.deartoday.data.model.response.TapesResponse
+import co.kr.deartoday.data.model.response.timetravel.TapesResponse
 import kotlinx.coroutines.launch
 
 class TimeTravelViewModel : ViewModel() {
