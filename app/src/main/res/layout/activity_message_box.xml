@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_check_message">
@@ -149,6 +149,7 @@
             android:layout_height="0dp"
             android:layout_marginHorizontal="12dp"
             android:layout_marginTop="40dp"
+            android:visibility="visible"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/tv_check_message"
             app:layout_constraintBottom_toBottomOf="parent"
