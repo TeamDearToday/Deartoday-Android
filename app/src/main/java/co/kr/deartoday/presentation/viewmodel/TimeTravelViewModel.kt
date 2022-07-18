@@ -12,7 +12,7 @@ class TimeTravelViewModel : ViewModel() {
     private var _tapes = MutableLiveData<List<TapesResponse.Tape>>() //업데이트,변경
     val tapes : LiveData<List<TapesResponse.Tape>> get() = _tapes    //관찰
 
-    fun setTapeData(){
+    fun getTapeData(){
         viewModelScope.launch {
             runCatching {
                 //TODO 서비스 만들기

@@ -21,12 +21,17 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
         super.onCreate(savedInstanceState)
 
         initAdapter()
+        observeUpDate()
         backBtnClickEvent()
-        upDateAdapter()
+        getAdapterData()
     }
 
     private fun initAdapter() {
-        tapeAdapter = TapeAdapter()
+        tapeAdapter = TapeAdapter { tape ->
+            val intent = Intent(this, TimeTravelDetailActivity::class.java)
+            intent.putExtra("tape_id", tape.timeTravelId)  //TODO 키값 수정
+            startActivity(intent)
+        }
         binding.rvTimeTravel.adapter = tapeAdapter
         binding.rvTimeTravel.addItemDecoration(
             TapeItemDecoration(
@@ -37,8 +42,8 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
         tapeAdapter.notifyDataSetChanged()
     }
 
-    private fun upDateAdapter() {
-        viewModel.setTapeData()
+    private fun getAdapterData() {
+        viewModel.getTapeData()
     }
 
     private fun backBtnClickEvent() {
