@@ -8,6 +8,8 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineChat4Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
@@ -53,7 +55,7 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
     private fun initAnimation() {
         (requireActivity() as TimeMachineActivity).mainScope.launch {
             fadeOutAnimator(binding.tvContent, 500).start()
-            delay(100)
+            delay(1000)
 
             showQuestion()
         }
@@ -128,6 +130,9 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
                     delay(1000)
 
                     // fragment change
+                    parentFragmentManager.commit {
+                        replace<TimeMachineChat5Fragment>(R.id.fcv_time_machine)
+                    }
                 }
             } else {
                 with(binding) {
@@ -148,7 +153,6 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
                 qnaIndex++
                 showQuestion()
             }
-            requireContext().shortToast(qnaIndex.toString())
         }
     }
 
