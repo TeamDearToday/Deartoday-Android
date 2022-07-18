@@ -50,7 +50,7 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
             (requireActivity() as TimeMachineActivity).mainScope.launch {
                 fadeOutAnimator(binding.tvContent, 500).start()
                 fadeOutAnimator(binding.tvNext, 500).start()
-                delay(1200)
+                delay(1600)
 
                 parentFragmentManager.commit {
                     replace<TimeMachineChat2Fragment>(R.id.fcv_time_machine)
