@@ -5,13 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.kr.deartoday.data.ServiceCreator
-import co.kr.deartoday.data.model.response.MessageBoxResponse
 import co.kr.deartoday.util.SingleLiveEvent
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class MessageBoxViewModel : ViewModel() {
-    private var _data = MutableLiveData<MessageBoxResponse>() //업데이트
-    val data: LiveData<MessageBoxResponse> get() = _data //관찰
+    private var _data = MutableLiveData<List<String>>() //업데이트
+    val data: LiveData<List<String>> get() = _data //관찰
 
     private var _isSuccess = SingleLiveEvent<Boolean>()
     val isSuccess: LiveData<Boolean> get() = _isSuccess
@@ -25,12 +25,11 @@ class MessageBoxViewModel : ViewModel() {
                 ServiceCreator.messageBoxService.getMessageBox()
             }
                 .onSuccess {
-                    //성공했을 때 뷰모델 정보 저장
-                    _isSuccess.value = true
+                    _data.value = it.data
                 }
                 .onFailure {
+                    Timber.e(it)
                 }
         }
-        //isEmpty인 경우에 또 처리해주고?
     }
 }
