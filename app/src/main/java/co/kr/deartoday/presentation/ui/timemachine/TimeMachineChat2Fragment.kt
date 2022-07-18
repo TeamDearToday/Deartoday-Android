@@ -35,8 +35,9 @@ class TimeMachineChat2Fragment : BaseFragment<FragmentTimeMachineChat2Binding>()
             delay(700)
             fadeInAnimator(binding.tvContent, 500).start()
             binding.tvContent.isVisible = true
+            delay(1500)
             fadeOutAnimator(binding.tvContent, 500).start()
-            delay(1200)
+            delay(1700)
 
             parentFragmentManager.commit {
                 replace<TimeMachineChat3Fragment>(R.id.fcv_time_machine)
