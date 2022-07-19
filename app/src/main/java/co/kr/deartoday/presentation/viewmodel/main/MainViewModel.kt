@@ -1,4 +1,4 @@
-package co.kr.deartoday.presentation.viewmodel
+package co.kr.deartoday.presentation.viewmodel.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

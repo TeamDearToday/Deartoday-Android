@@ -7,7 +7,7 @@
 
         <variable
             name="viewmodel"
-            type="co.kr.deartoday.presentation.viewmodel.MainViewModel" />
+            type="co.kr.deartoday.presentation.viewmodel.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,7 +1,7 @@
 package co.kr.deartoday.di
 
-import co.kr.deartoday.data.repository.TimeMachineRepositoryImpl
-import co.kr.deartoday.data.service.TimeMachineService
+import co.kr.deartoday.data.repository.timemachine.TimeMachineRepositoryImpl
+import co.kr.deartoday.data.service.timemachine.TimeMachineService
 import co.kr.deartoday.domain.repository.timemachine.TimeMachineRepository
 import dagger.Module
 import dagger.Provides

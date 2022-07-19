@@ -10,7 +10,7 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachinePastRoomBinding
 import co.kr.deartoday.presentation.adapter.PastImageAdapter
 import co.kr.deartoday.presentation.ui.base.BaseFragment
-import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
+import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.PastPhotoItemDecoration
 import co.kr.deartoday.util.fadeInAnimator
 import dagger.hilt.android.AndroidEntryPoint

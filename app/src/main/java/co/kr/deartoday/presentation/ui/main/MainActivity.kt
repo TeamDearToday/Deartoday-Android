@@ -7,7 +7,7 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityMainBinding
 import co.kr.deartoday.presentation.adapter.MainViewPagerAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
-import co.kr.deartoday.presentation.viewmodel.MainViewModel
+import co.kr.deartoday.presentation.viewmodel.main.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*

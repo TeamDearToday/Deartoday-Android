@@ -9,7 +9,7 @@ import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineChat1Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
-import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
+import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,7 +29,7 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
         super.onViewCreated(view, savedInstanceState)
         binding.viewmodel = viewModel
 
-        viewModel.getQuestions()
+        viewModel.fetchQuestions()
         initAnimation()
         initOnClickListener()
     }

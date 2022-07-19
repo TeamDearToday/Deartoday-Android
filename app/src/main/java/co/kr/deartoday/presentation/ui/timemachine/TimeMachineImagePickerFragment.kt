@@ -21,7 +21,7 @@ import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineImagePickerBinding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
-import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
+import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.getTodayString
 import co.kr.deartoday.util.shortToast
 import com.bumptech.glide.Glide

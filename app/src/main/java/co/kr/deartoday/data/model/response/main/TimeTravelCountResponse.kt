@@ -1,6 +1,6 @@
 package co.kr.deartoday.data.model.response.main
 
-data class TimeTravelCount(
+data class TimeTravelCountResponse(
     val timeTravelCount: Int
 ) {
     fun toEntity(): String {
