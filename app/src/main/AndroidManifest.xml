@@ -21,6 +21,9 @@
         android:theme="@style/Theme.DearToday"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.onboarding.DeartodaySplashActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.ui.timetravel.TimeTravelDetailActivity"
             android:exported="true" />
         <activity
@@ -34,7 +37,7 @@
             android:exported="true" />
         <activity
             android:name=".presentation.ui.onboarding.OnboardingActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".presentation.ui.signin.SignInActivity"
             android:exported="true" />
@@ -55,6 +58,7 @@
         <activity
             android:name=".presentation.ui.main.MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
