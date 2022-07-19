@@ -3,6 +3,7 @@ package co.kr.deartoday.di
 import co.kr.deartoday.data.repository.timemachine.TimeMachineRepositoryImpl
 import co.kr.deartoday.data.service.timemachine.TimeMachineService
 import co.kr.deartoday.domain.repository.timemachine.TimeMachineRepository
+import co.kr.deartoday.presentation.usecase.TimeMachineUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,4 +26,11 @@ object TimeMachineModule {
         timeMachineService: TimeMachineService,
         @IoDispatcher coroutineDispatcher: CoroutineDispatcher
     ): TimeMachineRepository = TimeMachineRepositoryImpl(timeMachineService, coroutineDispatcher)
+
+    @Provides
+    @Singleton
+    fun provideTimeMachineUseCase(
+        timeMachineService: TimeMachineService,
+        @IoDispatcher coroutineDispatcher: CoroutineDispatcher
+    ): TimeMachineUseCase = TimeMachineUseCase(timeMachineService, coroutineDispatcher)
 }
