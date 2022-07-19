@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="당신에게 궁금한게 많은지 이것저것 질문을 합니다."
+            android:text="당신에게 궁금한 게 많은지 이것저것 질문을 합니다."
             android:textColor="@color/light_gray_e0e0e0"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
