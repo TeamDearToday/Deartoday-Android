@@ -24,9 +24,10 @@ class DeartodaySplashActivity : BaseActivity<ActivityDeartodaySplashBinding>() {
 
     private fun initAnimation() {
         CoroutineScope(Dispatchers.Main).launch {
-            fadeInAnimator(binding.tvSoundon, 1000).start()
+            delay(1000)
+            fadeInAnimator(binding.tvSoundon, 500).start()
             binding.tvSoundon.visibility = View.VISIBLE
-            delay(2000)
+            delay(3000)
             val intent = Intent(this@DeartodaySplashActivity, OnboardingActivity::class.java)
             startActivity(intent)
         }
