@@ -161,6 +161,7 @@
                 android:background="@android:color/transparent"
                 android:hint="답장을 입력해주세요"
                 android:maxLines="2"
+                android:text="@={viewmodel.answer}"
                 android:textColor="@color/white_ffffff"
                 android:textColorHint="@color/gray_01_a0a0a0"
                 app:layout_constraintBottom_toBottomOf="@id/tv_send"
@@ -176,7 +177,8 @@
                 android:layout_marginBottom="10dp"
                 android:padding="4dp"
                 android:text="보내기"
-                android:textColor="@color/blue_558fff"
+                android:textColor="@{viewmodel.answer.length() == 0 ? @color/gray_01_a0a0a0 : @color/blue_558fff}"
+                android:clickable="@{viewmodel.answer.length() == 0 ? false : true}"
                 app:layout_constraintBottom_toBottomOf="@id/layout_underline_answer"
                 app:layout_constraintEnd_toEndOf="parent" />
 
