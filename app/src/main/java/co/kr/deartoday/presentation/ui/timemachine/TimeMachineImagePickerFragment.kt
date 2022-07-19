@@ -25,10 +25,11 @@ import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
 import co.kr.deartoday.util.getTodayString
 import co.kr.deartoday.util.shortToast
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
-
+@AndroidEntryPoint
 class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePickerBinding>() {
     override val TAG: String
         get() = TimeMachineImagePickerFragment::class.java.simpleName
