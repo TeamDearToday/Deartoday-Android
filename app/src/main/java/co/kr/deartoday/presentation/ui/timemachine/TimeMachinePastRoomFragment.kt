@@ -72,6 +72,6 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
     }
 
     companion object {
-        fun newInstance(param1: String, param2: String) = TimeMachinePastRoomFragment()
+        fun newInstance() = TimeMachinePastRoomFragment()
     }
 }
