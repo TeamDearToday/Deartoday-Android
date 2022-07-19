@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewmodel"
+            type="co.kr.deartoday.presentation.viewmodel.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -85,7 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
-                    android:text="0"
+                    android:text="@{viewmodel.timeTravelCount}"
                     android:textColor="@color/blue_558fff"
                     app:layout_constraintBottom_toBottomOf="@id/iv_message"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -152,7 +155,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
-                    android:text="0"
+                    android:text="@{viewmodel.timeTravelCount}"
                     android:textColor="@color/blue_558fff"
                     app:layout_constraintBottom_toBottomOf="@id/iv_video_tape"
                     app:layout_constraintEnd_toEndOf="parent"

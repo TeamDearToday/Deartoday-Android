@@ -2,6 +2,7 @@ package co.kr.deartoday.presentation.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityMainBinding
@@ -9,18 +10,29 @@ import co.kr.deartoday.presentation.adapter.MainViewPagerAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.onboarding.OnboardingActivity
 import co.kr.deartoday.presentation.ui.setting.SettingActivity
+import co.kr.deartoday.presentation.viewmodel.main.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
+@AndroidEntryPoint
 class MainActivity() : BaseActivity<ActivityMainBinding>() {
     override val layoutRes: Int
         get() = R.layout.activity_main
     private lateinit var mainViewPagerAdapter: MainViewPagerAdapter
 
+    private val viewModel by viewModels<MainViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel.fetchTimeTravelCount()
         initView()
         settingBtnClickEvent()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        viewModel.fetchTimeTravelCount()
     }
 
     private fun initView() {

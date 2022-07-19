@@ -9,12 +9,15 @@ import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineChat1Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
-import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
+import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
+import co.kr.deartoday.util.setOnSingleClickListener
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>() {
     override val TAG: String
         get() = TimeMachineChat1Fragment::class.java.simpleName
@@ -27,7 +30,7 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
         super.onViewCreated(view, savedInstanceState)
         binding.viewmodel = viewModel
 
-        viewModel.getQuestions()
+        viewModel.fetchQuestions()
         initAnimation()
         initOnClickListener()
     }
@@ -46,7 +49,7 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
     }
 
     private fun initOnClickListener() {
-        binding.tvNext.setOnClickListener {
+        binding.tvNext.setOnSingleClickListener {
             (requireActivity() as TimeMachineActivity).mainScope.launch {
                 fadeOutAnimator(binding.tvContent, 500).start()
                 fadeOutAnimator(binding.tvNext, 500).start()
@@ -57,7 +60,7 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
                 }
             }
         }
-        binding.ivExit.setOnClickListener {
+        binding.ivExit.setOnSingleClickListener {
             requireActivity().onBackPressed()
         }
     }

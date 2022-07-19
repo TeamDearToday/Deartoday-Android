@@ -9,7 +9,9 @@ import co.kr.deartoday.presentation.ui.timemachine.TimeMachineActivity
 import co.kr.deartoday.util.getScreenHeightDp
 import co.kr.deartoday.util.getScreenWidthDp
 import co.kr.deartoday.util.setTouchLayout
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainLeftFragment : BaseFragment<FragmentMainLeftBinding>() {
     override val TAG: String
         get() = MainLeftFragment::class.java.simpleName

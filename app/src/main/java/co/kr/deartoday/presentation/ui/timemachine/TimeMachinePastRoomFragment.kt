@@ -8,14 +8,16 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachinePastRoomBinding
-import co.kr.deartoday.presentation.adapter.PastPhotoAdapter
+import co.kr.deartoday.presentation.adapter.PastImageAdapter
 import co.kr.deartoday.presentation.ui.base.BaseFragment
-import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
+import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.PastPhotoItemDecoration
 import co.kr.deartoday.util.fadeInAnimator
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBinding>() {
     override val TAG: String
         get() = TimeMachinePastRoomFragment::class.java.simpleName
@@ -23,12 +25,12 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
         get() = R.layout.fragment_time_machine_past_room
 
     private val viewModel by activityViewModels<TimeMachineViewModel>()
-    private val pastPhotoAdapter by lazy { PastPhotoAdapter() }
+    private val pastImageAdapter by lazy { PastImageAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.viewmodel = viewModel
-        viewModel.getPastPhotos()
+        viewModel.fetchPastImages()
         initView()
         initAnimation()
         initOnClickListener()
@@ -37,7 +39,7 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
 
     private fun initView() {
         with(binding.rvPastPhoto) {
-            adapter = pastPhotoAdapter
+            adapter = pastImageAdapter
             addItemDecoration(PastPhotoItemDecoration(15))
         }
     }
@@ -66,12 +68,12 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
     }
 
     private fun observeData() {
-        viewModel.pastPhotos.observe(viewLifecycleOwner) {
-            pastPhotoAdapter.updateItem(it)
+        viewModel.pastImages.observe(viewLifecycleOwner) {
+            pastImageAdapter.updateItem(it)
         }
     }
 
     companion object {
-        fun newInstance(param1: String, param2: String) = TimeMachinePastRoomFragment()
+        fun newInstance() = TimeMachinePastRoomFragment()
     }
 }
