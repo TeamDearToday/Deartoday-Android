@@ -13,9 +13,11 @@ import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
 import co.kr.deartoday.util.PastPhotoItemDecoration
 import co.kr.deartoday.util.fadeInAnimator
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBinding>() {
     override val TAG: String
         get() = TimeMachinePastRoomFragment::class.java.simpleName
