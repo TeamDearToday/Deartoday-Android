@@ -1,4 +1,4 @@
-package co.kr.deartoday.presentation.ui.onboarding
+package co.kr.deartoday.presentation.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.view.View
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityDeartodaySplashBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import co.kr.deartoday.presentation.ui.onboarding.OnboardingActivity
 import co.kr.deartoday.util.fadeInAnimator
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -24,9 +25,10 @@ class DeartodaySplashActivity : BaseActivity<ActivityDeartodaySplashBinding>() {
 
     private fun initAnimation() {
         CoroutineScope(Dispatchers.Main).launch {
-            fadeInAnimator(binding.tvSoundon, 1000).start()
+            delay(1000)
+            fadeInAnimator(binding.tvSoundon, 500).start()
             binding.tvSoundon.visibility = View.VISIBLE
-            delay(2000)
+            delay(3000)
             val intent = Intent(this@DeartodaySplashActivity, OnboardingActivity::class.java)
             startActivity(intent)
         }
