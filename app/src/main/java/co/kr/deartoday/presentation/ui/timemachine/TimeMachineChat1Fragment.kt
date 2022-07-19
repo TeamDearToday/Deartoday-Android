@@ -12,6 +12,7 @@ import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
+import co.kr.deartoday.util.setOnSingleClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -48,7 +49,7 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
     }
 
     private fun initOnClickListener() {
-        binding.tvNext.setOnClickListener {
+        binding.tvNext.setOnSingleClickListener {
             (requireActivity() as TimeMachineActivity).mainScope.launch {
                 fadeOutAnimator(binding.tvContent, 500).start()
                 fadeOutAnimator(binding.tvNext, 500).start()
@@ -59,7 +60,7 @@ class TimeMachineChat1Fragment : BaseFragment<FragmentTimeMachineChat1Binding>()
                 }
             }
         }
-        binding.ivExit.setOnClickListener {
+        binding.ivExit.setOnSingleClickListener {
             requireActivity().onBackPressed()
         }
     }
