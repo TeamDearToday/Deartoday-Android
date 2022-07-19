@@ -11,8 +11,10 @@ import androidx.lifecycle.lifecycleScope
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityTimeMachineBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.cancel
 
+@AndroidEntryPoint
 class TimeMachineActivity : BaseActivity<ActivityTimeMachineBinding>() {
     val mainScope = this.lifecycleScope
 
