@@ -35,6 +35,7 @@ class TimeMachineViewModel @Inject constructor(
     private val answers = mutableListOf<String>()
     private var _lastMessages = listOf<String>()
     val lastMessages get() = _lastMessages
+    val answer = MutableLiveData<String>()
 
     init {
         with(_isImagePickerProcessComplete) {
