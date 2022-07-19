@@ -1,7 +1,6 @@
 package co.kr.deartoday.data.sharedpreferences
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.core.content.edit
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
