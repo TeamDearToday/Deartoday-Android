@@ -15,6 +15,7 @@ const val FILE_NAME = "DEAR_TODAY_..."
 // 아무래도 deartoday token 값을 넣거나 삭제할 수 있어야 하겠죠?
 // 추후에 sharedprferences token 값이 있거나 없을 경우 -> 자동 로그인 or 뭐 기타등등 해야겠죠?
 // 이 주석은 merge 직전에 사라질 예정입니다.
+// 파일 name 수정요망
 
 class DearTodaySharedPreferences @Inject constructor(
     @ApplicationContext private val context: Context
@@ -27,9 +28,9 @@ class DearTodaySharedPreferences @Inject constructor(
         EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
     )
 
-    var dearTodayToken: String
-        set(value) = dearTodaySharedPreferences.edit { putString("DEAR_TODAY_TOKEN", value) }
-        get() = dearTodaySharedPreferences.getString("DEAR_TODAY_TOKEN", "") ?: ""
+    var accessToken: String
+        set(value) = dearTodaySharedPreferences.edit { putString("ACCESS_TOKEN", value) }
+        get() = dearTodaySharedPreferences.getString("ACCESS_TOKEN", "") ?: ""
 
     var autoLogin: Boolean
         set(value) = dearTodaySharedPreferences.edit { putBoolean("AUTO_LOGIN", value) }

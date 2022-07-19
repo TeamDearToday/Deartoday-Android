@@ -1,12 +1,15 @@
 package co.kr.deartoday.presentation.ui.signin
 
 import android.content.ContentValues
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import co.kr.deartoday.R
+import co.kr.deartoday.data.sharedpreferences.DearTodaySharedPreferences
 import co.kr.deartoday.databinding.ActivitySignInBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import co.kr.deartoday.presentation.ui.main.MainActivity
 import co.kr.deartoday.presentation.viewmodel.SignInViewModel
 import com.kakao.sdk.user.UserApiClient
 import timber.log.Timber
@@ -19,6 +22,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        observeAccessToken()
         setOnLayoutButtonClickListener()
     }
 
@@ -46,6 +50,16 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
                     Timber.tag(ContentValues.TAG).i("로그인 성공 ${token.accessToken}")
                     viewModel.login("KAKAO", token.accessToken)
                 }
+            }
+        }
+    }
+
+    private fun observeAccessToken() {
+        viewModel.accessToken.observe(this) {
+            DearTodaySharedPreferences(this).accessToken = it
+            startActivity(Intent(this, MainActivity::class.java))
+            if(!isFinishing) {
+                finish()
             }
         }
     }
