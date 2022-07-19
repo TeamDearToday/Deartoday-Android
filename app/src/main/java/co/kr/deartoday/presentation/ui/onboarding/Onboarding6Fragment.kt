@@ -36,8 +36,8 @@ class Onboarding6Fragment : BaseFragment<FragmentOnboarding6Binding>() {
 
     private fun initAnimation() {
         CoroutineScope(Dispatchers.Main).launch {
-            val fadeIn1 = fadeInAnimator(binding.tvOb6Line1, 1000)
-            val slideUp1 = slideUpAnimator(binding.tvOb6Line1, 1000)
+            val fadeIn1 = fadeInAnimator(binding.tvOb6Line1, 500)
+            val slideUp1 = slideUpAnimator(binding.tvOb6Line1, 500)
             binding.tvOb6Line1.visibility = View.VISIBLE
             fadeIn1.start()
             slideUp1.start()
