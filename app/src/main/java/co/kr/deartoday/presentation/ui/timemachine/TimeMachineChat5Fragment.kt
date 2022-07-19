@@ -1,6 +1,9 @@
 package co.kr.deartoday.presentation.ui.timemachine
 
+import android.graphics.ImageDecoder
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
@@ -10,6 +13,8 @@ import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
+import co.kr.deartoday.util.setOnSingleClickListener
+import co.kr.deartoday.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -31,8 +36,16 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
     }
 
     private fun initOnClickListener() {
-        binding.tvNext.setOnClickListener {
-            requireActivity().finish()
+        binding.ivExit.setOnSingleClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.tvNext.setOnSingleClickListener {
+            (requireActivity() as TimeMachineActivity).mainScope.launch {
+                fadeOutAnimator(binding.root, 1000).start()
+                delay(2000)
+                toBitmap()
+//                requireActivity().finish()
+            }
         }
     }
 
@@ -60,6 +73,28 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
                 }
                 delay(3200)
             }
+        }
+    }
+
+    private fun toBitmap() {
+        runCatching {
+            ImageDecoder.decodeBitmap(
+                ImageDecoder.createSource(
+                    requireActivity().contentResolver,
+                    requireNotNull(viewModel.imageUri.value)
+                )
+            )
+        }.onSuccess {
+            viewModel.bitmap = it
+            viewModel.postTimeTravel()
+        }.onFailure {
+            requireContext().shortToast("앗뿔싸!")
+        }
+    }
+
+    private fun observeData() {
+        viewModel.isSuccess.observe(viewLifecycleOwner) {
+            requireContext().shortToast(it.toString())
         }
     }
 

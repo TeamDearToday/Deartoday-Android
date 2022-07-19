@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.onboarding.DeartodaySplashActivity">
+        tools:context=".presentation.ui.splash.DeartodaySplashActivity">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottie_animation_view"
@@ -20,8 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
-            app:lottie_fileName="splash.json"
-            app:lottie_loop="true" />
+            app:lottie_fileName="splash.json" />
 
         <TextView
             android:id="@+id/tv_soundon"
@@ -30,12 +29,16 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="6dp"
             android:layout_marginBottom="57dp"
-            android:visibility="invisible"
             android:background="@drawable/btn_large_present"
             android:clickable="true"
+            android:fontFamily="@font/pretendard_regular"
             android:gravity="center"
+            android:paddingVertical="23dp"
             android:text="@string/soundon"
             android:textColor="@color/dark_gray_323232"
+            android:textSize="12dp"
+            android:lineHeight="20dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent" />

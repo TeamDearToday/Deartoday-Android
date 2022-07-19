@@ -9,6 +9,5 @@ class OnboardingActivity : BaseActivity<ActivityOnboardingBinding>() {
         get() = R.layout.activity_onboarding
 
     override fun onBackPressed() {
-//        super.onBackPressed()
     }
 }
