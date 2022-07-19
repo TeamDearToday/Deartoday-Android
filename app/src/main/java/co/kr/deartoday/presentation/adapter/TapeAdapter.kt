@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.kr.deartoday.data.model.response.timetravel.TapesResponse
 import co.kr.deartoday.databinding.ItemTimeTravelBinding
+import com.bumptech.glide.Glide
 
 class TapeAdapter(private val itemClick: (TapesResponse.Tape) -> (Unit)) :
     RecyclerView.Adapter<TapeAdapter.TimeTravelTapeViewHolder>() {
@@ -27,6 +28,7 @@ class TapeAdapter(private val itemClick: (TapesResponse.Tape) -> (Unit)) :
         private val itemClick: (TapesResponse.Tape) -> (Unit)
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: TapesResponse.Tape) {
+            Glide.with(itemView).load(data.image).into(binding.ivTapeInner)
             binding.content.text = data.title
             binding.tvTravelFrom.text = data.writtenDate
             binding.tvTravelTo.text = "%d.%d.%d".format(data.year, data.month, data.day)
