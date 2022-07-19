@@ -6,17 +6,18 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ItemPastPhotoBinding
+import co.kr.deartoday.util.dpToPx
+import com.bumptech.glide.Glide
 
-class PastPhotoAdapter : RecyclerView.Adapter<PastPhotoAdapter.PastPhotoViewHolder>() {
+class PastImageAdapter : RecyclerView.Adapter<PastImageAdapter.PastPhotoViewHolder>() {
     private var itemList = listOf<String>()
 
     class PastPhotoViewHolder(val binding: ItemPastPhotoBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(photo: String) {
-//            Glide.with(binding.ivPhoto)
-//                .load(photo)
-//                .into(binding.ivPhoto)
-            binding.ivPhoto.setImageResource(R.drawable.main_left_withg_a_1)
+        fun onBind(photo: String) {
+            Glide.with(binding.ivPhoto)
+                .load(photo)
+                .into(binding.ivPhoto)
         }
     }
 
@@ -27,11 +28,14 @@ class PastPhotoAdapter : RecyclerView.Adapter<PastPhotoAdapter.PastPhotoViewHold
             parent,
             false
         )
+        val params = binding.root.layoutParams
+        params.width = parent.width - (47).dpToPx()
+        binding.root.layoutParams = params
         return PastPhotoViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: PastPhotoViewHolder, position: Int) {
-        holder.bind(itemList[position])
+        holder.onBind(itemList[position])
     }
 
     override fun getItemCount(): Int = itemList.size
