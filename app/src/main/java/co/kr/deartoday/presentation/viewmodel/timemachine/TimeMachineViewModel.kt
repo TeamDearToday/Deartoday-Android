@@ -30,8 +30,8 @@ class TimeMachineViewModel @Inject constructor(
     val pastImages: LiveData<List<String>> get() = _pastImages
 
     // TimeMachineChatFragments
-    private var _questions = mutableListOf<String>()
-    val questions get() = _questions.toList()
+    private var _questions = listOf<String>()
+    val questions get() = _questions
     private val answers = mutableListOf<String>()
     private var _lastMessages = listOf<String>()
     val lastMessages get() = _lastMessages
@@ -71,21 +71,16 @@ class TimeMachineViewModel @Inject constructor(
     }
 
     // TimeMachineChatFragments
-    fun getQuestions() {
-        val list = listOf<String>(
-            "Q1",
-            "Q2",
-            "Q3",
-            "Q4",
-            "Q5"
-        )
-        val lastMsg = listOf<String>(
-            "LastMsg1",
-            "LastMsg2",
-            "LastMsg3"
-        )
-        _questions = list.toMutableList()
-        _lastMessages = lastMsg
+    fun fetchQuestions() {
+        viewModelScope.launch {
+            timeMachineRepository.fetchQuestions()
+                .onSuccess {
+                    _questions = it.questions
+                    _lastMessages = it.lastMessages
+                }.onFailure {
+                    Timber.e(it)
+                }
+        }
     }
 
     fun addAnswer(answer: String) {
