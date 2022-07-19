@@ -11,6 +11,7 @@ import co.kr.deartoday.databinding.ActivityMessageBoxBinding
 import co.kr.deartoday.presentation.adapter.MessageBoxAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.main.MainActivity
+import co.kr.deartoday.presentation.ui.timemachine.TimeMachineActivity
 import co.kr.deartoday.presentation.viewmodel.MessageBoxViewModel
 import co.kr.deartoday.util.CustomDialog
 import co.kr.deartoday.util.MessageBoxItemDecoration
@@ -42,7 +43,8 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
 
     private fun timeTravelBtnClickEvent() {
         binding.layoutGoTimeTravel.setOnClickListener {
-            startActivity(Intent(this@MessageBoxActivity, MainActivity::class.java))
+            startActivity(Intent(this@MessageBoxActivity, TimeMachineActivity::class.java))
+            finish()
         }
     }
 
@@ -64,16 +66,11 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
         )
     }
 
-    private fun observeData(){
-        viewModel.data.observe(this){
-            messageBoxAdapter.messageBoxList.addAll(it)
-            messageBoxAdapter.notifyDataSetChanged()
-        }
-
-        viewModel.isEmpty.observe(this) {
-            if (it) {
-                binding.layoutMessageBoxEmpty.isVisible
-                binding.rvMessage.isGone
+    private fun observeData() {
+        viewModel.data.observe(this) {
+            if (it.isNotEmpty()) {
+                messageBoxAdapter.messageBoxList.addAll(it)
+                messageBoxAdapter.notifyDataSetChanged()
             }
         }
     }
