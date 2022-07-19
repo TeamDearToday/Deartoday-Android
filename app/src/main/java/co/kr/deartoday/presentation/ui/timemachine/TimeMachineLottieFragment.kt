@@ -14,9 +14,9 @@ import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
 import co.kr.deartoday.util.getTodayString
 import co.kr.deartoday.util.textCounterAnimator
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TimeMachineLottieFragment : BaseFragment<FragmentTimeMachineLottieBinding>() {
     override val TAG: String
         get() = TimeMachineLottieFragment::class.java.simpleName
@@ -33,32 +33,28 @@ class TimeMachineLottieFragment : BaseFragment<FragmentTimeMachineLottieBinding>
     }
 
     private fun initAnimation() {
-        (requireActivity() as TimeMachineActivity).mainScope.launch {
-            fadeOutAnimator(binding.ivBackground, 1000).start()
-            fadeInAnimator(binding.lottieTape, 1000).start()
-            delay(2000)
-            binding.lottieTape.playAnimation()
-            binding.lottieTape.addAnimatorListener(object : Animator.AnimatorListener {
-                override fun onAnimationStart(p0: Animator?) {
-                    startDateAnimation()
+        fadeOutAnimator(binding.ivBackground, 1000).start()
+        fadeInAnimator(binding.lottieTape, 1000).start()
+        binding.lottieTape.playAnimation()
+        binding.lottieTape.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(p0: Animator?) {
+                startDateAnimation()
+            }
+
+            override fun onAnimationEnd(p0: Animator?) {
+                parentFragmentManager.commit {
+                    replace<TimeMachinePastRoomFragment>(R.id.fcv_time_machine)
                 }
+            }
 
-                override fun onAnimationEnd(p0: Animator?) {
-                    parentFragmentManager.commit {
-                        replace<TimeMachinePastRoomFragment>(R.id.fcv_time_machine)
-                    }
-                }
+            override fun onAnimationCancel(p0: Animator?) {
 
-                override fun onAnimationCancel(p0: Animator?) {
+            }
 
-                }
+            override fun onAnimationRepeat(p0: Animator?) {
 
-                override fun onAnimationRepeat(p0: Animator?) {
-
-                }
-
-            })
-        }
+            }
+        })
     }
 
     private fun startDateAnimation() {
