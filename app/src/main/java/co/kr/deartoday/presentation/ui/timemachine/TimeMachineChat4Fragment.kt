@@ -18,6 +18,7 @@ import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.dpToPx
 import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
+import co.kr.deartoday.util.setOnSingleClickListener
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -50,7 +51,10 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
     }
 
     private fun initOnClickListener() {
-        binding.tvSend.setOnClickListener {
+        binding.ivExit.setOnSingleClickListener {
+            requireActivity().onBackPressed()
+        }
+        binding.tvSend.setOnSingleClickListener {
             sendAnswer()
         }
     }
