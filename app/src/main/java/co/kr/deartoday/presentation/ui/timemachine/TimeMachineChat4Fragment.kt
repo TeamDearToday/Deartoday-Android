@@ -112,11 +112,13 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
         (requireActivity() as TimeMachineActivity).mainScope.launch {
             fadeOutAnimator(binding.etAnswer, 1000).start()
             fadeOutAnimator(binding.tvContent, 1000).start()
+            val answer = binding.etAnswer.text.toString()
+            binding.etAnswer.setText("")
             delay(2000)
 
             if (qnaIndex == viewModel.questions.size) {
                 with(binding) {
-                    tvContent.text = etAnswer.text.toString()
+                    tvContent.text = answer
                     tvContent.setBackgroundResource(R.drawable.rectangle_textfield_border_blue_radius_4_20)
                     tvContent.backgroundTintList =
                         requireContext().getColorStateList(R.color.light_blue_e9f1fe)
@@ -129,7 +131,7 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
                     )
                     tvContent.maxLines = 2
                     tvContent.ellipsize = TextUtils.TruncateAt.END
-                    viewModel.addAnswer(etAnswer.text.toString())
+                    viewModel.addAnswer(answer)
                     fadeInAnimator(binding.tvContent, 1000).start()
                     fadeOutAnimator(binding.layoutAnswer, 1000).start()
                     binding.layoutAnswer.isVisible = false
@@ -149,14 +151,13 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
                 }
             } else {
                 with(binding) {
-                    tvContent.text = etAnswer.text.toString()
+                    tvContent.text = answer
                     tvContent.setBackgroundResource(R.drawable.rectangle_textfield_border_blue_radius_4_20)
                     tvContent.backgroundTintList =
                         requireContext().getColorStateList(R.color.light_blue_e9f1fe)
                     tvContent.maxLines = 2
                     tvContent.ellipsize = TextUtils.TruncateAt.END
-                    viewModel.addAnswer(etAnswer.text.toString())
-                    etAnswer.setText("")
+                    viewModel.addAnswer(answer)
                 }
                 fadeInAnimator(binding.tvContent, 1000).start()
                 delay(2000)
