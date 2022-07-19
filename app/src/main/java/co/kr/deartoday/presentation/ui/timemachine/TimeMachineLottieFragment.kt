@@ -14,9 +14,9 @@ import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
 import co.kr.deartoday.util.getTodayString
 import co.kr.deartoday.util.textCounterAnimator
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TimeMachineLottieFragment : BaseFragment<FragmentTimeMachineLottieBinding>() {
     override val TAG: String
         get() = TimeMachineLottieFragment::class.java.simpleName
