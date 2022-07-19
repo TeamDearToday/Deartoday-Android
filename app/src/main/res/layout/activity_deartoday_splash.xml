@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.onboarding.DeartodaySplashActivity">
+        tools:context=".presentation.ui.splash.DeartodaySplashActivity">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottie_animation_view"
