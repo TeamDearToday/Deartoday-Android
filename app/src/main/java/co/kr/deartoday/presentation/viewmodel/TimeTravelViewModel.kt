@@ -7,21 +7,22 @@ import androidx.lifecycle.viewModelScope
 import co.kr.deartoday.data.ServiceCreator
 import co.kr.deartoday.data.model.response.timetravel.TapesResponse
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class TimeTravelViewModel : ViewModel() {
     //TimeTravelActivity
     private var _tapes = MutableLiveData<TapesResponse>() //업데이트,변경
     val tapes: LiveData<TapesResponse> get() = _tapes    //관찰
 
-    fun getTapeData(token: String) {
+    fun getTapeData() {
         viewModelScope.launch {
             runCatching {
-                //TODO 서비스 만들기
                 ServiceCreator.tapeService.getTapes()
             }.onSuccess {
+                Timber.v("성공?")
                 _tapes.value = it.data!!
             }.onFailure {
-                //TODO 오류처리
+                Timber.v("tape 가져오기 실패 [${it}]")
             }
         }
     }

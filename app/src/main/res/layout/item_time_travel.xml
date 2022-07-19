@@ -20,7 +20,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/main_left_withg_a_1"
         app:layout_constraintBottom_toBottomOf="@id/iv_tape"
         app:layout_constraintDimensionRatio="131:74"
         app:layout_constraintEnd_toEndOf="@id/iv_tape"
@@ -28,7 +27,8 @@
         app:layout_constraintStart_toStartOf="@id/iv_tape"
         app:layout_constraintTop_toTopOf="@id/iv_tape"
         app:layout_constraintVertical_bias="0.5535"
-        app:layout_constraintWidth_percent="0.4" />
+        app:layout_constraintWidth_percent="0.4"
+        tools:src="@drawable/main_left_withg_a_1" />
 
 
     <TextView
