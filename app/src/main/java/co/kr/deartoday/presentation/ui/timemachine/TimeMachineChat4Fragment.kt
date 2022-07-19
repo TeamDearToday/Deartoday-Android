@@ -18,11 +18,12 @@ import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
 import co.kr.deartoday.util.dpToPx
 import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
-import co.kr.deartoday.util.slideUpAnimator
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>() {
     override val TAG: String
         get() = TimeMachineChat4Fragment::class.java.simpleName
