@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.setting.SettingActivity">
+
+        <ImageButton
+            android:id="@+id/ib_setting_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white_ffffff"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_setting"
+            style="@style/P4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/setting"
+            android:textColor="@color/blue_558fff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ib_setting_back" />
+
+        <TextView
+            android:id="@+id/tv_sound"
+            style="@style/P2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/sound"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_setting" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="28dp"
+            android:theme="@style/Switch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_setting"
+            />
+
+        <View
+            android:id="@+id/v_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/light_blue_e9f1fe"
+            app:layout_constraintTop_toBottomOf="@id/tv_sound" />
+
+        <TextView
+            android:id="@+id/tv_pushalarm"
+            style="@style/P2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/pushalarm"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_line1" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_push_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:theme="@style/Switch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v_line1"
+            app:layout_constraintBottom_toBottomOf="@+id/v_line2"/>
+
+        <View
+            android:id="@+id/v_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/light_blue_e9f1fe"
+            app:layout_constraintTop_toBottomOf="@id/tv_pushalarm" />
+
+        <TextView
+            android:id="@+id/tv_deartoday_info"
+            style="@style/P4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/deartoday_info"
+            android:textColor="@color/blue_558fff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_line2" />
+
+        <TextView
+            android:id="@+id/tv_service_rule"
+            style="@style/P2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/service_rule"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_deartoday_info" />
+
+        <View
+            android:id="@+id/v_line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/light_blue_e9f1fe"
+            app:layout_constraintTop_toBottomOf="@id/tv_service_rule" />
+
+        <TextView
+            android:id="@+id/tv_inquiry"
+            style="@style/P2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/inquiry"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_line3" />
+
+        <View
+            android:id="@+id/v_line4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/light_blue_e9f1fe"
+            app:layout_constraintTop_toBottomOf="@id/tv_inquiry" />
+
+        <TextView
+            android:id="@+id/tv_opensource_license"
+            style="@style/P2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/opensource_license"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_line4" />
+
+        <View
+            android:id="@+id/v_line5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/light_blue_e9f1fe"
+            app:layout_constraintTop_toBottomOf="@id/tv_opensource_license" />
+
+        <TextView
+            android:id="@+id/tv_team_deartoday"
+            style="@style/P2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/team_deartoday"
+            android:textColor="@color/dark_gray_323232"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_line5" />
+
+        <View
+            android:id="@+id/v_line6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@color/light_blue_e9f1fe"
+            app:layout_constraintTop_toBottomOf="@id/tv_team_deartoday" />
+
+        <TextView
+            android:id="@+id/tv_logout"
+            style="@style/P4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="53dp"
+            android:text="@string/logout"
+            android:clickable="true"
+            android:textColor="@color/blue_78a6ff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/v_line6" />
+
+        <TextView
+            android:id="@+id/tv_leave_service"
+            style="@style/P4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/leave_service"
+            android:textColor="@color/blue_78a6ff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_logout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
