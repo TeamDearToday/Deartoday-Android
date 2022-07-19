@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import co.kr.deartoday.R
+import co.kr.deartoday.data.sharedpreferences.DearTodaySharedPreferences
 import co.kr.deartoday.databinding.ActivityTimeTravelBinding
 import co.kr.deartoday.presentation.adapter.TapeAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
@@ -43,7 +44,8 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     }
 
     private fun getAdapterData() {
-        viewModel.getTapeData()
+        //수정요망
+        viewModel.getTapeData(DearTodaySharedPreferences(this).dearTodayToken)
     }
 
     private fun backBtnClickEvent() {
@@ -54,7 +56,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
 
     private fun observeUpDate() {
         viewModel.tapes.observe(this) {
-            tapeAdapter.tapeList.addAll(it)
+            tapeAdapter.tapeList.addAll(it.tapes)
             tapeAdapter.notifyDataSetChanged()
         }
     }

@@ -1,4 +1,4 @@
-package co.kr.deartoday.data.model.response
+package co.kr.deartoday.data.model.response.timetravel
 
 data class DetailTapeResponse(
     val title: String,

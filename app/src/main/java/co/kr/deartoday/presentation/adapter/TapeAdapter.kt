@@ -3,7 +3,7 @@ package co.kr.deartoday.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import co.kr.deartoday.data.model.response.TapesResponse
+import co.kr.deartoday.data.model.response.timetravel.TapesResponse
 import co.kr.deartoday.databinding.ItemTimeTravelBinding
 
 class TapeAdapter(private val itemClick: (TapesResponse.Tape) -> (Unit)) :
