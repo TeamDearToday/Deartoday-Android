@@ -1,4 +1,4 @@
-package co.kr.deartoday.presentation.viewmodel
+package co.kr.deartoday.presentation.viewmodel.timemachine
 
 import android.net.Uri
 import androidx.lifecycle.*

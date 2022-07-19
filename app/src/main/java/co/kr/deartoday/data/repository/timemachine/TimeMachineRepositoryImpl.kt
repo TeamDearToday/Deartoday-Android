@@ -1,6 +1,6 @@
-package co.kr.deartoday.data.repository
+package co.kr.deartoday.data.repository.timemachine
 
-import co.kr.deartoday.data.service.TimeMachineService
+import co.kr.deartoday.data.service.timemachine.TimeMachineService
 import co.kr.deartoday.di.IoDispatcher
 import co.kr.deartoday.domain.repository.timemachine.TimeMachineRepository
 import kotlinx.coroutines.CoroutineDispatcher

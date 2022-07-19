@@ -1,4 +1,4 @@
-package co.kr.deartoday.data.service
+package co.kr.deartoday.data.service.main
 
 import co.kr.deartoday.data.model.response.BaseResponse
 import co.kr.deartoday.data.model.response.main.TimeTravelCount

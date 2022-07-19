@@ -1,6 +1,6 @@
-package co.kr.deartoday.data.repository
+package co.kr.deartoday.data.repository.main
 
-import co.kr.deartoday.data.service.MainService
+import co.kr.deartoday.data.service.main.MainService
 import co.kr.deartoday.domain.repository.main.MainRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
