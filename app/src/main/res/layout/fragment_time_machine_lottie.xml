@@ -15,12 +15,24 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.timemachine.TimeMachineLottieFragment">
 
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/main_left_withg_a_1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#cc323232" />
+
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottie_tape"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            app:lottie_autoPlay="true"
             app:lottie_fileName="timetravel_lottie.json" />
 
         <TextView
