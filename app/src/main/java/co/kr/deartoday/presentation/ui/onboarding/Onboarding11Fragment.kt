@@ -29,25 +29,25 @@ class Onboarding11Fragment : BaseFragment<FragmentOnboarding11Binding>() {
 
     private fun initAnimation() {
         CoroutineScope(Dispatchers.Main).launch {
-            delay(500)
+            delay(1000)
 
             val fadeIn1 = fadeInAnimator(binding.tvOb11Line1, 600)
             binding.tvOb11Line1.visibility = View.VISIBLE
             fadeIn1.start()
 
-            delay(1200)
+            delay(2400)
 
             val fadeIn2 = fadeInAnimator(binding.tvOb11Line2, 600)
             binding.tvOb11Line2.visibility = View.VISIBLE
             fadeIn2.start()
 
-            delay(1200)
+            delay(2400)
 
             val fadeIn3 = fadeInAnimator(binding.tvOb11Line3, 600)
             binding.tvOb11Line3.visibility = View.VISIBLE
             fadeIn3.start()
 
-            delay(1200)
+            delay(2400)
 
             val fadeIn4 = fadeInAnimator(binding.tvOb11Line4, 600)
             binding.tvOb11Line4.visibility = View.VISIBLE
@@ -57,7 +57,7 @@ class Onboarding11Fragment : BaseFragment<FragmentOnboarding11Binding>() {
             binding.tvOb11Line5.visibility = View.VISIBLE
             fadeIn5.start()
 
-            delay(1200)
+            delay(2400)
 
             val fadeIn6 = fadeInAnimator(binding.btnPlayer, 300)
             binding.btnPlayer.visibility = View.VISIBLE

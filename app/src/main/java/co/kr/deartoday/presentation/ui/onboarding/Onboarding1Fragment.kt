@@ -35,7 +35,7 @@ class Onboarding1Fragment : BaseFragment<FragmentOnboarding1Binding>() {
             fadeIn1.start()
             slideUp1.start()
 
-            delay(500)
+            delay(1000)
 
             val fadeIn2 = fadeInAnimator(binding.tvOb1Line2, 500)
             val slideUp2 = slideUpAnimator(binding.tvOb1Line2, 500)
@@ -43,7 +43,7 @@ class Onboarding1Fragment : BaseFragment<FragmentOnboarding1Binding>() {
             fadeIn2.start()
             slideUp2.start()
 
-            delay(300)
+            delay(600)
 
             val fadeIn3 = fadeInAnimator(binding.btnNext1, 300)
             binding.btnNext1.visibility = View.VISIBLE

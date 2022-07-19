@@ -32,31 +32,31 @@ class Onboarding8Fragment : BaseFragment<FragmentOnboarding8Binding>() {
 
     private fun initAnimation() {
         CoroutineScope(Dispatchers.Main).launch {
-            delay(500)
+            delay(1000)
 
             val fadeIn1 = fadeInAnimator(binding.tvOb8Line1, 600)
             binding.tvOb8Line1.visibility = View.VISIBLE
             fadeIn1.start()
 
-            delay(1200)
+            delay(2400)
 
             val fadeIn2 = fadeInAnimator(binding.tvOb8Line2, 600)
             binding.tvOb8Line2.visibility = View.VISIBLE
             fadeIn2.start()
 
-            delay(1200)
+            delay(2400)
 
             val fadeIn3 = fadeInAnimator(binding.tvOb8Line3, 600)
             binding.tvOb8Line3.visibility = View.VISIBLE
             fadeIn3.start()
 
-            delay(1200)
+            delay(2400)
 
             val fadeIn4 = fadeInAnimator(binding.tvOb8Line4, 600)
             binding.tvOb8Line4.visibility = View.VISIBLE
             fadeIn4.start()
 
-            delay(1200)
+            delay(2400)
 
             val fadeIn5 = fadeInAnimator(binding.btnGoNext8, 300)
             binding.btnGoNext8.visibility = View.VISIBLE
