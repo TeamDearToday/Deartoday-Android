@@ -1,12 +1,17 @@
 package co.kr.deartoday.presentation.viewmodel
 
 import android.net.Uri
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import co.kr.deartoday.domain.repository.timemachine.TimeMachineRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import timber.log.Timber
+import javax.inject.Inject
 
-class TimeMachineViewModel : ViewModel() {
+@HiltViewModel
+class TimeMachineViewModel @Inject constructor(
+    private val timeMachineRepository: TimeMachineRepository
+) : ViewModel() {
     // TimeMachineImagePickerFragment
     val imageUri = MutableLiveData<Uri>()
     val date = MutableLiveData<String>()
@@ -21,8 +26,8 @@ class TimeMachineViewModel : ViewModel() {
     val day get() = _day
 
     // TimaMachinePastRoomFragment
-    private val _pastPhotos = MutableLiveData<List<String>>()
-    val pastPhotos: LiveData<List<String>> get() = _pastPhotos
+    private val _pastImages = MutableLiveData<List<String>>()
+    val pastImages: LiveData<List<String>> get() = _pastImages
 
     // TimeMachineChatFragments
     private var _questions = mutableListOf<String>()
@@ -54,15 +59,15 @@ class TimeMachineViewModel : ViewModel() {
     }
 
     // TimeMachinePastRoomFragment
-    fun getPastPhotos() {
-        val list = listOf<String>(
-            "",
-            "",
-            "",
-            "",
-            ""
-        )
-        _pastPhotos.value = list
+    fun fetchPastImages() {
+        viewModelScope.launch {
+            timeMachineRepository.fetchPastImages(year.toInt())
+                .onSuccess {
+                    _pastImages.value = it
+                }.onFailure {
+                    Timber.e(it)
+                }
+        }
     }
 
     // TimeMachineChatFragments
