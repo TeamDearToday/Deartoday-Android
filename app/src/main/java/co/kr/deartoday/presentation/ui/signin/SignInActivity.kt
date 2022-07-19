@@ -56,7 +56,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
 
     private fun observeAccessToken() {
         viewModel.accessToken.observe(this) {
-            DearTodaySharedPreferences(this).accessToken = it
+            DearTodaySharedPreferences(this).dearTodayToken = it
             startActivity(Intent(this, MainActivity::class.java))
             if(!isFinishing) {
                 finish()

@@ -45,7 +45,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
 
     private fun getAdapterData() {
         //수정요망
-        viewModel.getTapeData(DearTodaySharedPreferences(this).accessToken)
+        viewModel.getTapeData(DearTodaySharedPreferences(this).dearTodayToken)
     }
 
     private fun backBtnClickEvent() {

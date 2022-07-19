@@ -8,13 +8,13 @@ import android.widget.TextView
 
 fun fadeInAnimator(view: View, duration: Long): ObjectAnimator {
     val fadeIn = ObjectAnimator.ofFloat(view, "alpha", 0f, 1f)
-    fadeIn.duration = duration
+    fadeIn.duration = duration * 2
     return fadeIn
 }
 
 fun fadeOutAnimator(view: View, duration: Long): ObjectAnimator {
     val fadeOut = ObjectAnimator.ofFloat(view, "alpha", 1f, 0f)
-    fadeOut.duration = duration
+    fadeOut.duration = duration * 2
     return fadeOut
 }
 
@@ -23,14 +23,21 @@ fun slideUpAnimator(view: View, duration: Long): ObjectAnimator {
         view,
         PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 100.0f, 10.0f)
     )
-    slideUp.duration = duration
+    slideUp.duration = duration * 2
     return slideUp
 }
 
-fun textCounterAnimator(textView: TextView, fromValue: String, toValue: String, duration: Long): ValueAnimator {
+fun textCounterAnimator(
+    textView: TextView,
+    fromValue: String,
+    toValue: String,
+    duration: Long
+): ValueAnimator {
     val textCounter = ValueAnimator()
     textCounter.setObjectValues(fromValue.toInt(), toValue.toInt())
-    textCounter.addUpdateListener { animation -> textView.text = String.format("%02d", animation.animatedValue) }
+    textCounter.addUpdateListener { animation ->
+        textView.text = String.format("%02d", animation.animatedValue)
+    }
     textCounter.duration = duration
     return textCounter
 }

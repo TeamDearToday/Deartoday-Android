@@ -2,6 +2,7 @@ package co.kr.deartoday.presentation.ui.timemachine
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -9,6 +10,8 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineChat2Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
+import co.kr.deartoday.util.fadeInAnimator
+import co.kr.deartoday.util.fadeOutAnimator
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -30,6 +33,11 @@ class TimeMachineChat2Fragment : BaseFragment<FragmentTimeMachineChat2Binding>()
     private fun initAnimation() {
         (requireActivity() as TimeMachineActivity).mainScope.launch {
             delay(700)
+            fadeInAnimator(binding.tvContent, 500).start()
+            binding.tvContent.isVisible = true
+            delay(1500)
+            fadeOutAnimator(binding.tvContent, 500).start()
+            delay(1700)
 
             parentFragmentManager.commit {
                 replace<TimeMachineChat3Fragment>(R.id.fcv_time_machine)

@@ -49,4 +49,8 @@
     <string name="time_travel_empty_case">아직 디어투데이와 함께한 시간 여행이 없어요\n지금 바로 시간 여행을 떠나볼까요?</string>
     <string name="time_travel_detail_past">과거의 당신에게 꼭 해주고 싶은 말</string>
     <string name="time_travel_detail_title">나의 시간 여행</string>
+
+    <!--Splash-->
+    <string name="soundon">소리를 키면 보다 풍부한 몰입감을 느끼실 수 있습니다.\n사운드 설정은 설정 메뉴에서 언제든지 변경할 수 있어요.</string>
+
 </resources>

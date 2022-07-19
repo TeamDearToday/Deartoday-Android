@@ -29,23 +29,23 @@ class Onboarding1Fragment : BaseFragment<FragmentOnboarding1Binding>() {
 
     private fun initAnimation() {
         CoroutineScope(Dispatchers.Main).launch {
-            val fadeIn1 = fadeInAnimator(binding.tvOb1Line1, 1000)
-            val slideUp1 = slideUpAnimator(binding.tvOb1Line1, 1000)
+            val fadeIn1 = fadeInAnimator(binding.tvOb1Line1, 500)
+            val slideUp1 = slideUpAnimator(binding.tvOb1Line1, 500)
             binding.tvOb1Line1.visibility = View.VISIBLE
             fadeIn1.start()
             slideUp1.start()
 
             delay(1000)
 
-            val fadeIn2 = fadeInAnimator(binding.tvOb1Line2, 1000)
-            val slideUp2 = slideUpAnimator(binding.tvOb1Line2, 1000)
+            val fadeIn2 = fadeInAnimator(binding.tvOb1Line2, 500)
+            val slideUp2 = slideUpAnimator(binding.tvOb1Line2, 500)
             binding.tvOb1Line2.visibility = View.VISIBLE
             fadeIn2.start()
             slideUp2.start()
 
             delay(600)
 
-            val fadeIn3 = fadeInAnimator(binding.btnNext1, 600)
+            val fadeIn3 = fadeInAnimator(binding.btnNext1, 300)
             binding.btnNext1.visibility = View.VISIBLE
             fadeIn3.start()
 

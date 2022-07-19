@@ -91,6 +91,7 @@
             android:gravity="center"
             android:text='@{"지금의 당신을 발견한 " + viewmodel.year + "년도의 당신,\n반갑게 손을 흔들며 당신을 맞이하네요.\n한 번 인사를 건네보세요!"}'
             android:textColor="@color/light_gray_e0e0e0"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -105,9 +106,11 @@
             android:layout_marginHorizontal="52dp"
             android:layout_marginBottom="132dp"
             android:background="@drawable/btn_medium_present"
+            android:clickable="false"
             android:gravity="center"
             android:text="안녕!"
             android:textColor="@color/blue_558fff"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

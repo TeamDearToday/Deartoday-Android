@@ -34,7 +34,7 @@ class Onboarding10Fragment : BaseFragment<FragmentOnboarding10Binding>() {
             }
 
             override fun onAnimationEnd(animation: Animator) {
-                val fadeOut1 = fadeOutAnimator(binding.lottieTape, 1000)
+                val fadeOut1 = fadeOutAnimator(binding.lottieTape, 500)
                 fadeOut1.start()
                 findNavController().navigate(R.id.action_onboarding10Fragment_to_onboarding11Fragment)
             }
