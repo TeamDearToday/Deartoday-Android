@@ -32,7 +32,11 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
 
     private fun initOnClickListener() {
         binding.tvNext.setOnClickListener {
-            requireActivity().finish()
+            (requireActivity() as TimeMachineActivity).mainScope.launch {
+                fadeOutAnimator(binding.root, 1000).start()
+                delay(2000)
+                requireActivity().finish()
+            }
         }
     }
 
