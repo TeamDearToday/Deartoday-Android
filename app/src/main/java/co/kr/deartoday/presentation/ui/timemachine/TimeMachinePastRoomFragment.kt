@@ -2,6 +2,7 @@ package co.kr.deartoday.presentation.ui.timemachine
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
@@ -11,6 +12,9 @@ import co.kr.deartoday.presentation.adapter.PastPhotoAdapter
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.TimeMachineViewModel
 import co.kr.deartoday.util.PastPhotoItemDecoration
+import co.kr.deartoday.util.fadeInAnimator
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBinding>() {
     override val TAG: String
@@ -26,6 +30,7 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
         binding.viewmodel = viewModel
         viewModel.getPastPhotos()
         initView()
+        initAnimation()
         initOnClickListener()
         observeData()
     }
@@ -34,6 +39,21 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
         with(binding.rvPastPhoto) {
             adapter = pastPhotoAdapter
             addItemDecoration(PastPhotoItemDecoration(15))
+        }
+    }
+
+    private fun initAnimation() {
+        (requireActivity() as TimeMachineActivity).mainScope.launch {
+            delay(800)
+            fadeInAnimator(binding.layoutBackground, 700).start()
+            fadeInAnimator(binding.rvPastPhoto, 700).start()
+            fadeInAnimator(binding.tvNext, 700).start()
+            with(binding) {
+                layoutBackground.isVisible = true
+                rvPastPhoto.isVisible = true
+                tvNext.isVisible = true
+            }
+            delay(1400)
         }
     }
 
