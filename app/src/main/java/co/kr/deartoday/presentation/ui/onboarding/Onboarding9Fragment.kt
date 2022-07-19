@@ -32,7 +32,7 @@ class Onboarding9Fragment : BaseFragment<FragmentOnboarding9Binding>() {
 
     private fun initAnimation() {
         CoroutineScope(Dispatchers.Main).launch {
-            val fadeIn1 = fadeInAnimator(binding.layoutPlayer, 600)
+            val fadeIn1 = fadeInAnimator(binding.layoutPlayer, 300)
             binding.layoutPlayer.visibility = View.VISIBLE
             fadeIn1.start()
 

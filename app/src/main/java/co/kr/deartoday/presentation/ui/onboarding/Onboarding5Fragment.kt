@@ -36,41 +36,41 @@ class Onboarding5Fragment : BaseFragment<FragmentOnboarding5Binding>() {
 
             delay(1000)
 
-            val fadeIn1 = fadeInAnimator(binding.tvOb5Line1, 1200)
+            val fadeIn1 = fadeInAnimator(binding.tvOb5Line1, 600)
             binding.tvOb5Line1.visibility = View.VISIBLE
             fadeIn1.start()
 
-            val fadeIn2 = fadeInAnimator(binding.tvOb5Line2, 1200)
+            val fadeIn2 = fadeInAnimator(binding.tvOb5Line2, 600)
             binding.tvOb5Line2.visibility = View.VISIBLE
             fadeIn2.start()
 
             delay(2400)
 
-            val fadeIn3 = fadeInAnimator(binding.tvOb5Line3, 1200)
+            val fadeIn3 = fadeInAnimator(binding.tvOb5Line3, 600)
             binding.tvOb5Line3.visibility = View.VISIBLE
             fadeIn3.start()
 
             delay(2400)
 
-            val fadeIn4 = fadeInAnimator(binding.tvOb5Line4, 1200)
+            val fadeIn4 = fadeInAnimator(binding.tvOb5Line4, 600)
             binding.tvOb5Line4.visibility = View.VISIBLE
             fadeIn4.start()
 
             delay(2400)
 
-            val fadeIn5 = fadeInAnimator(binding.tvOb5Line5, 1200)
+            val fadeIn5 = fadeInAnimator(binding.tvOb5Line5, 600)
             binding.tvOb5Line5.visibility = View.VISIBLE
             fadeIn5.start()
 
             delay(2400)
 
-            val fadeIn6 = fadeInAnimator(binding.tvOb5Line6, 1200)
+            val fadeIn6 = fadeInAnimator(binding.tvOb5Line6, 600)
             binding.tvOb5Line6.visibility = View.VISIBLE
             fadeIn6.start()
 
             delay(2400)
 
-            val fadeIn7 = fadeInAnimator(binding.btnPlayer, 600)
+            val fadeIn7 = fadeInAnimator(binding.btnPlayer, 300)
             binding.btnPlayer.visibility = View.VISIBLE
             fadeIn7.start()
 

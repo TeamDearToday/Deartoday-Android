@@ -34,19 +34,19 @@ class Onboarding7Fragment : BaseFragment<FragmentOnboarding7Binding>() {
         CoroutineScope(Dispatchers.Main).launch {
             delay(1000)
 
-            val fadeIn1 = fadeInAnimator(binding.tvOb7Line1, 1200)
+            val fadeIn1 = fadeInAnimator(binding.tvOb7Line1, 600)
             binding.tvOb7Line1.visibility = View.VISIBLE
             fadeIn1.start()
 
             delay(2400)
 
-            val fadeIn2 = fadeInAnimator(binding.tvOb7Line2, 1200)
+            val fadeIn2 = fadeInAnimator(binding.tvOb7Line2, 600)
             binding.tvOb7Line2.visibility = View.VISIBLE
             fadeIn2.start()
 
             delay(2400)
 
-            val fadeIn3 = fadeInAnimator(binding.btnGoNext7, 600)
+            val fadeIn3 = fadeInAnimator(binding.btnGoNext7, 300)
             binding.btnGoNext7.visibility = View.VISIBLE
             fadeIn3.start()
 
