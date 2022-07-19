@@ -17,9 +17,9 @@
         tools:context=".presentation.ui.timemachine.TimeMachineChat4Fragment">
 
         <ScrollView
+            android:id="@+id/sv_background"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/sv_background">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/iv_background"
@@ -36,8 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/layout_answer"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_chat"
@@ -114,6 +114,7 @@
                     android:background="@drawable/rectangle_radius_20"
                     android:clipToOutline="true"
                     android:scaleType="centerCrop"
+                    android:visibility="invisible"
                     app:layout_constraintDimensionRatio="328:182"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -134,6 +135,7 @@
                     android:paddingVertical="13dp"
                     android:text="고마워!\n아하, 너는 이때로 가장 돌아가고 싶었구나."
                     android:textColor="@color/dark_gray_323232"
+                    android:visibility="invisible"
                     app:layout_constraintTop_toBottomOf="@id/iv_image" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

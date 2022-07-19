@@ -2,6 +2,7 @@ package co.kr.deartoday.presentation.ui.timemachine
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineChat5Binding
@@ -36,22 +37,26 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
     private fun initAnimation() {
         (requireActivity() as TimeMachineActivity).mainScope.launch {
             viewModel.lastMessages.forEachIndexed { index, lastMessage ->
-                if (index != 0) {
-                    fadeOutAnimator(binding.tvContent, 500).start()
+                if (index == 0) {
+                    delay(1200)
                 }
-                delay(1000)
 
                 with(binding) {
                     tvContent.text = lastMessage
                     tvContent.visibility = View.VISIBLE
-                    if (index == viewModel.lastMessages.size - 1) {
-                        tvNext.visibility = View.VISIBLE
-                    }
                 }
 
-                fadeInAnimator(binding.tvContent, 500).start()
-                fadeInAnimator(binding.tvNext, 500).start()
-                delay(1000)
+                fadeInAnimator(binding.tvContent, 1000).start()
+                if (index != viewModel.lastMessages.size - 1) {
+                    fadeOutAnimator(binding.tvContent, 1000).start()
+                } else {
+                    fadeInAnimator(binding.tvNext, 1000).start()
+                    with(binding.tvNext) {
+                        isVisible = true
+                        isClickable = true
+                    }
+                }
+                delay(3200)
             }
         }
     }
