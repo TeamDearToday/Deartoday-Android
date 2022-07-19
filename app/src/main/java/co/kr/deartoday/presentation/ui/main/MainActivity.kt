@@ -1,11 +1,14 @@
 package co.kr.deartoday.presentation.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.viewpager2.widget.ViewPager2
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityMainBinding
 import co.kr.deartoday.presentation.adapter.MainViewPagerAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import co.kr.deartoday.presentation.ui.onboarding.OnboardingActivity
+import co.kr.deartoday.presentation.ui.setting.SettingActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,6 +20,7 @@ class MainActivity() : BaseActivity<ActivityMainBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initView()
+        settingBtnClickEvent()
     }
 
     private fun initView() {
@@ -52,6 +56,13 @@ class MainActivity() : BaseActivity<ActivityMainBinding>() {
             tvTodayYear.text = today.substring(0, 4)
             tvTodayMonth.text = today.substring(4, 6)
             tvTodayDay.text = today.substring(6, 8)
+        }
+    }
+
+    private fun settingBtnClickEvent(){
+        binding.ivSetting.setOnClickListener{
+            val intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
         }
     }
 }
