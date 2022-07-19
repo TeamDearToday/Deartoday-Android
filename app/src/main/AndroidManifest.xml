@@ -21,6 +21,9 @@
         android:theme="@style/Theme.DearToday"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.setting.SettingActivity"
+            android:exported="true" />
+        <activity
             android:name=".presentation.ui.splash.DeartodaySplashActivity"
             android:exported="true" />
         <activity
@@ -58,7 +61,6 @@
         <activity
             android:name=".presentation.ui.main.MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
