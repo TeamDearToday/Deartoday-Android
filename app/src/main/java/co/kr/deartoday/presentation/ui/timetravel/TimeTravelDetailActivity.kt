@@ -45,6 +45,7 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
             binding.tvTravelTo.text = "%d.%d.%d".format(tapeData.year, tapeData.month, tapeData.day)
             binding.tvTitle.text = tapeData.title
             binding.tvTravelFrom.text = tapeData.writtenDate
+            binding.ivOriginal.clipToOutline = true
             Glide.with(this).load(tapeData.image).into(binding.ivOriginal)
             binding.tvDialog01.text = tapeData.messages[0].question
             binding.tvDialogSelf01.text = tapeData.messages[0].answer

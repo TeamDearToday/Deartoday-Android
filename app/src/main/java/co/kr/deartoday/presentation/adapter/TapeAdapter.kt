@@ -29,6 +29,7 @@ class TapeAdapter(private val itemClick: (String) -> (Unit)) :
         private val itemClick: (String) -> (Unit)
     ) : RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: TapesResponse.Tape) {
+            binding.ivTapeInner.clipToOutline = true
             Glide.with(itemView).load(data.image).into(binding.ivTapeInner)
             binding.content.text = data.title
             binding.tvTravelFrom.text = data.writtenDate
