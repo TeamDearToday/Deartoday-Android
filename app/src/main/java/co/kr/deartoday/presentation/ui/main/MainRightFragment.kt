@@ -33,15 +33,19 @@ class MainRightFragment : BaseFragment<FragmentMainRightBinding>() {
     private fun initOnClickListener() {
         binding.layoutMessage.setOnClickListener {
             startActivity(MessageBoxActivity.getIntent(requireContext()))
+            requireActivity().overridePendingTransition(R.anim.right_in,R.anim.not_move)
         }
         binding.layoutBtnMessage.setOnClickListener {
             startActivity(MessageBoxActivity.getIntent(requireContext()))
+            requireActivity().overridePendingTransition(R.anim.right_in,R.anim.not_move)
         }
         binding.layoutVideoTape.setOnClickListener {
             startActivity(TimeTravelActivity.getIntent(requireContext()))
+            requireActivity().overridePendingTransition(R.anim.right_in,R.anim.not_move)
         }
         binding.layoutBtnVideoTape.setOnClickListener {
             startActivity(TimeTravelActivity.getIntent(requireContext()))
+            requireActivity().overridePendingTransition(R.anim.right_in,R.anim.not_move)
         }
     }
 

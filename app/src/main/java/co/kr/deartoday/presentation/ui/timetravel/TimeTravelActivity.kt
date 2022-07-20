@@ -27,6 +27,11 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
         getAdapterData()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.not_move,R.anim.right_out)
+    }
+
     private fun initAdapter() {
         tapeAdapter = TapeAdapter { tapeId ->
             val intent = Intent(this, TimeTravelDetailActivity::class.java)
@@ -51,6 +56,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     private fun backBtnClickEvent() {
         binding.ibMessageBack.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.not_move,R.anim.right_out)
         }
     }
 

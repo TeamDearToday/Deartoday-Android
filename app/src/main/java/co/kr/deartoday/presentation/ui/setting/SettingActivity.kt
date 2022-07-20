@@ -16,14 +16,20 @@ class SettingActivity : BaseActivity<ActivitySettingBinding>() {
         logout()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.not_move,R.anim.right_out)
+    }
+
     private fun backBtnClickEvent() {
-        binding.ibSettingBack.setOnClickListener{
+        binding.ibSettingBack.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.not_move, R.anim.right_out)
         }
     }
 
-    private fun logout(){
-        binding.tvLogout.setOnClickListener{
+    private fun logout() {
+        binding.tvLogout.setOnClickListener {
 
         }
     }
