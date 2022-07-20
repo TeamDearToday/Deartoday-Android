@@ -1,13 +1,13 @@
 package co.kr.deartoday.presentation.viewmodel.timetravel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.kr.deartoday.data.ServiceCreator
 import co.kr.deartoday.data.model.response.timetravel.TapesResponse
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 class TimeTravelViewModel : ViewModel() {
     //TimeTravelActivity
