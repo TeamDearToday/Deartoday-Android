@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="6dp"
             android:layout_marginBottom="57dp"
-            android:background="@drawable/btn_large_present"
+            android:background="@drawable/soundon_messagebox_aos"
             android:clickable="true"
             android:fontFamily="@font/pretendard_regular"
             android:gravity="center"
