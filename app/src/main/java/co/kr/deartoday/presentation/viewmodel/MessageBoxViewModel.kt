@@ -10,16 +10,16 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class MessageBoxViewModel : ViewModel() {
-    private var _data = MutableLiveData<List<String>>() //업데이트
-    val data: LiveData<List<String>> get() = _data //관찰
+    private val _lastAnswer = MutableLiveData<List<String>>() //업데이트
+    val lastAnswer: LiveData<List<String>> get() = _lastAnswer //관찰
 
     fun getMessage() {
         viewModelScope.launch {
             runCatching {
                 ServiceCreator.messageBoxService.getMessageBox()
             }.onSuccess {
-                _data.value = it.data
-            //  _data.value = listOf<String>() //이 코드는 서버에 데이터가 담겨있지 않을 때를 시험하는 코드입니다
+                _lastAnswer.value = it.data.lastAnswer
+                //  _lastAnswer.value = listOf<String>() //이 코드는 서버에 데이터가 담겨있지 않을 때를 시험하는 코드입니다
             }.onFailure {
                 Timber.e(it)
             }
