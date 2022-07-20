@@ -5,6 +5,7 @@
     tools:context=".presentation.ui.timetravel.TimeTravelDetailActivity">
 
     <data>
+
         <variable
             name="viewmodel"
             type="co.kr.deartoday.presentation.viewmodel.timetravel.TimeTravelDetailViewModel" />
@@ -53,11 +54,11 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
-                    tools:src="@drawable/main_left_withg_a_size_small"
                     app:layout_constraintDimensionRatio="131:74"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/main_left_withg_a_size_small" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_title_bundle"
@@ -72,16 +73,15 @@
                         android:background="@color/white_ffffff"
                         app:layout_constraintTop_toTopOf="parent">
 
-
                         <TextView
                             android:id="@+id/tv_travel_to"
                             style="@style/H0"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="2016.06.03"
                             android:textColor="@color/blue_558fff"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="2016.06.03" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -97,13 +97,13 @@
                             style="@style/Caption0"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="2033.07.03"
                             android:textColor="@color/gray_01_a0a0a0"
                             app:layout_constraintBottom_toBottomOf="@id/tv_travel_to"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/tv_travel_to" />
+                            app:layout_constraintTop_toTopOf="@id/tv_travel_to"
+                            tools:text="2033.07.03" />
 
-                        <TextView
+                        <co.kr.deartoday.util.BreakAllTextView
                             android:id="@+id/tv_title"
                             style="@style/H2"
                             android:layout_width="0dp"
@@ -111,11 +111,11 @@
                             android:gravity="start"
                             android:paddingTop="16dp"
                             android:paddingBottom="13dp"
-                            tools:text="더미데이터 더미데이터 더미데이터 더미데이터더미데이터더미데이터더미데이터 더미데이터"
                             android:textColor="@color/dark_gray_131313"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tv_travel_to" />
+                            app:layout_constraintTop_toBottomOf="@id/tv_travel_to"
+                            tools:text="더미데이터 더미데이터 더미데이터 더미데이터더미데이터더미데이터더미데이터 더미데이터" />
 
                         <View
                             android:id="@+id/view_line_01"
@@ -129,14 +129,16 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_dialog_01"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="86dp"
                     android:background="@drawable/rectangle_yellow_radius_20"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cl_title_bundle">
 
@@ -148,25 +150,27 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
+                    <co.kr.deartoday.util.BreakAllTextView
                         android:id="@+id/tv_dialog_01"
                         style="@style/Caption2"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        tools:text="111111111111111111111111111111111111111111111111111111111111111111111111111111"
                         android:textColor="@color/black_000000"
+                        app:layout_constrainedWidth="true"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
                         app:layout_constraintStart_toEndOf="@id/iv_rewind_01"
-                        app:layout_constraintTop_toTopOf="@id/iv_rewind_01" />
+                        app:layout_constraintTop_toTopOf="@id/iv_rewind_01"
+                        tools:text="1111111111111111111111111" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
+                <co.kr.deartoday.util.BreakAllTextView
                     android:id="@+id/tv_dialog_self_01"
                     style="@style/Caption2"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="56dp"
                     android:layout_marginTop="20dp"
@@ -174,11 +178,13 @@
                     android:gravity="end"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
-                    tools:text="111111111111111111111111111111111111111111111111111111111111111111111111111111"
                     android:textColor="@color/black_000000"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_01" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_01"
+                    tools:text="11111111111111111111111111111111111111111" />
 
                 <View
                     android:id="@+id/view_line_02"
@@ -190,14 +196,16 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_dialog_02"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="86dp"
                     android:background="@drawable/rectangle_yellow_radius_20"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view_line_02">
 
@@ -209,25 +217,27 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
+                    <co.kr.deartoday.util.BreakAllTextView
                         android:id="@+id/tv_dialog_02"
                         style="@style/Caption2"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        tools:text="222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222"
                         android:textColor="@color/black_000000"
+                        app:layout_constrainedWidth="true"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
                         app:layout_constraintStart_toEndOf="@id/iv_rewind_02"
-                        app:layout_constraintTop_toTopOf="@id/iv_rewind_02" />
+                        app:layout_constraintTop_toTopOf="@id/iv_rewind_02"
+                        tools:text="222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
+                <co.kr.deartoday.util.BreakAllTextView
                     android:id="@+id/tv_dialog_self_02"
                     style="@style/Caption2"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="56dp"
                     android:layout_marginTop="20dp"
@@ -235,12 +245,13 @@
                     android:gravity="end"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
-                    tools:text="222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222"
                     android:textColor="@color/black_000000"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_02" />
-
+                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_02"
+                    tools:text="222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222" />
 
                 <View
                     android:id="@+id/view_line_03"
@@ -252,14 +263,16 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_dialog_03"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="86dp"
                     android:background="@drawable/rectangle_yellow_radius_20"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view_line_03">
 
@@ -271,25 +284,27 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
+                    <co.kr.deartoday.util.BreakAllTextView
                         android:id="@+id/tv_dialog_03"
                         style="@style/Caption2"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        tools:text="3"
                         android:textColor="@color/black_000000"
+                        app:layout_constrainedWidth="true"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
                         app:layout_constraintStart_toEndOf="@id/iv_rewind_03"
-                        app:layout_constraintTop_toTopOf="@id/iv_rewind_03" />
+                        app:layout_constraintTop_toTopOf="@id/iv_rewind_03"
+                        tools:text="3" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
+                <co.kr.deartoday.util.BreakAllTextView
                     android:id="@+id/tv_dialog_self_03"
                     style="@style/Caption2"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="56dp"
                     android:layout_marginTop="20dp"
@@ -297,11 +312,13 @@
                     android:gravity="end"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
-                    tools:text="3"
                     android:textColor="@color/black_000000"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_03" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_03"
+                    tools:text="3" />
 
                 <View
                     android:id="@+id/view_line_04"
@@ -313,14 +330,16 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_dialog_04"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="86dp"
                     android:background="@drawable/rectangle_yellow_radius_20"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view_line_04">
 
@@ -332,25 +351,27 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
+                    <co.kr.deartoday.util.BreakAllTextView
                         android:id="@+id/tv_dialog_04"
                         style="@style/Caption2"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        tools:text="4"
                         android:textColor="@color/black_000000"
+                        app:layout_constrainedWidth="true"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
                         app:layout_constraintStart_toEndOf="@id/iv_rewind_04"
-                        app:layout_constraintTop_toTopOf="@id/iv_rewind_04" />
+                        app:layout_constraintTop_toTopOf="@id/iv_rewind_04"
+                        tools:text="4" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
+                <co.kr.deartoday.util.BreakAllTextView
                     android:id="@+id/tv_dialog_self_04"
                     style="@style/Caption2"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="56dp"
                     android:layout_marginTop="20dp"
@@ -358,11 +379,13 @@
                     android:gravity="end"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
-                    tools:text="4"
                     android:textColor="@color/black_000000"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_04" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_04"
+                    tools:text="4" />
 
                 <View
                     android:id="@+id/view_line_05"
@@ -374,14 +397,16 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_dialog_05"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="86dp"
                     android:background="@drawable/rectangle_yellow_radius_20"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view_line_05">
 
@@ -393,25 +418,27 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
+                    <co.kr.deartoday.util.BreakAllTextView
                         android:id="@+id/tv_dialog_05"
                         style="@style/Caption2"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        tools:text="5"
                         android:textColor="@color/black_000000"
+                        app:layout_constrainedWidth="true"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
                         app:layout_constraintStart_toEndOf="@id/iv_rewind_05"
-                        app:layout_constraintTop_toTopOf="@id/iv_rewind_05" />
+                        app:layout_constraintTop_toTopOf="@id/iv_rewind_05"
+                        tools:text="5" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
+                <co.kr.deartoday.util.BreakAllTextView
                     android:id="@+id/tv_dialog_self_05"
                     style="@style/Caption2"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="56dp"
                     android:layout_marginTop="20dp"
@@ -419,11 +446,13 @@
                     android:gravity="end"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
-                    tools:text="5"
                     android:textColor="@color/black_000000"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_05" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_05"
+                    tools:text="5" />
 
                 <View
                     android:id="@+id/view_line_06"
@@ -435,14 +464,16 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_dialog_06"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="86dp"
                     android:background="@drawable/rectangle_yellow_radius_20"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view_line_06">
 
@@ -454,25 +485,27 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
+                    <co.kr.deartoday.util.BreakAllTextView
                         android:id="@+id/tv_dialog_06"
                         style="@style/Caption2"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        tools:text="6"
                         android:textColor="@color/black_000000"
+                        app:layout_constrainedWidth="true"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
                         app:layout_constraintStart_toEndOf="@id/iv_rewind_06"
-                        app:layout_constraintTop_toTopOf="@id/iv_rewind_06" />
+                        app:layout_constraintTop_toTopOf="@id/iv_rewind_06"
+                        tools:text="6" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
+                <co.kr.deartoday.util.BreakAllTextView
                     android:id="@+id/tv_dialog_self_06"
                     style="@style/Caption2"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="56dp"
                     android:layout_marginTop="20dp"
@@ -480,11 +513,13 @@
                     android:gravity="end"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
-                    tools:text="6"
                     android:textColor="@color/black_000000"
+                    app:layout_constrainedWidth="true"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_06" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_dialog_06"
+                    tools:text="6" />
 
                 <View
                     android:id="@+id/view_line_07"
@@ -493,10 +528,6 @@
                     android:layout_marginTop="15dp"
                     android:background="@color/light_blue_e9f1fe"
                     app:layout_constraintTop_toBottomOf="@id/tv_dialog_self_06" />
-
-
-
-
 
                 <ImageView
                     android:id="@+id/iv_rewind_08"
@@ -508,7 +539,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/view_line_07" />
 
-                <TextView
+                <co.kr.deartoday.util.BreakAllTextView
                     android:id="@+id/tv_past_01"
                     style="@style/Caption2"
                     android:layout_width="wrap_content"
@@ -520,7 +551,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_rewind_08" />
 
-                <TextView
+                <co.kr.deartoday.util.BreakAllTextView
                     android:id="@+id/tv_past_02"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -530,11 +561,11 @@
                     android:gravity="center"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="14dp"
-                    tools:text="정발산기슭곰발냄새타령부인사잘해정발산기슭곰발냄새타령부인사잘해정발산기슭곰발냄새타령부인사잘해정발산기슭곰발냄새타령부인사잘해"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_past_01" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_past_01"
+                    tools:text="정발산기슭곰발냄새타령부인사잘해정발산기슭곰발냄새타령부인사잘해정발산기슭곰발냄새타령부인사잘해정발산기슭곰발냄새타령부인사잘해" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
