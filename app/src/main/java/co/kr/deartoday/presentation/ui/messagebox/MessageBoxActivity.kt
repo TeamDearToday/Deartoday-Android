@@ -32,9 +32,15 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
         observeData()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.not_move,R.anim.right_out)
+    }
+
     private fun backBtnClickEvent() {
         binding.ibMessageBack.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.not_move,R.anim.right_out)
         }
     }
 

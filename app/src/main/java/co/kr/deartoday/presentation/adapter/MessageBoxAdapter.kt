@@ -4,10 +4,8 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import co.kr.deartoday.data.model.response.MessageBoxResponse
 import co.kr.deartoday.databinding.ItemMessageBoxListBinding
 import co.kr.deartoday.util.calculateMaxLines
-import okhttp3.internal.notify
 
 class MessageBoxAdapter(private val itemClick: (String) -> Unit) :
     RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewHolder>() {

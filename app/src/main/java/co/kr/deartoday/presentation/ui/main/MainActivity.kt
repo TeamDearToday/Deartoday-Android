@@ -75,6 +75,7 @@ class MainActivity() : BaseActivity<ActivityMainBinding>() {
         binding.ivSetting.setOnClickListener{
             val intent = Intent(this, SettingActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.right_in,R.anim.not_move) //타 액티비티 시작
         }
     }
 }

@@ -2,19 +2,12 @@ package co.kr.deartoday.presentation.ui.onboarding
 
 import android.animation.Animator
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
-import co.kr.deartoday.databinding.*
+import co.kr.deartoday.databinding.FragmentOnboarding10Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.util.fadeOutAnimator
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class Onboarding10Fragment : BaseFragment<FragmentOnboarding10Binding>() {
     override val TAG: String

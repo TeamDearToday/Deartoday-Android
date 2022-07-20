@@ -22,6 +22,8 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentTimeMachineImagePickerBinding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
+import co.kr.deartoday.util.MySoundPlayer
+import co.kr.deartoday.util.MySoundPlayer.initSounds
 import co.kr.deartoday.util.getTodayString
 import co.kr.deartoday.util.shortToast
 import com.bumptech.glide.Glide
@@ -71,6 +73,7 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
     }
 
     private fun initOnClickListener() {
+        initSounds(requireContext())
         binding.ivVideoTape.setOnClickListener {
             when {
                 checkSelfPermissionGranted() -> {
@@ -93,6 +96,7 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
         binding.layoutRewind.setOnClickListener {
             viewModel.parseDate()
             parentFragmentManager.commit {
+                MySoundPlayer.play(MySoundPlayer.SOUND_PLAYER)
                 replace<TimeMachineLottieFragment>(R.id.fcv_time_machine)
             }
         }

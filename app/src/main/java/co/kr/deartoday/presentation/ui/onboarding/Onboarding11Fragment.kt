@@ -2,11 +2,13 @@ package co.kr.deartoday.presentation.ui.onboarding
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.FragmentOnboarding11Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.util.fadeInAnimator
+import com.google.android.material.internal.ContextUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -23,6 +25,7 @@ class Onboarding11Fragment : BaseFragment<FragmentOnboarding11Binding>() {
 
         binding.btnPlayer.setOnClickListener {
             findNavController().navigate(R.id.action_onboarding11Fragment_to_mainActivity)
+            (activity as OnboardingActivity).finish()
         }
         initAnimation()
     }

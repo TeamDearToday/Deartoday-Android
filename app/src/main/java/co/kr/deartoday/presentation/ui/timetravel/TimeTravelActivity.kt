@@ -8,6 +8,7 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityTimeTravelBinding
 import co.kr.deartoday.presentation.adapter.TapeAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
+import co.kr.deartoday.presentation.ui.timemachine.TimeMachineActivity
 import co.kr.deartoday.presentation.viewmodel.timetravel.TimeTravelViewModel
 import co.kr.deartoday.util.TapeItemDecoration
 import timber.log.Timber
@@ -21,10 +22,17 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding.viewmodel = viewModel
         initAdapter()
         observeUpDate()
         backBtnClickEvent()
+        timeTravelBtnClickEvent()
         getAdapterData()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.not_move,R.anim.right_out)
     }
 
     private fun initAdapter() {
@@ -51,6 +59,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     private fun backBtnClickEvent() {
         binding.ibMessageBack.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.not_move,R.anim.right_out)
         }
     }
 
@@ -58,6 +67,13 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
         viewModel.tapes.observe(this) {
             tapeAdapter.tapeList.addAll(it.tapes)
             tapeAdapter.notifyDataSetChanged()
+        }
+    }
+
+    private fun timeTravelBtnClickEvent() {
+        binding.layoutGoTimeTravel.setOnClickListener {
+            startActivity(Intent(this, TimeMachineActivity::class.java))
+            finish()
         }
     }
 
