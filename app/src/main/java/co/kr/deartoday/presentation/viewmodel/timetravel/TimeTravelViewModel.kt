@@ -1,4 +1,4 @@
-package co.kr.deartoday.presentation.viewmodel
+package co.kr.deartoday.presentation.viewmodel.timetravel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

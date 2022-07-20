@@ -26,7 +26,7 @@ class SignInViewModel : ViewModel() {
             }.onSuccess {
                 _accessToken.value = it.data.accessToken
                 ServiceCreator.accessToken = it.data.accessToken
-                Timber.v("[${it.data.accessToken}]")
+                Timber.d("최우형[${it.data.accessToken}]", "[${it.data.accessToken}]")
             }.onFailure {
                 Timber.e("$it")
             }

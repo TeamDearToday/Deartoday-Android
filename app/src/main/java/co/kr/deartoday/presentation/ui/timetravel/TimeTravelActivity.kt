@@ -8,8 +8,9 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityTimeTravelBinding
 import co.kr.deartoday.presentation.adapter.TapeAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
-import co.kr.deartoday.presentation.viewmodel.TimeTravelViewModel
+import co.kr.deartoday.presentation.viewmodel.timetravel.TimeTravelViewModel
 import co.kr.deartoday.util.TapeItemDecoration
+import timber.log.Timber
 
 class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     private val viewModel by viewModels<TimeTravelViewModel>()
@@ -27,9 +28,10 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     }
 
     private fun initAdapter() {
-        tapeAdapter = TapeAdapter { tape ->
+        tapeAdapter = TapeAdapter { tapeId ->
             val intent = Intent(this, TimeTravelDetailActivity::class.java)
-            intent.putExtra("tape_id", tape.timeTravelId)  //TODO 키값 수정
+            Timber.d("tapeId for intent = [${tapeId}]")
+            intent.putExtra("tape_id", tapeId)  //TODO 키값 수정
             startActivity(intent)
         }
         binding.rvTimeTravel.adapter = tapeAdapter
@@ -43,7 +45,6 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
     }
 
     private fun getAdapterData() {
-        //수정요망
         viewModel.getTapeData()
     }
 
