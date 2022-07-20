@@ -13,23 +13,16 @@ class MessageBoxViewModel : ViewModel() {
     private var _data = MutableLiveData<List<String>>() //업데이트
     val data: LiveData<List<String>> get() = _data //관찰
 
-    private var _isSuccess = SingleLiveEvent<Boolean>()
-    val isSuccess: LiveData<Boolean> get() = _isSuccess
-
-    private var _isEmpty = SingleLiveEvent<Boolean>()
-    val isEmpty: LiveData<Boolean> get() = _isEmpty
-
     fun getMessage() {
         viewModelScope.launch {
             runCatching {
                 ServiceCreator.messageBoxService.getMessageBox()
+            }.onSuccess {
+                _data.value = it.data
+            //  _data.value = listOf<String>() //이 코드는 서버에 데이터가 담겨있지 않을 때를 시험하는 코드입니다
+            }.onFailure {
+                Timber.e(it)
             }
-                .onSuccess {
-                    _data.value = it.data
-                }
-                .onFailure {
-                    Timber.e(it)
-                }
         }
     }
 }
