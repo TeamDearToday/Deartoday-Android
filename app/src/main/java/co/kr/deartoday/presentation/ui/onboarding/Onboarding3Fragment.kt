@@ -1,7 +1,6 @@
 package co.kr.deartoday.presentation.ui.onboarding
 
 import android.animation.Animator
-import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController

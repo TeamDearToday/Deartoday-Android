@@ -1,15 +1,9 @@
 package co.kr.deartoday.presentation.ui.onboarding
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import co.kr.deartoday.R
-import co.kr.deartoday.databinding.FragmentOnboarding1Binding
-import co.kr.deartoday.databinding.FragmentOnboarding2Binding
-import co.kr.deartoday.databinding.FragmentOnboarding3Binding
 import co.kr.deartoday.databinding.FragmentOnboarding4Binding
 import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.util.fadeInAnimator
