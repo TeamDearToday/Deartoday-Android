@@ -19,7 +19,6 @@ class MessageBoxViewModel : ViewModel() {
                 ServiceCreator.messageBoxService.getMessageBox()
             }.onSuccess {
                 _lastAnswer.value = it.data.lastAnswer
-                //  _lastAnswer.value = listOf<String>() //이 코드는 서버에 데이터가 담겨있지 않을 때를 시험하는 코드입니다
             }.onFailure {
                 Timber.e(it)
             }
