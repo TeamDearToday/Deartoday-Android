@@ -4,13 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.core.view.isGone
-import androidx.core.view.isVisible
 import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityMessageBoxBinding
 import co.kr.deartoday.presentation.adapter.MessageBoxAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
-import co.kr.deartoday.presentation.ui.main.MainActivity
 import co.kr.deartoday.presentation.ui.timemachine.TimeMachineActivity
 import co.kr.deartoday.presentation.viewmodel.MessageBoxViewModel
 import co.kr.deartoday.util.CustomDialog
@@ -67,11 +64,8 @@ class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
     }
 
     private fun observeData() {
-        viewModel.data.observe(this) {
-            if (it.isNotEmpty()) {
-                messageBoxAdapter.messageBoxList.addAll(it)
-                messageBoxAdapter.notifyDataSetChanged()
-            }
+        viewModel.lastAnswer.observe(this) {
+            messageBoxAdapter.updateItem(it)
         }
     }
 
