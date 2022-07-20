@@ -7,10 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import co.kr.deartoday.data.model.response.MessageBoxResponse
 import co.kr.deartoday.databinding.ItemMessageBoxListBinding
 import co.kr.deartoday.util.calculateMaxLines
+import okhttp3.internal.notify
 
 class MessageBoxAdapter(private val itemClick: (String) -> Unit) :
     RecyclerView.Adapter<MessageBoxAdapter.MessageBoxViewHolder>() {
-    val messageBoxList = mutableListOf<String>()
+    private var messageBoxList = listOf<String>()
 
     class MessageBoxViewHolder(
         private val binding: ItemMessageBoxListBinding,
@@ -41,4 +42,9 @@ class MessageBoxAdapter(private val itemClick: (String) -> Unit) :
         holder.onBind(messageBoxList[position])
     }
     override fun getItemCount(): Int = messageBoxList.size
+
+    fun updateItem(list: List<String>) {
+        messageBoxList = list
+        notifyDataSetChanged()
+    }
 }
