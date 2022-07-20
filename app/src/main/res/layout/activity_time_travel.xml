@@ -5,6 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".presentation.ui.timetravel.TimeTravelActivity">
 
+    <data>
+        <variable
+            name="viewmodel"
+            type="co.kr.deartoday.presentation.viewmodel.timetravel.TimeTravelViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
