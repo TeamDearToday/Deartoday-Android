@@ -18,6 +18,7 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
         super.onCreate(savedInstanceState)
         Timber.d("putextra 확인 : ${intent.getStringExtra("tape_id")}")
 
+        initBackBtnClickEvent()
         addObserve()
         setTapeId()
         setStickyScrollView()
@@ -61,6 +62,12 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
             binding.tvDialogSelf06.text = tapeData.messages[5].answer
             binding.tvPast01.text = tapeData.messages[6].question
             binding.tvPast02.text = tapeData.messages[6].answer
+        }
+    }
+
+    private fun initBackBtnClickEvent() {
+        binding.ibMessageBack.setOnClickListener {
+            onBackPressed()
         }
     }
 }
