@@ -1,6 +1,6 @@
 package co.kr.deartoday.presentation.ui.setting
 
-가import android.content.Intent
+import android.content.Intent
 import android.os.Bundle
 import androidx.core.app.ActivityCompat
 import co.kr.deartoday.R
