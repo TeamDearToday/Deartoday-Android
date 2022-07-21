@@ -30,6 +30,10 @@ class DearTodaySharedPreferences @Inject constructor(
         set(value) = dearTodaySharedPreferences.edit { putString("DEAR_TODAY_TOKEN", value) }
         get() = dearTodaySharedPreferences.getString("DEAR_TODAY_TOKEN", "") ?: ""
 
+    var deviceToken: String
+        set(value) = dearTodaySharedPreferences.edit { putString("DEVICE_TOKEN", value) }
+        get() = dearTodaySharedPreferences.getString("DEVICE_TOKEN", "") ?: ""
+
     var autoLogin: Boolean
         set(value) = dearTodaySharedPreferences.edit { putBoolean("AUTO_LOGIN", value) }
         get() = dearTodaySharedPreferences.getBoolean("AUTO_LOGIN", false)
