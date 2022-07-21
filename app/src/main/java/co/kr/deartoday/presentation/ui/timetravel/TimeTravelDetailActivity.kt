@@ -65,7 +65,7 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
             binding.tvDialogSelf05.text = tapeData.messages[4].answer
             binding.tvDialog06.text = tapeData.messages[5].question
             binding.tvDialogSelf06.text = tapeData.messages[5].answer
-            binding.tvPast01.text = tapeData.messages[6].question
+            binding.tvPast01.text = "과거의 당신에게 꼭 해주고 싶은 말"
             binding.tvPast02.text = tapeData.messages[6].answer
         }
     }
