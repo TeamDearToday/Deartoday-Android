@@ -57,6 +57,7 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
                     binding.tvContent.text = "소중한 말 남겨줘서 정말 고마워"
                     binding.tvContent.isVisible = true
                     fadeInAnimator(binding.tvContent, 1000).start()
+                    delay(2000)
                     fadeOutAnimator(binding.tvContent, 1000).start()
                     delay(4500)
                 }
@@ -68,6 +69,7 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
 
                 fadeInAnimator(binding.tvContent, 1000).start()
                 if (index != viewModel.lastMessages.size - 1) {
+                    delay(2000)
                     fadeOutAnimator(binding.tvContent, 1000).start()
                 } else {
                     fadeInAnimator(binding.tvNext, 1000).start()
