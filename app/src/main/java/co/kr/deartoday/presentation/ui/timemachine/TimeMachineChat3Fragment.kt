@@ -12,7 +12,6 @@ import co.kr.deartoday.presentation.ui.base.BaseFragment
 import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.fadeInAnimator
 import co.kr.deartoday.util.fadeOutAnimator
-import co.kr.deartoday.util.setOnSingleClickListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -31,7 +30,6 @@ class TimeMachineChat3Fragment : BaseFragment<FragmentTimeMachineChat3Binding>()
         binding.viewmodel = viewModel
 
         initAnimation()
-        initOnClickListener()
     }
 
     private fun initAnimation() {
@@ -43,14 +41,16 @@ class TimeMachineChat3Fragment : BaseFragment<FragmentTimeMachineChat3Binding>()
             fadeInAnimator(binding.tvNext, 600).start()
             binding.tvNext.isVisible = true
             delay(1800)
+            initOnClickListener()
         }
     }
 
     private fun initOnClickListener() {
-        binding.ivExit.setOnSingleClickListener {
+        binding.ivExit.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.tvNext.setOnSingleClickListener {
+        binding.tvNext.setOnClickListener {
+            binding.tvNext.isClickable = false
             (requireActivity() as TimeMachineActivity).mainScope.launch {
                 fadeOutAnimator(binding.tvContent, 600).start()
                 fadeOutAnimator(binding.tvNext, 600).start()
