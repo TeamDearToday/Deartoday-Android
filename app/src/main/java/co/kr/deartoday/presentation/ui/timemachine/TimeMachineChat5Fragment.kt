@@ -35,10 +35,11 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
     }
 
     private fun initOnClickListener() {
-        binding.ivExit.setOnSingleClickListener {
+        binding.ivExit.setOnClickListener {
             requireActivity().onBackPressed()
         }
-        binding.tvNext.setOnSingleClickListener {
+        binding.tvNext.setOnClickListener {
+            binding.tvNext.isClickable = false
             (requireActivity() as TimeMachineActivity).mainScope.launch {
                 fadeOutAnimator(binding.root, 1000).start()
                 delay(2000)
