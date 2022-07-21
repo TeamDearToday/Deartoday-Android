@@ -29,7 +29,7 @@ class Onboarding8Fragment : BaseFragment<FragmentOnboarding8Binding>() {
 
     private fun initAnimation() {
         CoroutineScope(Dispatchers.Main).launch {
-            delay(1000)
+            delay(700)
 
             val fadeIn1 = fadeInAnimator(binding.tvOb8Line1, 600)
             binding.tvOb8Line1.visibility = View.VISIBLE
