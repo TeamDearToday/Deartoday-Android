@@ -24,6 +24,11 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
         setStickyScrollView()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.not_move,R.anim.right_out)
+    }
+
     private fun setStickyScrollView() {
         binding.svSticky.run {
             this.header = binding.clTitleBundle
@@ -68,6 +73,7 @@ class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>()
     private fun initBackBtnClickEvent() {
         binding.ibMessageBack.setOnClickListener {
             onBackPressed()
+            overridePendingTransition(R.anim.not_move,R.anim.right_out)
         }
     }
 }

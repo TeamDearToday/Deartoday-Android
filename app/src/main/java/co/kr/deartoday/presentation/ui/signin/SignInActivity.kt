@@ -13,6 +13,7 @@ import co.kr.deartoday.presentation.ui.main.MainActivity
 import co.kr.deartoday.presentation.viewmodel.SignInViewModel
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
+import co.kr.deartoday.util.shortToast
 import com.kakao.sdk.user.UserApiClient
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -50,6 +51,16 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
                 sharedPreferences.deviceToken = token
             })
         }
+    }
+
+    private var backPressedTime: Long = 0
+    override fun onBackPressed() {
+        if (System.currentTimeMillis() - backPressedTime < 2000) {
+            finish()
+            return
+        }
+        shortToast("뒤로가기 버튼을 한 번 더 누르면 종료됩니다")
+        backPressedTime = System.currentTimeMillis()
     }
 
     private fun setOnLayoutButtonClickListener() {

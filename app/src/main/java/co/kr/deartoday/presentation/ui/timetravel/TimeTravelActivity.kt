@@ -41,6 +41,7 @@ class TimeTravelActivity : BaseActivity<ActivityTimeTravelBinding>() {
             Timber.d("tapeId for intent = [${tapeId}]")
             intent.putExtra("tape_id", tapeId)  //TODO 키값 수정
             startActivity(intent)
+            overridePendingTransition(R.anim.right_in,R.anim.not_move)
         }
         binding.rvTimeTravel.adapter = tapeAdapter
         binding.rvTimeTravel.addItemDecoration(

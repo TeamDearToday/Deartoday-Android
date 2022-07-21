@@ -31,6 +31,7 @@ class DeartodaySplashActivity : BaseActivity<ActivityDeartodaySplashBinding>() {
             delay(3000)
             val intent = Intent(this@DeartodaySplashActivity, OnboardingActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

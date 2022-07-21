@@ -15,7 +15,7 @@ class OnboardingActivity : BaseActivity<ActivityOnboardingBinding>() {
             finish()
             return
         }
-        shortToast("암온더넥스트레벨.\n코틀린문법지켜.")
+        shortToast("뒤로가기 버튼을 한 번 더 누르면 종료됩니다")
         backPressedTime = System.currentTimeMillis()
     }
 }

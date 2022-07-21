@@ -8,9 +8,9 @@ import co.kr.deartoday.R
 import co.kr.deartoday.databinding.ActivityMainBinding
 import co.kr.deartoday.presentation.adapter.MainViewPagerAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
-import co.kr.deartoday.presentation.ui.onboarding.OnboardingActivity
 import co.kr.deartoday.presentation.ui.setting.SettingActivity
 import co.kr.deartoday.presentation.viewmodel.main.MainViewModel
+import co.kr.deartoday.util.shortToast
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
@@ -28,6 +28,16 @@ class MainActivity() : BaseActivity<ActivityMainBinding>() {
         viewModel.fetchTimeTravelCount()
         initView()
         settingBtnClickEvent()
+    }
+
+    private var backPressedTime: Long = 0
+    override fun onBackPressed() {
+        if (System.currentTimeMillis() - backPressedTime < 2000) {
+            finish()
+            return
+        }
+        shortToast("뒤로가기 버튼을 한 번 더 누르면 종료됩니다")
+        backPressedTime = System.currentTimeMillis()
     }
 
     override fun onRestart() {
