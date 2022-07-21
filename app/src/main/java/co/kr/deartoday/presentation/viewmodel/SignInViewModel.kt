@@ -6,10 +6,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.kr.deartoday.data.ServiceCreator
 import co.kr.deartoday.data.model.request.auth.AuthRequest
+import co.kr.deartoday.data.sharedpreferences.DearTodaySharedPreferences
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-class SignInViewModel : ViewModel() {
+@HiltViewModel
+class SignInViewModel @Inject constructor(
+    private val sharedPreferences: DearTodaySharedPreferences
+) : ViewModel() {
 
     //디어투데이 사용자 토큰
     private var _accessToken = MutableLiveData<String>()
@@ -21,7 +27,7 @@ class SignInViewModel : ViewModel() {
                 Timber.v("log.앞 카카오::[${social}] + 소셜토큰::[${socialToken}]")
                 ServiceCreator.authService.getAccessToken(
                     social,
-                    AuthRequest(socialToken, "1234")
+                    AuthRequest(socialToken, sharedPreferences.deviceToken)
                 )
             }.onSuccess {
                 _accessToken.value = it.data.accessToken
