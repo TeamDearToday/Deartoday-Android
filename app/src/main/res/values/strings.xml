@@ -65,6 +65,6 @@
     <string name="logout"><u>로그아웃</u></string>
     <string name="leave_service"><u>서비스 탈퇴</u></string>
 
-
+    <string name="default_notification_channel_id">default_messaging_channel</string>
 
 </resources>
