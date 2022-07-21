@@ -106,7 +106,6 @@
             android:layout_marginHorizontal="52dp"
             android:layout_marginBottom="132dp"
             android:background="@drawable/btn_medium_present"
-            android:clickable="false"
             android:gravity="center"
             android:text="안녕!"
             android:textColor="@color/blue_558fff"

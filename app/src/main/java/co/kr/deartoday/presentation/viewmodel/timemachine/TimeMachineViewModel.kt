@@ -56,6 +56,7 @@ class TimeMachineViewModel @Inject constructor(
         arrayOf("좋은 말이야.\n너에게 마지막으로 궁금한 게 있어."),
         arrayOf("답해줘서 고마워.\n오늘 너랑 이렇게 이야기할 수 있어서 정말 좋았어.", "너가 이때로 다시 한 번 돌아가고 싶다고 생각한 만큼,\n나도 최선을 다해서 나의 오늘을 살아갈게.")
     )
+    val isEditable = MutableLiveData<Boolean>()
 
     var bitmap: Bitmap? = null
 

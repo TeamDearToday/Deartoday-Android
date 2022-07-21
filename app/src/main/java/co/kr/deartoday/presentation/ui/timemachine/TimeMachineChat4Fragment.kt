@@ -51,7 +51,7 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
     }
 
     private fun initOnClickListener() {
-        binding.ivExit.setOnSingleClickListener {
+        binding.ivExit.setOnClickListener {
             requireActivity().onBackPressed()
         }
         binding.tvSend.setOnSingleClickListener {
@@ -77,6 +77,8 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
     private fun showQuestion() {
         (requireActivity() as TimeMachineActivity).mainScope.launch {
             for(reaction in viewModel.reactions[qnaIndex]) {
+                viewModel.isEditable.value = false
+                binding.etAnswer.setText("")
                 delay(1200)
                 binding.tvContent.text = reaction
                 binding.tvContent.setBackgroundResource(R.drawable.rectangle_textfield_border_yellow_radius_4_20)
@@ -90,8 +92,10 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
             }
 
             if (qnaIndex == viewModel.questions.size) {
+                binding.etAnswer.setText("")
                 delay(1200)
                 with(binding) {
+                    viewModel.isEditable.value = true
                     tvContent.text = "마지막으로,\n과거의 당신에게 꼭 해주고 싶은 말을 남겨주세요"
 //                viewModel.addQuestion(tvContent.text.toString())
                     tvContent.gravity = Gravity.CENTER
@@ -109,6 +113,8 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
                     delay(2000)
                 }
             } else {
+                binding.etAnswer.setText("")
+                viewModel.isEditable.value = true
                 delay(1200)
                 with(binding) {
                     tvContent.text = viewModel.questions[qnaIndex]
@@ -127,6 +133,7 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
 
     private fun sendAnswer() {
         (requireActivity() as TimeMachineActivity).mainScope.launch {
+            viewModel.isEditable.value = false
             fadeOutAnimator(binding.etAnswer, 1000).start()
             fadeOutAnimator(binding.tvContent, 1000).start()
             val answer = binding.etAnswer.text.toString()
