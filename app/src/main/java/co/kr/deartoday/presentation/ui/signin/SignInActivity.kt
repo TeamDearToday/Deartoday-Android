@@ -11,19 +11,45 @@ import co.kr.deartoday.databinding.ActivitySignInBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.main.MainActivity
 import co.kr.deartoday.presentation.viewmodel.SignInViewModel
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.kakao.sdk.user.UserApiClient
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SignInActivity : BaseActivity<ActivitySignInBinding>() {
     private val viewModel by viewModels<SignInViewModel>()
     override val layoutRes: Int
         get() = R.layout.activity_sign_in
+
+    @Inject
+    lateinit var sharedPreferences: DearTodaySharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         observeAccessToken()
         setOnLayoutButtonClickListener()
+        getRegistrationToken()
+    }
+
+    private fun getRegistrationToken() {
+        if(sharedPreferences.deviceToken == "") {
+            FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Timber.tag("Firebase Device Token")
+                        .w("Fetching FCM registration token failed", task.exception)
+                    return@OnCompleteListener
+                }
+
+                // Get new FCM registration token
+                val token = task.result
+                Timber.tag("Firebase Device Token").d(token)
+                sharedPreferences.deviceToken = token
+            })
+        }
     }
 
     private fun setOnLayoutButtonClickListener() {
@@ -58,7 +84,7 @@ class SignInActivity : BaseActivity<ActivitySignInBinding>() {
         viewModel.accessToken.observe(this) {
             DearTodaySharedPreferences(this).dearTodayToken = it
             startActivity(Intent(this, MainActivity::class.java))
-            if(!isFinishing) {
+            if (!isFinishing) {
                 finish()
             }
         }
