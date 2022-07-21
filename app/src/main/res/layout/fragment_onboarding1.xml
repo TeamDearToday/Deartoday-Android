@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="6dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/btn_large_present"
             android:clickable="false"
             android:text="@string/btn_next"

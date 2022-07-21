@@ -25,7 +25,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="134dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_bg_letter"
+            android:src="@drawable/bg_letter"
             app:layout_constraintDimensionRatio="360:614.8"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +111,7 @@
             style="@style/BtnKr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/btn_medium_present"
             android:clickable="false"
@@ -119,6 +119,6 @@
             android:textColor="@color/blue_558fff"
             android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_ob11_line5" />
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
