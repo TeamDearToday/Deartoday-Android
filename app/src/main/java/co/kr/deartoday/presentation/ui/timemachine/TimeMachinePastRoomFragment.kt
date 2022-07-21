@@ -65,6 +65,9 @@ class TimeMachinePastRoomFragment : BaseFragment<FragmentTimeMachinePastRoomBind
                 replace<TimeMachineChat1Fragment>(R.id.fcv_time_machine)
             }
         }
+        binding.ivExit.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     private fun observeData() {

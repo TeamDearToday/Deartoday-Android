@@ -25,6 +25,7 @@ import co.kr.deartoday.presentation.viewmodel.timemachine.TimeMachineViewModel
 import co.kr.deartoday.util.MySoundPlayer
 import co.kr.deartoday.util.MySoundPlayer.initSounds
 import co.kr.deartoday.util.getTodayString
+import co.kr.deartoday.util.setOnSingleClickListener
 import co.kr.deartoday.util.shortToast
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
@@ -74,7 +75,7 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
 
     private fun initOnClickListener() {
         initSounds(requireContext())
-        binding.ivVideoTape.setOnClickListener {
+        binding.ivVideoTape.setOnSingleClickListener {
             when {
                 checkSelfPermissionGranted() -> {
                     navigateGallery()
@@ -87,7 +88,7 @@ class TimeMachineImagePickerFragment : BaseFragment<FragmentTimeMachineImagePick
                 }
             }
         }
-        binding.tvDate.setOnClickListener {
+        binding.tvDate.setOnSingleClickListener {
             openDatePickerDialog()
         }
         binding.ivExit.setOnClickListener {
