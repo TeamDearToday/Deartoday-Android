@@ -76,6 +76,19 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
 
     private fun showQuestion() {
         (requireActivity() as TimeMachineActivity).mainScope.launch {
+            for(reaction in viewModel.reactions[qnaIndex]) {
+                delay(1200)
+                binding.tvContent.text = reaction
+                binding.tvContent.setBackgroundResource(R.drawable.rectangle_textfield_border_yellow_radius_4_20)
+                binding.tvContent.backgroundTintList =
+                    requireContext().getColorStateList(R.color.yellow_feffdb)
+                binding.tvContent.maxLines = Integer.MAX_VALUE
+                fadeInAnimator(binding.tvContent, 1000).start()
+                delay(3000)
+                fadeOutAnimator(binding.tvContent, 1000).start()
+                delay(2000)
+            }
+
             if (qnaIndex == viewModel.questions.size) {
                 delay(1200)
                 with(binding) {

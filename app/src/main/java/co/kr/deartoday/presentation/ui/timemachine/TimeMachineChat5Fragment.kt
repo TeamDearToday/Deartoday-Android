@@ -1,9 +1,7 @@
 package co.kr.deartoday.presentation.ui.timemachine
 
 import android.graphics.ImageDecoder
-import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
@@ -33,6 +31,7 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
         binding.viewmodel = viewModel
         initOnClickListener()
         initAnimation()
+        observeData()
     }
 
     private fun initOnClickListener() {
@@ -54,11 +53,16 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
             viewModel.lastMessages.forEachIndexed { index, lastMessage ->
                 if (index == 0) {
                     delay(1200)
+                    binding.tvContent.text = "소중한 말 남겨줘서 정말 고마워"
+                    binding.tvContent.isVisible = true
+                    fadeInAnimator(binding.tvContent, 1000).start()
+                    fadeOutAnimator(binding.tvContent, 1000).start()
+                    delay(4500)
                 }
 
                 with(binding) {
                     tvContent.text = lastMessage
-                    tvContent.visibility = View.VISIBLE
+                    tvContent.isVisible = true
                 }
 
                 fadeInAnimator(binding.tvContent, 1000).start()
@@ -71,7 +75,7 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
                         isClickable = true
                     }
                 }
-                delay(3200)
+                delay(4500)
             }
         }
     }
@@ -94,7 +98,9 @@ class TimeMachineChat5Fragment : BaseFragment<FragmentTimeMachineChat5Binding>()
 
     private fun observeData() {
         viewModel.isSuccess.observe(viewLifecycleOwner) {
-            requireContext().shortToast(it.toString())
+            if(it || !it) {
+                requireActivity().finish()
+            }
         }
     }
 
