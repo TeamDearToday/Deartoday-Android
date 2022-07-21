@@ -64,6 +64,7 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
             delay(1200)
             fadeInAnimator(binding.ivImage, 1000).start()
             fadeInAnimator(binding.tvContent, 1000).start()
+            binding.ivImage.clipToOutline = true
             binding.ivImage.isVisible = true
             binding.tvContent.isVisible = true
             delay(2000)
