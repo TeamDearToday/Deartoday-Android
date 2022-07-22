@@ -42,28 +42,12 @@
 
         <activity
             android:name=".presentation.ui.setting.SettingActivity"
-            android:exported="true" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".presentation.ui.splash.DeartodaySplashActivity"
-            android:exported="true" />
-        <activity
-            android:name=".presentation.ui.timetravel.TimeTravelDetailActivity"
-            android:exported="true" />
-        <activity
-            android:name=".presentation.ui.timetravel.TimeTravelActivity"
-            android:exported="true" />
-        <activity
-            android:name=".presentation.ui.timemachine.TimeMachineActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.ui.messagebox.MessageBoxActivity"
-            android:exported="true" />
-        <activity
-            android:name=".presentation.ui.onboarding.OnboardingActivity"
-            android:exported="true" />
-        <activity
-            android:name=".presentation.ui.signin.SignInActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -71,8 +55,33 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".presentation.ui.timetravel.TimeTravelDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.ui.timetravel.TimeTravelActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.ui.timemachine.TimeMachineActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.ui.messagebox.MessageBoxActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.ui.onboarding.OnboardingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".presentation.ui.signin.SignInActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -86,15 +95,9 @@
         </activity>
         <activity
             android:name=".presentation.ui.main.MainActivity"
-            android:exported="true" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
 
-        <service
-            android:name=".java.MyFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>
