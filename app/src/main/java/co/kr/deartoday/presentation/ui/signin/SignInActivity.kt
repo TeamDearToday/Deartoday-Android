@@ -10,7 +10,7 @@ import co.kr.deartoday.data.sharedpreferences.DearTodaySharedPreferences
 import co.kr.deartoday.databinding.ActivitySignInBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.main.MainActivity
-import co.kr.deartoday.presentation.viewmodel.SignInViewModel
+import co.kr.deartoday.presentation.viewmodel.signin.SignInViewModel
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import co.kr.deartoday.util.shortToast
