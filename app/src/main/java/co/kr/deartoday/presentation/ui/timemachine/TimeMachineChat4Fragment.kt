@@ -60,6 +60,7 @@ class TimeMachineChat4Fragment : BaseFragment<FragmentTimeMachineChat4Binding>()
     }
 
     private fun initAnimation() {
+        binding.ivImage.clipToOutline = true
         (requireActivity() as TimeMachineActivity).mainScope.launch {
             delay(1200)
             fadeInAnimator(binding.ivImage, 1000).start()
