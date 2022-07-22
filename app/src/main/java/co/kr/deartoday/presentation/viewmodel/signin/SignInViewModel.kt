@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import co.kr.deartoday.data.ServiceCreator
 import co.kr.deartoday.data.model.request.auth.LoginRequest
 import co.kr.deartoday.data.service.auth.AuthService
 import co.kr.deartoday.data.sharedpreferences.DearTodaySharedPreferences
@@ -33,7 +32,7 @@ class SignInViewModel @Inject constructor(
                 )
             }.onSuccess {
                 _accessToken.value = it.data.accessToken
-                ServiceCreator.accessToken = it.data.accessToken
+                sharedPreferences.dearTodayToken = it.data.accessToken
                 Timber.d("최우형[${it.data.accessToken}]", "[${it.data.accessToken}]")
             }.onFailure {
                 Timber.e("$it")
