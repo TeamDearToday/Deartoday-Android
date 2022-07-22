@@ -1,15 +1,20 @@
 package co.kr.deartoday.presentation.viewmodel.timetravel
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import co.kr.deartoday.data.ServiceCreator
-import co.kr.deartoday.data.model.response.timetravel.TapesResponse
-import kotlinx.coroutines.launch
-import timber.log.Timber
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import co.kr.deartoday.data.model.response.timetravel.TapesResponse
+import co.kr.deartoday.data.service.tape.TapeService
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import timber.log.Timber
+import javax.inject.Inject
 
-class TimeTravelViewModel : ViewModel() {
+@HiltViewModel
+class TimeTravelViewModel @Inject constructor(
+    private val tapeService: TapeService
+) : ViewModel() {
     //TimeTravelActivity
     private var _tapes = MutableLiveData<TapesResponse>() //업데이트,변경
     val tapes: LiveData<TapesResponse> get() = _tapes    //관찰
@@ -17,7 +22,7 @@ class TimeTravelViewModel : ViewModel() {
     fun getTapeData() {
         viewModelScope.launch {
             runCatching {
-                ServiceCreator.tapeService.getTapes()
+                tapeService.getTapes()
             }.onSuccess {
                 Timber.v("성공?")
                 _tapes.value = it.data!!
