@@ -7,8 +7,10 @@ import co.kr.deartoday.databinding.ActivityTimeTravelDetailBinding
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.viewmodel.timetravel.TimeTravelDetailViewModel
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+@AndroidEntryPoint
 class TimeTravelDetailActivity : BaseActivity<ActivityTimeTravelDetailBinding>() {
     private val viewModel by viewModels<TimeTravelDetailViewModel>()
     override val layoutRes: Int
