@@ -1,4 +1,4 @@
-package co.kr.deartoday.data.service
+package co.kr.deartoday.data.service.messagebox
 
 import co.kr.deartoday.data.model.response.BaseResponse
 import co.kr.deartoday.data.model.response.MessageBoxResponse
