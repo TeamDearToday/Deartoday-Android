@@ -4,13 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import co.kr.deartoday.data.ServiceCreator
 import co.kr.deartoday.data.model.response.timetravel.DetailTapeResponse
+import co.kr.deartoday.data.service.tape.TapeService
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-class TimeTravelDetailViewModel : ViewModel() {
-
+@HiltViewModel
+class TimeTravelDetailViewModel @Inject constructor(
+    private val tapeService: TapeService
+) : ViewModel() {
     private var _tapeId = MutableLiveData<String>() //업데이트,변경
     val tapeId: LiveData<String> get() = _tapeId    //관찰
 
@@ -20,7 +24,7 @@ class TimeTravelDetailViewModel : ViewModel() {
     fun getTape() {
         viewModelScope.launch {
             runCatching {
-                ServiceCreator.tapeService.getTape(
+                tapeService.getTape(
                     _tapeId.value ?: error("아 어차피 앞에서 짤린다고 ㄹㅇㅋㅋ 뒤에서도 짤릴꺼고")
                 )
             }.onSuccess {

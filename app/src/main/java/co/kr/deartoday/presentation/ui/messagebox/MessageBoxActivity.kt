@@ -9,10 +9,12 @@ import co.kr.deartoday.databinding.ActivityMessageBoxBinding
 import co.kr.deartoday.presentation.adapter.MessageBoxAdapter
 import co.kr.deartoday.presentation.ui.base.BaseActivity
 import co.kr.deartoday.presentation.ui.timemachine.TimeMachineActivity
-import co.kr.deartoday.presentation.viewmodel.MessageBoxViewModel
+import co.kr.deartoday.presentation.viewmodel.messagebox.MessageBoxViewModel
 import co.kr.deartoday.util.CustomDialog
 import co.kr.deartoday.util.MessageBoxItemDecoration
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MessageBoxActivity : BaseActivity<ActivityMessageBoxBinding>() {
     private lateinit var messageBoxAdapter: MessageBoxAdapter
     private val viewModel by viewModels<MessageBoxViewModel>()

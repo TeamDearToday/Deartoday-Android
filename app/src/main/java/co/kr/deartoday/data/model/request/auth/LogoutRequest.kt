@@ -1,6 +1,5 @@
 package co.kr.deartoday.data.model.request.auth
 
-data class AuthRequest(
-    val socialToken: String,
+data class LogoutRequest(
     val fcmToken: String
 )
