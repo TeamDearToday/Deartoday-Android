@@ -49,7 +49,7 @@ Thanks goes to these wonderful people
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="http://github.com/hansh0101"><img src="https://avatars.githubusercontent.com/u/81508084?v=4" width="100px;" alt=""/><br /><sub><b>Seunghyeon Han</b></sub></a><br /><a href="https://github.com/TeamDearToday/Deartoday-Android/commits?author=hansh0101" title="Code">💻</a></td>
+    <td align="center"><a href="http://github.com/hansh0101"><img src="https://avatars.githubusercontent.com/u/81508084?v=4" width="100px;" alt=""/><br /><sub><b>Seunghyeon Han<br>A.K.A. Iceman</b></sub></a><br /><a href="https://github.com/TeamDearToday/Deartoday-Android/commits?author=hansh0101" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/dn7638"><img src="https://avatars.githubusercontent.com/u/48896148?v=4" width="100px;" alt=""/><br /><sub><b>Woohyeong Choi</b></sub></a><br /><a href="https://github.com/TeamDearToday/Deartoday-Android/commits?author=dn7638" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/uxri"><img src="https://avatars.githubusercontent.com/u/102457223?v=4" width="100px;" at=""/><br /><sub><b>Yuree Choi</b></sub></a><br /><a href="https://github.com/TeamDearToday/Deartoday-Android/commits?author=uxri" title="Code">💻</a></td>
   </tr>
